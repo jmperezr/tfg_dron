@@ -8,7 +8,7 @@
 \advisorDepartment{DEPARTAMENTO DE TECNOLOGÍAS Y SISTEMAS DE INFORMACIÓN}
 \advisorSecond{}
 \intensification{COMPUTACIÓN}
-\docdate{2016}{Febrero}
+\docdate{2016}{Marzo}
 
 \usepackage{tikz}
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
@@ -22,21 +22,21 @@
 
 \section{INTRODUCCIÓN}
 
-Cada vez es más habitual que se produzcan cataclismos atmosféricos\cite{desastres} que puedan provocar la pérdida de vidas, como incendios, terremotos, inundaciones o tsunamis. Además, a estas catástrofes naturales se le añaden los factores de riesgo provocados por los humanos durante el ejercicio de actividades industriales\cite{desastres}, como puede ser un accidente nuclear.
+Cada vez es más habitual que se produzcan cataclismos atmosféricos \cite{desastres} que puedan provocar la pérdida de vidas, como incendios, terremotos, inundaciones o tsunamis. Además, a estas catástrofes naturales se le añaden los factores de riesgo provocados por los humanos durante el ejercicio de actividades industriales \cite{desastres}, como puede ser un accidente nuclear.
   
 Los momentos inmediatamente posteriores a la ocurrencia de estas catástrofes son extremadamente críticos para minimizar el daño causado. Normalmente, existe un protocolo de actuación bien definido basado en la coordinación de personal especializado y la gestión de recursos para responder de manera eficiente cuando tiene lugar una catástrofe. Por ejemplo, en el caso de un terremoto resulta esencial la intervención inmediata de un equipo de rescate para maximizar el número de personas rescatadas con vida. No obstante, la actuación humana resulta muy complicada en determinadas circunstancias debido a las propias consecuencias de la catástrofe y al riesgo real para el personal responsable de gestionar la crisis.
 
-Este tipo de entornos son ideales para emplear vehículos automáticos no tripulados (UAVs), más comúnmente llamados drones\cite{dron1}, ya que en este contexto la tecnología puede contribuir a mejorar dicha gestión gracias al soporte de drones autónomos, que sirvan como primera línea de actuación para recabar información en escenarios poco accesibles de una forma rápida y lo más precisa posible. Si además esta intervención se realiza de manera coordinada, las probabilidades de minimizar los daños de la catástrofe sufrida crecen considerablemente.
+Este tipo de entornos son ideales para emplear vehículos automáticos no tripulados (UAVs), más comúnmente llamados drones \cite{dron1}, ya que en este contexto la tecnología puede contribuir a mejorar dicha gestión gracias al soporte de drones autónomos, que sirvan como primera línea de actuación para recabar información en escenarios poco accesibles de una forma rápida y lo más precisa posible. Si además esta intervención se realiza de manera coordinada, las probabilidades de minimizar los daños de la catástrofe sufrida crecen considerablemente.
 
-El ayuntamiento de Madrid se ha convertido en el primer consistorio en proporcionar un UAV cuyo uso se extiende al Cuerpo de Bomberos, Samur y Policía Municipal. Se enmarca en el proyecto piloto SOS Drone\cite{sosdrone} y es capaz de actuar en condiciones adversas como altas temperaturas, humos, contaminantes y tóxicos. El dron fue utilizado por primera vez en septiembre de 2013 en la Puerta de Alcalá durante la elección de la sede de los Juegos Olímpicos de 2020.
+El ayuntamiento de Madrid se ha convertido en el primer consistorio en proporcionar un UAV cuyo uso se extiende al Cuerpo de Bomberos, Samur y Policía Municipal. Se enmarca en el proyecto piloto SOS Drone \cite{sosdrone} y es capaz de actuar en condiciones adversas como altas temperaturas, humos, contaminantes y tóxicos. El dron fue utilizado por primera vez en septiembre de 2013 en la Puerta de Alcalá durante la elección de la sede de los Juegos Olímpicos de 2020.
 
 En este TFG se propone la creación de un sistema que permita un despliegue coordinado de varios UAVs para conseguir información útil sobre el entorno damnificado por el desastre. A través del equipamiento de cámaras en drones se puedan llevar a cabo misiones de búsqueda y rescate, maximizando las posibilidades de éxito de la misión iniciada y reduciendo ostensiblemente el coste operacional.
 
 \subsection{Contexto}
 
-El contexto del TFG está enfocado a la utilización y coordinación de UAVs en situaciones de emergencias, por ejemplo desastres naturales o provocados por el ser humano. Los científicos han confirmado que estos sucesos han aumentado de manera preocupante en las últimas décadas.
+El contexto del TFG está enfocado a la utilización y coordinación de UAVs en situaciones de emergencias, por ejemplo desastres naturales o provocados por el ser humano. Los científicos han confirmado que estos sucesos han aumentado de manera preocupante en las últimas décadas \cite{aumento}.
 
-Para constatar este hecho, en la \textbf{Figura 1}\cite{EMDAT} se observa la evolución de la cantidad de desastres naturales identificados desde el año 1900 hasta el año 2015. En esta gráfica se advierte un incremento mayúsculo de este tipo de catástrofes en los últimos 30 años.
+Para constatar este hecho, en la \textbf{Figura 1\footnote{http://www.emdat.be/disaster\_trends/index.html}} se observa la evolución de la cantidad de desastres naturales identificados desde el año 1900 hasta el año 2015. En esta gráfica se advierte un incremento mayúsculo de este tipo de catástrofes en los últimos 30 años.
 
 \begin{figure}[htb]
 \centering
@@ -44,25 +44,25 @@ Para constatar este hecho, en la \textbf{Figura 1}\cite{EMDAT} se observa la evo
 \caption{Número de desastres naturales registrados en el periodo 1900-2015.}
 \end{figure}
 
-Con el auge existente en torno a los drones, en la sociedad actual, se abre todo un mundo de posibilidades para la creación de sistemas que sean útiles para la humanidad. Según Sophic Capital y como muestra la \textbf{Figura 2}\cite{cuotamercado} los ingresos totales de las compañías que trabajan con UAVs pueden ascender hasta más de 12000 millones de dólares en el año 2025.
+Con el auge existente en torno a los drones, en la sociedad actual, se abre todo un mundo de posibilidades para la creación de sistemas que sean útiles para la humanidad. Según Sophic Capital y como muestra la \textbf{Figura 2} \cite{cuotamercado} los ingresos totales de las compañías que trabajan con UAVs pueden ascender hasta más de 12000 millones de dólares en el año 2025.
 
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.65\textwidth]{./figures/DCA-15-chart.png}
+\includegraphics[width=0.60\textwidth]{./figures/DCA-15-chart.png}
 \caption{Previsión de ingresos por regiones en el periodo 2015-2025.}
 \end{figure} 
 
 
 \subsection{Motivación}
 
-Estimar el tiempo de actuación en labores de socorro es una tarea compleja, pero los drones pueden desplegarse con rapidez y acortar sustancialmente el tiempo de respuesta y el riesgo de lesiones de los individuos desaparecidos y de los equipos de rescate. En el caso de rescates acuáticos, según la empresa Vodafone\cite{tiempomenor} ``un socorrista tarda el triple del tiempo que un dron necesita para llegar a un bañista en peligro''.
+Estimar el tiempo de actuación en labores de socorro es una tarea compleja, pero los drones pueden desplegarse con rapidez y acortar sustancialmente el tiempo de respuesta y el riesgo de lesiones de los individuos desaparecidos y de los equipos de rescate. En el caso de rescates acuáticos, según la empresa Vodafone \cite{tiempomenor} ``un socorrista tarda el triple del tiempo que un dron necesita para llegar a un bañista en peligro''.
 
-Los UAVs son un aliado perfecto en misiones de búsqueda y rescate puesto que sus limitaciones en condiciones meteorológicas adversas son menores, aparte de esto, el uso de sensores especializados contribuyen a equipar los UAV de ventajas importantes en la realización de este tipo de operaciones. Sirva como precedente ``la utilización de helicópteros no tripulados franceses Elipse HE 300 durante la actual crisis de la central de Fukushima''\cite{notripulados}.
+Los UAVs son un aliado perfecto en misiones de búsqueda y rescate puesto que sus limitaciones en condiciones meteorológicas adversas son menores. Aparte de esto, el uso de sensores especializados contribuyen a equipar los UAV de ventajas importantes en la realización de este tipo de operaciones. Sirva como precedente ``la utilización de helicópteros no tripulados franceses Elipse HE 300 durante la actual crisis de la central de Fukushima'' \cite{notripulados}.
 
 Con todo lo anterior, en este TFG se pretende mejorar la productividad de los equipos de rescate, en situaciones de catástrofe, permitiendo rebajar los tiempos de reconocimiento del terreno con la ayuda de una flota de UAVs que se coordinen y comuniquen de forma descentralizada.
 
-El objetivo principal del proyecto es la creación de un sistema que permita monitorizar determinadas zonas, basándose en prioridades, de tal forma que en caso de catástrofe el uso de este software permita reducir costes en cuanto a: el tiempo de reconocimiento del territorio afectado por el desastre, el tiempo de rescate de individuos y la exposición al peligro por parte del personal de emergencia.
+El objetivo principal del proyecto es la creación de un sistema que permita monitorizar determinadas zonas, basándose en prioridades, de tal forma que en caso de catástrofe el uso de este software permita reducir costes en cuanto a: i) el tiempo de reconocimiento del territorio afectado por el desastre, ii) el tiempo de rescate de individuos y iii) la exposición al peligro por parte del personal de emergencia.
 
 \begin{figure}[htb]
 \centering
@@ -111,11 +111,6 @@ UAVs se organicen para poder ser utilizados en situaciones de emergencia. \\
   computación, percepción y actuación en ambientes entornos inteligentes. & Es fundamental modelar el
 conocimiento humano para el sistema propuesto, debido a que los drones deben actuar y coordinarse siguiendo las
 pautas de los protocolos de actuación establecidos dependiendo de la catástrofe ocurrida. \\
-   Capacidad para evaluar la complejidad computacional de un problema, conocer
-  estrategias algorítmicas que puedan conducir a su resolución y recomendar, desarrollar e
-  implementar aquella que garantice el mejor rendimiento de acuerdo con los requisitos
-  establecidos. &  El tiempo de actuación en áreas que han sido afectadas por una catástrofe es crítico, por lo
- que garantizar el mejor rendimiento  en la coordinación de los drones es una condición fundamental.  \\
     & \\
     \hline
   \end{tabular}
@@ -128,7 +123,7 @@ Los objetivos que se pretenden conseguir con la realización de este TFG son los
 
 \begin{itemize}
 
-\item Desarrollar un sistema adaptativo basado en la coordinación de UAVs o drones para obtener información relevante sobre el entorno afectado por la catástrofe, de forma que se logren los siguientes subojetivos:
+\item Desarrollar un sistema adaptativo basado en la coordinación de UAVs o drones para obtener información relevante sobre el entorno afectado por la catástrofe, de forma que se logren los siguientes subobjetivos:
 
 \begin{itemize}
 \item Reducir la exposición de agentes humanos al peligro derivado de la propia catástrofe.
@@ -165,11 +160,11 @@ En esta primera etapa se lleva a cabo una prospección de los sistemas y artícu
 
 \subsection{Análisis y Diseño}
 
-La documentación continuará con un análisis de requisitos que permita comprender la naturaleza del sistema, su función, comportamiento e interconexión\cite{pressman}. Después, en la fase de diseño se establecen las estructuras de datos, la arquitectura del software, y una representación de la interfaz y el algoritmo sobre los cuales se trabajarán en fases posteriores. ``El proceso de diseño traduce requisitos en una representación de software''\cite{pressman}
+La documentación continuará con un análisis de requisitos que permita comprender la naturaleza del sistema, su función, comportamiento e interconexión \cite{pressman}. Después, en la fase de diseño se establecen las estructuras de datos, la arquitectura del software, y una representación de la interfaz y el algoritmo sobre los cuales se trabajarán en fases posteriores. ``El proceso de diseño traduce requisitos en una representación de software'' \cite{pressman}
 
 \subsection{Implementación y Pruebas}
 
-Esta actividad tratará de traducir el diseño a un lenguaje de programación legible por la computadora, Python en este caso. Una vez que se haya implementado el código, las pruebas del software se centrarán en asegurarse que todas las sentencias se han comprobado y en realizar las prueba para la detección de errores\cite{pressman}.
+Esta actividad tratará de traducir el diseño a un lenguaje de programación legible por la computadora, Python en este caso. Una vez que se haya implementado el código, las pruebas del software se centrarán en asegurarse que todas las sentencias se han comprobado y en realizar las prueba para la detección de errores \cite{pressman}.
 
 \subsection{Análisis de Resultados}
 

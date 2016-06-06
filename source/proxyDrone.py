@@ -1,61 +1,63 @@
 import os
 import sys
 import time
-from dronekit import connect, Command, VehicleMode
+from dronekit import connect, Command, VehicleMode, LocationGlobalRelative
 from pymavlink import mavutil
 import drone
 import thread
 
 class proxyDrone():
-	def __init__(self, vehicle, lock):
-        	self.waypoints= []
-        	self.status= "Idle"
-		self.vehicle= vehicle
+	def __init__(self, numVehicle, lock):
+        	self.waypoint= None
+        	self.status= "idle"
+		self.numVehicle= numVehicle
 		self.lock = lock
+		self.connected = False
+		self.vehicle = None
         	print "Proxy created."
 
-	def takeoff(self, vehicle, aTargetAltitude):
+	def takeoff(self, aTargetAltitude):
 
-    		print "Drone %s: Basic pre-arm checks" %self.vehicle
+    		print "Drone %s: Basic pre-arm checks" %self.numVehicle
     		
-    		while not vehicle.is_armable:
-        		print "  Drone %s: Waiting for vehicle to initialise..." %self.vehicle
+    		while not self.vehicle.is_armable:
+        		print "  Drone %s: Waiting for vehicle to initialise..." %self.numVehicle
         		time.sleep(2)
 
         
-    		print "Drone %s: Arming motors" %self.vehicle
-    		# vehicle Copter debe ser armado en modo GUIADO
-    		vehicle.mode    = VehicleMode("GUIDED")
-    		vehicle.armed   = True    
+    		print "Drone %s: Arming motors" %self.numVehicle
+    		# vehicle Copter must be armed in guided mode
+    		self.vehicle.mode    = VehicleMode("GUIDED")
+    		self.vehicle.armed   = True    
 
-    		while not vehicle.armed:      
-        		print "  Drone %s: Waiting for arming..." %self.vehicle
+    		while not self.vehicle.armed:      
+        		print "  Drone %s: Waiting for arming..." %self.numVehicle
         		time.sleep(2)
 
-    		print "Drone %s: Takeoff!!" %self.vehicle
-    		vehicle.simple_takeoff(aTargetAltitude) 
+    		print "Drone %s: Takeoff!!" %self.numVehicle
+    		self.vehicle.simple_takeoff(aTargetAltitude) 
 
        		while True:
-        		print "Drone %s: Altitude: %s" %(self.vehicle, vehicle.location.global_relative_frame.alt)      
-        		if vehicle.location.global_relative_frame.alt>=aTargetAltitude*0.95:
-            			print "Drone %s: Reached target altitude" %self.vehicle
+        		print "Drone %s: Altitude: %s" %(self.numVehicle, self.vehicle.location.global_relative_frame.alt)      
+        		if self.vehicle.location.global_relative_frame.alt>=aTargetAltitude*0.95:
+            			print "Drone %s: Reached target altitude" %self.numVehicle
             			break
         		time.sleep(2)
 
-	def uploadMission(self, vehicle):
-		cmds = vehicle.commands
-		cmd=Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_WAYPOINT, 0, 0, 0, 0, 0, 0, 32.8351736920028898, -117.162837982177734, 0)
-		cmds.add(cmd)
+	def uploadMission(self, land):
+		cmds = self.vehicle.commands
+		cmds.clear()
 		
-		for i in self.waypoints:
-			cmd=Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_WAYPOINT, 0, 0, 0, 0, 0, 0, float(i.lon) , float(i.lat), float(i.alt))
-			cmds.add(cmd)
-		cmd1=Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_RETURN_TO_LAUNCH, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-		cmd2=Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_LAND, 0, 0, 0, 0, 0, 0,  0, 0, 0)
-		cmds.add(cmd1)
-		cmds.add(cmd2)
-		
+		if not land:
+			cmds.add(Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_WAYPOINT, 0, 0, 0, 0, 0, 0, float(self.waypoint.lon) , float(self.waypoint.lat), float(self.waypoint.alt)))
+			cmds.add(Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_WAYPOINT, 0, 0, 0, 0, 0, 0, float(self.waypoint.lon) , float(self.waypoint.lat), float(self.waypoint.alt)))
+			
+			cmds.add(Command( 0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_WAYPOINT, 0, 0, 0, 0, 0, 0, float(self.waypoint.lon) , float(self.waypoint.lat), float(self.waypoint.alt)))
 
+		else:
+			cmds.add(Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_RETURN_TO_LAUNCH, 0, 0, 0, 0, 0, 0, 0, 0, 0))
+			cmds.add(Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_LAND, 0, 0, 0, 0, 0, 0,  0, 0, 0))
+		
 		cmds.upload()
 
 	def connectDrone(self, UdpPort):
@@ -64,34 +66,47 @@ class proxyDrone():
 		
 		return vehicle
 
-	def doMission(self):
-		self.lock.acquire()
-		instanceDrone = drone.drone(self.vehicle)
-		instanceDrone.startDrone()
-		self.lock.release()
-		vehicle = self.connectDrone(instanceDrone.UdpPort)
-
-		vehicle.parameters['SYSID_THISMAV']= self.vehicle + 1
+	def doMission(self, land):
+		if not self.connected:
+			self.lock.acquire()
+			instanceDrone = drone.drone(self.numVehicle)
+			instanceDrone.startDrone()
+			self.vehicle = self.connectDrone(instanceDrone.UdpPort)
+			self.vehicle.parameters['SYSID_THISMAV']= self.numVehicle + 1
+			self.setHomeWaypoint()
+			print self.homeWaypoint
+			self.lock.release()
 		
-		self.uploadMission(vehicle)
-		self.takeoff(vehicle, 10)
+		self.uploadMission(land)
+		
+		if not self.connected:
+			self.takeoff(10)
+			self.connected = True
 
-		print "Drone %s: Starting mission..." %self.vehicle
+		print "Drone %s: Starting mission..." %self.numVehicle
 
-		vehicle.commands.next=0
+		self.vehicle.commands.next=0
 	
 
-		vehicle.mode = VehicleMode("AUTO")
+		self.vehicle.mode = VehicleMode("AUTO")
 
 		while True:
 			time.sleep(2)
-			nextwaypoint=vehicle.commands.next
+			nextwaypoint= self.vehicle.commands.next
 			
-
-			if (vehicle.location.global_relative_frame.alt <= 0):
-            			print "Drone %s: Landing completed" %self.vehicle
-            			break
-		vehicle.close()
-
+			if not land:
+				if nextwaypoint==2: #Dummy waypoint
+        				print "Drone %s: Next waypoint..."
+        				break;
+			else:
+				if (self.vehicle.location.global_relative_frame.alt <= 0):
+            				print "Drone %s: Landing completed" %self.numVehicle
+					self.vehicle.close()
+            				break
+		#self.vehicle.close()
+		self.status= "idle"
+	
 	def insertWaypoints(self, waypoint):
-		self.waypoints.append(waypoint)
+		self.status= "busy"
+		self.waypoint= waypoint
+		

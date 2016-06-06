@@ -58,17 +58,23 @@ def main():
 		proxy.append(proxyDrone.proxyDrone(i,lock))
 		print i
 
-	for i in range(len(coordinator.waypoints)):
-		if(i / coordinator.numVehicles == 0):
-			proxy[i].insertWaypoints(coordinator.waypoints[i])
-		else:
-			remainder = i % coordinator.numVehicles
-			proxy[remainder].insertWaypoints(coordinator.waypoints[i])
+	#for i in range(len(coordinator.waypoints)):
+	#	if(i / coordinator.numVehicles == 0):
+	#		proxy[i].insertWaypoints(coordinator.waypoints[i])
+	#	else:
+	#		remainder = i % coordinator.numVehicles
+	#		proxy[remainder].insertWaypoints(coordinator.waypoints[i])
+	
+	while coordinator.waypoints:
+		for i in range(coordinator.numVehicles):	
+			if (proxy[i].status == "idle"):
+				proxy[i].insertWaypoints(coordinator.waypoints.pop(0))
+				proxy[i].doMission(False)			
+				#t = threading.Thread(target=proxy[i].doMission)
+    				#t.start()
 
 	for i in range(coordinator.numVehicles):
-		t = threading.Thread(target=proxy[i].doMission)
-    		t.start()
-
+		proxy[i].doMission(True)
 	
 if __name__ == "__main__":
 	main()

@@ -63,6 +63,8 @@ class proxyDrone():
 	def connectDrone(self, UdpPort):
 		print "Connected to vehicle: %s" % UdpPort
 		vehicle= connect("127.0.0.1:%d" % UdpPort, wait_ready=True)
+
+		vehicle.wait_ready('autopilot_version')
 		
 		return vehicle
 
@@ -73,8 +75,6 @@ class proxyDrone():
 			instanceDrone.startDrone()
 			self.vehicle = self.connectDrone(instanceDrone.UdpPort)
 			self.vehicle.parameters['SYSID_THISMAV']= self.numVehicle + 1
-			self.setHomeWaypoint()
-			print self.homeWaypoint
 			self.lock.release()
 		
 		self.uploadMission(land)
@@ -96,7 +96,7 @@ class proxyDrone():
 			
 			if not land:
 				if nextwaypoint==2: #Dummy waypoint
-        				print "Drone %s: Next waypoint..."
+        				print "Drone %s: Next waypoint..." %self.numVehicle
         				break;
 			else:
 				if (self.vehicle.location.global_relative_frame.alt <= 0):

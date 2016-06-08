@@ -65,16 +65,15 @@ def main():
 	#		remainder = i % coordinator.numVehicles
 	#		proxy[remainder].insertWaypoints(coordinator.waypoints[i])
 	
+	j = 1
 	while coordinator.waypoints:
 		for i in range(coordinator.numVehicles):	
 			if (proxy[i].status == "idle"):
+				print "PUNTO %s" %j
+				j = j+1
 				proxy[i].insertWaypoints(coordinator.waypoints.pop(0))
-				proxy[i].doMission(False)			
-				#t = threading.Thread(target=proxy[i].doMission)
-    				#t.start()
-
-	for i in range(coordinator.numVehicles):
-		proxy[i].doMission(True)
-	
+				t = threading.Thread(target=proxy[i].doMission, args=(False,))
+    				t.start()
+		
 if __name__ == "__main__":
 	main()

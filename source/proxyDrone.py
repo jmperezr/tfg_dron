@@ -12,8 +12,8 @@ class proxyDrone():
         	self.status= "idle"
 		self.numVehicle= numVehicle
 		self.lock = lock
-		self.connected = False
 		self.vehicle = None
+		self.inFlight= False
         	print "Proxy created."
 
 	def takeoff(self, aTargetAltitude):
@@ -60,28 +60,22 @@ class proxyDrone():
 		
 		cmds.upload()
 
-	def connectDrone(self, UdpPort):
-		print "Connected to vehicle: %s" % UdpPort
-		vehicle= connect("127.0.0.1:%d" % UdpPort, wait_ready=True)
-
-		vehicle.wait_ready('autopilot_version')
+	def connectDrone(self):
+		self.lock.acquire()
+		instanceDrone = drone.drone(self.numVehicle)
+		instanceDrone.startDrone()
+		print "Connected to vehicle: %s" % instanceDrone.UdpPort
+		self.vehicle= connect("127.0.0.1:%d" % instanceDrone.UdpPort, wait_ready=True, heartbeat_timeout=30)
+		self.vehicle.parameters['SYSID_THISMAV']= self.numVehicle + 1
+		self.lock.release()
 		
-		return vehicle
-
+		self.takeoff(10)
+		self.inFlight = True
+		
+			
 	def doMission(self, land):
-		if not self.connected:
-			self.lock.acquire()
-			instanceDrone = drone.drone(self.numVehicle)
-			instanceDrone.startDrone()
-			self.vehicle = self.connectDrone(instanceDrone.UdpPort)
-			self.vehicle.parameters['SYSID_THISMAV']= self.numVehicle + 1
-			self.lock.release()
 		
 		self.uploadMission(land)
-		
-		if not self.connected:
-			self.takeoff(10)
-			self.connected = True
 
 		print "Drone %s: Starting mission..." %self.numVehicle
 

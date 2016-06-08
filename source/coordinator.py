@@ -56,7 +56,10 @@ def main():
 	proxy= []
 	for i in range(coordinator.numVehicles):
 		proxy.append(proxyDrone.proxyDrone(i,lock))
+		t = threading.Thread(target=proxy[i].connectDrone)
+		t.start()
 		print i
+		
 
 	#for i in range(len(coordinator.waypoints)):
 	#	if(i / coordinator.numVehicles == 0):
@@ -64,16 +67,13 @@ def main():
 	#	else:
 	#		remainder = i % coordinator.numVehicles
 	#		proxy[remainder].insertWaypoints(coordinator.waypoints[i])
-	
-	j = 1
+		
 	while coordinator.waypoints:
-		for i in range(coordinator.numVehicles):	
-			if (proxy[i].status == "idle"):
-				print "PUNTO %s" %j
-				j = j+1
+		for i in range(coordinator.numVehicles):
+			if proxy[i].status == "idle" and proxy[i].inFlight:
 				proxy[i].insertWaypoints(coordinator.waypoints.pop(0))
 				t = threading.Thread(target=proxy[i].doMission, args=(False,))
-    				t.start()
+				t.start()
 		
 if __name__ == "__main__":
 	main()

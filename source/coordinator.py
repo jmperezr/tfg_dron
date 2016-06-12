@@ -67,13 +67,24 @@ def main():
 	#	else:
 	#		remainder = i % coordinator.numVehicles
 	#		proxy[remainder].insertWaypoints(coordinator.waypoints[i])
-		
+	
+	
+	#Pausa para ajustar pruebas de video
+	#try:
+    	#	input("Press enter to continue")
+	#except SyntaxError:
+    	#	pass
+	
 	while coordinator.waypoints:
 		for i in range(coordinator.numVehicles):
 			if proxy[i].status == "idle" and proxy[i].inFlight:
 				proxy[i].insertWaypoints(coordinator.waypoints.pop(0))
 				t = threading.Thread(target=proxy[i].doMission, args=(False,))
 				t.start()
-		
+
+	for i in range(coordinator.numVehicles):
+		t = threading.Thread(target=proxy[i].doMission, args=(True,))
+		t.start()
+
 if __name__ == "__main__":
 	main()

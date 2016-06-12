@@ -46,26 +46,24 @@ class proxyDrone():
 
 	def uploadMission(self, land):
 		cmds = self.vehicle.commands
-		cmds.clear()
-		
+				
 		if not land:
+			cmds.clear()
 			cmds.add(Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_WAYPOINT, 0, 0, 0, 0, 0, 0, float(self.waypoint.lon) , float(self.waypoint.lat), float(self.waypoint.alt)))
 			cmds.add(Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_WAYPOINT, 0, 0, 0, 0, 0, 0, float(self.waypoint.lon) , float(self.waypoint.lat), float(self.waypoint.alt)))
-			
 			cmds.add(Command( 0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_WAYPOINT, 0, 0, 0, 0, 0, 0, float(self.waypoint.lon) , float(self.waypoint.lat), float(self.waypoint.alt)))
-
-		else:
+		#	cmds.upload()
+		#else:
 			cmds.add(Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_RETURN_TO_LAUNCH, 0, 0, 0, 0, 0, 0, 0, 0, 0))
 			cmds.add(Command(0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_LAND, 0, 0, 0, 0, 0, 0,  0, 0, 0))
+			cmds.upload()
 		
-		cmds.upload()
-
 	def connectDrone(self):
 		self.lock.acquire()
 		instanceDrone = drone.drone(self.numVehicle)
 		instanceDrone.startDrone()
 		print "Connected to vehicle: %s" % instanceDrone.UdpPort
-		self.vehicle= connect("127.0.0.1:%d" % instanceDrone.UdpPort, wait_ready=True, heartbeat_timeout=30)
+		self.vehicle= connect('127.0.0.1:%s' % instanceDrone.UdpPort, wait_ready=True)
 		self.vehicle.parameters['SYSID_THISMAV']= self.numVehicle + 1
 		self.lock.release()
 		

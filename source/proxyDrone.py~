@@ -14,6 +14,7 @@ class proxyDrone():
 		self.lock = lock
 		self.vehicle = None
 		self.inFlight= False
+		self.home = None
 		self.numWaypoints = 0
         	print "Proxy created."
 

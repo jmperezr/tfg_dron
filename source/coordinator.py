@@ -8,15 +8,18 @@ from threading import Thread
 import argparse 
 parser = argparse.ArgumentParser(description="Coordinator. Send missions to a certain number of vehicles.")
 parser.add_argument("--vehicles", default="1",
-                   help="Number of vehicles to which the waypoints are sent. Default 1 vehicle.")
+                   help="Number of vehicles simulated to fly to a waypoint. Default 1 vehicle.")
+parser.add_argument("--wait", default="10",
+                   help="Number of seconds the vehicle is stopped on the waypoint. Default 10 seconds.")
 args = parser.parse_args()
 
 class Coordinator():
 
-	def __init__(self, numVehicles):
+	def __init__(self, numVehicles, waitWaypoint):
         	self.waypoints = []
        		self.priority = []
 		self.numVehicles = int(numVehicles)
+		self.waitWaypoint = int(waitWaypoint)
         	print "Coordinator created."
 
 	
@@ -46,7 +49,7 @@ class Coordinator():
 	
 		
 def main():
-	coordinator = Coordinator(args.vehicles)
+	coordinator = Coordinator(args.vehicles, args.wait)
 	coordinator.readXml()
 
 	lock = threading.Lock()
@@ -59,16 +62,7 @@ def main():
 		t = threading.Thread(target=proxy[i].connectDrone)
 		t.start()
 		print i
-		
-
-	#for i in range(len(coordinator.waypoints)):
-	#	if(i / coordinator.numVehicles == 0):
-	#		proxy[i].insertWaypoints(coordinator.waypoints[i])
-	#	else:
-	#		remainder = i % coordinator.numVehicles
-	#		proxy[remainder].insertWaypoints(coordinator.waypoints[i])
-	
-	
+			
 	#Pausa para ajustar pruebas de video
 	#try:
     	#	input("Press enter to continue")
@@ -79,11 +73,11 @@ def main():
 		for i in range(coordinator.numVehicles):
 			if proxy[i].status == "idle" and proxy[i].inFlight:
 				proxy[i].insertWaypoints(coordinator.waypoints.pop(0))
-				t = threading.Thread(target=proxy[i].doMission, args=(False,))
+				t = threading.Thread(target=proxy[i].doMission, args=(False, coordinator.waitWaypoint))
 				t.start()
 
 	for i in range(coordinator.numVehicles):
-		t = threading.Thread(target=proxy[i].doMission, args=(True,))
+		t = threading.Thread(target=proxy[i].doMission, args=(True, coordinator.waitWaypoint))
 		t.start()
 
 if __name__ == "__main__":

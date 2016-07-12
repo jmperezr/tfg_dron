@@ -22,6 +22,8 @@ print __doc__
 
 number = 0
 cap = None
+cv2.namedWindow("frame", cv2.cv.CV_WINDOW_NORMAL)
+cv2.cv.ResizeWindow("frame", 640, 480)
 while (True):
 
         capAux = cv2.VideoCapture(number)
@@ -41,7 +43,7 @@ h=int(cap.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT))
 
 # video recorder
 fourcc = cv2.cv.CV_FOURCC(*'XVID')
-out = cv2.VideoWriter(time.strftime("%d-%m-%Y_%H:%M:%S")+".avi", fourcc, 25, (w, h))
+out = cv2.VideoWriter(time.strftime("Videos/%d-%m-%Y_%H:%M:%S")+".avi", fourcc, 25, (w, h))
 
 while(cap.isOpened()):
 	ch = 0xFF & cv2.waitKey(1)
@@ -52,7 +54,7 @@ while(cap.isOpened()):
         	if ch == ord('q'):
             		break
 		if ch == ord(' '):
-            		photo_file = time.strftime("%d-%m-%Y_%H:%M:%S")+".png"
+            		photo_file = time.strftime("Images/%d-%m-%Y_%H:%M:%S")+".jpg"
             		cv2.imwrite(photo_file, frame)
             		print photo_file, 'saved'
 			# [START authenticate]
@@ -78,10 +80,14 @@ while(cap.isOpened()):
         
 			# [START parse_response]
         		response = service_request.execute()
-			size = len(response['responses'][0]['labelAnnotations'])
-			for i in range(size):
-        			label = response['responses'][0]['labelAnnotations'][i]['description']
-				print "Found label: %s" %label
+			size= len(response['responses'][0])
+			if size == 0:
+				print "Label not found"
+			else:
+				size = len(response['responses'][0]['labelAnnotations'])
+				for i in range(size):
+        				label = response['responses'][0]['labelAnnotations'][i]['description']
+					print "Found a label: %s" %label
     	else:
         	break
 

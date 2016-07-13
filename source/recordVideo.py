@@ -24,8 +24,7 @@ number = 0
 cap = None
 cv2.namedWindow("frame", cv2.cv.CV_WINDOW_NORMAL)
 cv2.cv.ResizeWindow("frame", 640, 480)
-while (True):
-
+while True:
         capAux = cv2.VideoCapture(number)
         if not (capAux.isOpened()):
         	break;
@@ -33,7 +32,7 @@ while (True):
             number= number+1
             capAux.release()
 
-if (number > 1):   
+if number > 1:   
 	cap = cv2.VideoCapture(0)
 else:
 	cap = cv2.VideoCapture(1)
@@ -45,7 +44,10 @@ h=int(cap.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT))
 fourcc = cv2.cv.CV_FOURCC(*'XVID')
 out = cv2.VideoWriter(time.strftime("Videos/%d-%m-%Y_%H:%M:%S")+".avi", fourcc, 25, (w, h))
 
-while(cap.isOpened()):
+if not cap.isOpened():
+	print "FPV system not connected."
+
+while cap.isOpened():
 	ch = 0xFF & cv2.waitKey(1)
 	ret, frame = cap.read()
 	if ret==True:

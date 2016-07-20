@@ -3,7 +3,7 @@
 
 \drop{E}{}n este capítulo se lleva a cabo una prospección de los sistemas y artículos
 que se han efectuado hasta la fecha, de modo que se contextualice el \acs{TFG} en el ámbito 
-de la utilización de \acs{UAV}s, en diferentes ámbitos de la ingeniería civil en general y, más
+de la utilización de \acs{UAV}s, en diferentes entornos de la ingeniería civil en general y, más
 concretamente, en situaciones de emergencia. Asimismo se analizarán las tecnologías de mayor 
 relevancia para el desarrollo e implementación del sistema adaptativo.  
 
@@ -15,9 +15,9 @@ en la creación de los torpedos aéreos, que después evolucionaron a través de
 aéreos (o drones), los señuelos, los modelos deportivos de radiocontrol, las aeronaves de investigación, 
 las aeronaves de reconocimiento y las aeronaves de combate.
 
-Un \acs{UAV} es «un  vehículo  aéreo  motorizado  que no  lleva  a  bordo  a  un  operador  humano,  
-que utiliza las fuerzas aerodinámicas para proporcionar la elevación del vehículo, que puede volar autónomamente 
-o ser tripulado por control remoto, que puede ser sustituido o recuperado, y que puede transportar una 
+Un \acs{UAV} es «un vehículo aéreo motorizado \textbf{i)} que no lleva a bordo a un operador humano, 
+\textbf{ii)} que utiliza las fuerzas aerodinámicas para proporcionar la elevación del vehículo, \textbf{iii)} que puede volar autónomamente 
+o ser tripulado por control remoto, \textbf{iv)} que puede ser sustituido o recuperado, y \textbf{v)} que puede transportar una 
 carga letal o no» \cite{UAV}. Dada esta definición quedan excluidos:
 
 \begin{itemize}
@@ -48,16 +48,17 @@ remota para ser consideradas como aptas para la aviación civil» \cite{dron1}.
 APV = Automatically Piloted Vehicle, UTA = Unmanned Tactical Aircraft, UCAV = Unmanned Combat Air Vehicle, 
 ROA = Remotely Operated Aircraft.}
 
-\subsection{Historia}
+\subsection{Nacimiento y desarrollo de aeronaves pilotadas por control remoto}
+\label{sec:historia}
 
-Los europeos fueron pioneros en el desarrollo de los principios de la aeronáutica y, al 
+Los europeos fueron pioneros en concebir los principios de la aeronáutica y, al 
 tratar de emplearlos en aeronaves, volaron modelos no tripulados que pueden ser los primeros vehículos 
 aéreos no tripulados de la historia. Precursores de la aviación en distintos países siguieron una progresión que va de los
 planeadores a los aviones propulsados no tripulados, y de los vuelos no tripulados a los
 tripulados (ver Cuadro~\ref{tab:pioneros}). Su limitación tecnológica, no disponer de un motor con suficiente relación potencia-peso, 
 impidió que sus diseños pudieran mantenerse en el aire.
 
-\begin{table}[hp]
+\begin{table}[htb]
   \centering
   {\small
   \input{tables/pioneros.tex}
@@ -67,7 +68,7 @@ impidió que sus diseños pudieran mantenerse en el aire.
   \label{tab:pioneros}
 \end{table}
 
-Durante la \textbf{Primera Guerra Mundial}, la aviación no tripulada se veía entorpecida por falta de desarrollo tecnológico. 
+Durante la \textbf{Primera Guerra Mundial}, la aviación no tripulada se veía entorpecida por la falta de progreso tecnológico. 
 Los obstáculos se encontraban en los problemas de estabilización automática, control remoto y navegación autónoma. Fue Elmer Sperry el primero en resolver estos inconvenientes en una aeronave no tripulada. Elmer Sperry creó un giroestabilizador para un avión en \textbf{1909}, que tenía un rendimiento mediocre y era demasiado pesado. Ayudado por Glenn Hammond Curtiss optimizó su invento, que ahora era 
 más pequeño y permitía controlar el avión en los tres ejes.
 
@@ -84,45 +85,68 @@ Finalmente, tras dos años de intentos fallidos, el torpedo aéreo de Sperry (ve
 \end{center}
 \end{figure}
 
-Los primeros sistemas se desarrollaron como armamento de largo alcance en artefactos tales como el torpedo aéreo de Sperry, mencionado anteriormente, y el blanco aéreo británico Aerial Target. El Aerial Target era un monoplano, sin piloto, controlado por radio que sirvió para verificar la viabilidad de utilizar señales de radio como sistema de guiado.
+Los primeros sistemas fueron creados como armamento de largo alcance en artefactos tales como el torpedo aéreo de Sperry, mencionado anteriormente, y el blanco aéreo británico Aerial Target. El Aerial Target era un monoplano, sin piloto, controlado por radio que sirvió para verificar la viabilidad de utilizar señales de radio como sistema de guiado.
 
 En el transcurso de la \textbf{Segunda Guerra Mundial}, Gran Bretaña abandonó la elaboración de misiles de crucero y se introdujo en el sector de los blancos aéreos con control completo por radio, a pesar de que el alcance era muy limitado.
-En paralelo en Estados Unidos se fabricó el RP-4 (ver Figura~\ref{fig:rp4}) de Radioplane Company. A través de estos aviones, se fue perfeccionando la tecnología y el uso del control remoto por radio.
+En paralelo en Estados Unidos se fabricó el RP-4 (ver Figura~\ref{fig:rp4}) de Radioplane Company. A través de estos aviones, se fue perfeccionando la tecnología y el uso del control remoto por radio (ver Figura~\ref{fig:controlador}).
 
 \begin{figure}[!h]
 \begin{center}
-\subfigure[RP-4 listo para volar]{\includegraphics[width=0.8\textwidth]{/rp4.jpeg}}
-\subfigure[Controlador de vuelo]{\includegraphics[width=0.6\textwidth]{/rp4controlador.jpeg}}
-\caption[Caption]{RP-4 de Radioplane Company}
+\includegraphics[width=0.8\textwidth]{/rp4.jpeg}
+\caption[Caption]{RP-4 listo para volar}
 \label{fig:rp4}
 \end{center}
 \end{figure}
 
-En la \textbf{Posguerra} de la \textbf{Segunda Guerra Mundial}, la compañía Radioplane produjo una serie de blancos aéreos no tripulados, llamados Falconer (ver Figura~\ref{fig:falconer}), que llevaban integrados sistemas de radiocontrol más modernos. 
-Otra aplicación relevante durante la \textbf{Posguerra} fue la de señuelos antirradar. Estos eran soltados desde 
-bombarderos, donde también eran controlados por radio con la ayuda de imágenes de vídeo, con la finalidad de confundir a los sistemas radar enemigos.
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{/falconer.jpg}
-\caption[Caption]{Northrop Falconer}
-\label{fig:falconer}
+\includegraphics[width=0.65\textwidth]{/rp4controlador.jpeg}
+\caption[Caption]{Controlador de vuelo}
+\label{fig:controlador}
+\end{center}
+\end{figure}
+
+En la \textbf{Posguerra} de la \textbf{Segunda Guerra Mundial}, la compañía Northrop produjo una serie de blancos aéreos no tripulados, llamados Falconer (ver Figura~\ref{fig:northrop}), que llevaban integrados sistemas de radiocontrol más modernos. 
+Otra aplicación relevante durante la \textbf{Posguerra} fue la de señuelos antirradar (ver Figura~\ref{fig:northrop}). Estos eran soltados desde bombarderos, donde también eran controlados por radio con la ayuda de imágenes de vídeo, con la finalidad de confundir a los sistemas radar enemigos.
+
+\begin{figure}[!h]
+\begin{center}
+\subfigure[Northrop Falconer]{\includegraphics[width=0.6\textwidth]{/falconer.jpg}}
+\subfigure[Señuelo antirradar Northrop Crossbow]{\includegraphics[width=0.3\textwidth]{/crossbow.jpg}}
+\caption[Caption]{Aeronaves no tripuladas de la compañia Northrop}
+\label{fig:northrop}
 \end{center}
 \end{figure}
 
 Con la aparición de aviones militares con sistemas de propulsión a reacción, a lo largo de \textbf{1960}
-se desarrollaron blancos aéreos más rápidos y con mayor alcance. De esta manera, eran más difíciles de detectar y de derribar que los aviones de reconocimiento tripulados y, adicionalmente, no provocarían incidentes diplomáticos asociados con la captura de un piloto. 
-Los \acs{UAV}s del momento fueron equipados con cámaras para misiones de reconocimiento, revelando las fotos en la base cuando el \acs{UAV} regresaba.
-Algunos incluso incorporaron buscadores de radiación y cabezas de combate antirradar.
+se fabricaron blancos aéreos más rápidos y con mayor alcance (ver Figura~\ref{fig:ryanfirebee}). De esta manera, eran más difíciles de detectar y de derribar que los aviones de reconocimiento tripulados y, adicionalmente, no provocarían incidentes diplomáticos asociados con la captura de un piloto. 
+Posteriormente estos \acs{UAV}s fueron equipados con cámaras para misiones de reconocimiento, revelando las fotos en la base cuando el \acs{UAV} regresaba. Algunos incluso incorporaron buscadores de radiación y cabezas de combate antirradar.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/ryanfirebee.jpg}
+\caption[Caption]{Ryan Firebee}
+\label{fig:ryanfirebee}
+\end{center}
+\end{figure}
 
 Los \textbf{años 70} iban a ser testigos de la inclusión de \acs{UAS} en misiones de 
 reconocimiento y vigilancia tanto de corto alcance, como de largo alcance y elevada altitud. Fueron sistemas 
 más complejos tanto en los requisitos de la misión como en la seguridad en las comunicaciones.
 
-En \textbf{1890} se creó un sistema en el que el \acs{UAV} se lanzaba desde una rampa y se rescataba con un paracaídas y un airbag. 
+En \textbf{1980} se creó un sistema en el que el \acs{UAV} se lanzaba desde una rampa (ver Figura~\ref{fig:cl89}) y se rescataba con un paracaídas y un airbag. 
 Cuando se realizaban análisis diurnos el \acs{UAV} estaba equipado con una cámara convencional más una cámara de infrarrojos y para los análisis nocturnos únicamente se equipaba la cámara infrarroja. El guiado se llevaba a cabo mediante la preprogramación de un autopiloto basándose en giróscopos verticales y direccionales, información de altímetros y anemómetros barométricos. 
 Además, transportaba un transmisor de video que podía enviar imágenes, en tiempo real, a la estación de control 
 en tierra, estando a 70 km de la base.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/cl-289-09.jpg}
+\caption[Caption]{Lanzamiento del Canadair CL-89}
+\label{fig:cl89}
+\end{center}
+\end{figure}
 
 En los \textbf{años 90} con la mayor disponibilidad del \acs{GPS} y de las comunicaciones vía satélite se consigue que los \acs{UAS} puedan operar por encima de la señal de radio y que puedan abandonar el uso de sistemas de navegación imprecisos basados en giróscopos y
 datos de aire. Es así como, junto con los sistemas digitales de control de vuelo o \acs{DFCS}, el alcance y la precisión de la navegación mejoraron apreciablemente. 
@@ -137,17 +161,131 @@ Otras líneas de avance, en este periodo de tiempo, son las que tratan de aument
 la carga de trabajo y los errores de las tripulaciones en tierra.
 
 \textbf{Más allá del 2010} el mercado militar de los \acs{RPAS} continúa con una tendencia positiva desde el final de la Guerra Fría y se espera que se acelere en las primeras décadas del siglo XXI.
-La tendencia comercial en el mercado de la robótica está también en constante crecimiento, es por eso que la tecnología está apoyando estas tendencias, con microprocesadores cada vez más baratos y competentes que fomenten el desarrollo. 
 
-\section{Cuadros}
-\label{sec:uncuadro}
+La tendencia comercial en el mercado de la robótica está también en constante crecimiento (ver Figura~\ref{fig:prevision}). Como consecuencia de esta corriente, la tecnología está apoyando estas tendencias con microprocesadores cada vez más baratos y competentes que incentiven su utilización.
 
-Se denominan «tablas» cuando contienen datos con relaciones numéricas. El
-término genérico (que debe usarse cuando en los demás casos) es
-«cuadro»~\cite{sousa}. Si las columnas están bien alineadas, las líneas
-verticales estorban más que ayudan (no las pongas). Los cuadros se referencian
-de este modo.
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/DCA-15-chart.png}
+\caption[Caption]{Previsión de ingresos por regiones en el periodo 2015-2025 \cite{cuotamercado}}
+\label{fig:prevision}
+\end{center}
+\end{figure}
 
+\subsection{Tipos de aeronaves pilotadas por control remoto}
+\label{sec:tipos}
+
+En conformidad con la Organización de Aviación Civil Internacional, «El hecho de que la aeronave sea tripulada o no tripulada no afecta su condición de aeronave. Cada categoría de aeronave tendrá posiblemente versiones no tripuladas en el futuro.
+Este punto es fundamental para todos los aspectos futuros relativos a las \acs{UA} y proporciona la base para tratar la aeronavegabilidad, el otorgamiento de licencias al personal, las normas de separación, etc.» \cite{OACI}. En otras palabras, las aeronaves no tripuladas son, en primer lugar, aeronaves, por lo que están sujetas a las mismas normas y restricciones que las aeronaves tripuladas.
+
+Existen múltiples formas de clasificar las aeronaves, pero lo habitual es utilizar una clasificación atendiendo al modo en la que las aeronaves consiguen su sustentación en la atmósfera. A continuación se propone una clasificación en la que se presenta los principales tipos de aeronaves:  
+
+\begin{itemize}
+\item \textbf{Aerostato}: Más ligeros que el aire.
+	\begin{itemize}
+	\item Globo aerostático.
+	\item Dirigible.
+	\end{itemize}
+\item \textbf{Aerodino}: Más pesados que el aire.
+	\begin{itemize}
+	\item \textbf{Ala fija}.
+		\begin{itemize}
+		\item Avión.
+		\item Planeador.
+		\item Ala delta.
+		\item Parapente.
+		\item Paramotor.
+		\end{itemize}
+	\item \textbf{Ala rotatoria}.
+		\begin{itemize}
+		\item Helicóptero.
+		\item Multirrotor.
+		\item Autogiro.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+Por otra parte, aparecen aeronaves de nuevas clases, como los híbridos, que ejecutan parte del vuelo haciendo uso del método de ala rotatoria, generalmente en el despegue y aterrizaje, realizando un salto al uso de ala fija para dirigirse de forma rápida y eficiente a su destino.
+
+El uso de vehículos aéreos no tripulados ha alcanzado un grado de madurez significativo en el terreno militar. Tanto es así, que 
+en el ejército norteamericano constituyen cerca de un tercio de la flota de aeronaves, desempeñando en exclusiva las misiones 
+de inteligencia, vigilancia y reconocimiento que deben cumplir las fuerzas armadas. «De acuerdo con la consultora de defensa Teal Group Corporation\footnote{\url{http://www.tealgroup.com}}, el inventario a 1 de enero de 2013 de sistemas aéreos no tripulados contaba con 10.730 \acs{UAS} [...], de lo que se deduce que en el ámbito militar la preponderancia de los sistemas de ala fija (ver Figura~\ref{fig:alafija}) es casi absoluta (97\%)» \cite{dron2}.
+
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.73\textwidth]{/alafija.jpg}
+\caption[Caption]{Ala fija}
+\label{fig:alafija}
+\end{center}
+\end{figure}
+
+En el ámbito civil, mucho menos avanzado que el militar, la situación es la contraria. «De acuerdo con la información suministrada por la Dirección General de la Aviación Civil francesa\footnote{\url{http://www.developpement-durable.gouv.fr/-Secteur-Aerien,1633-.html}} (DGAC) referida a las autorizaciones otorgadas hasta octubre de 2013, [...] los sistemas basados en aeronaves de ala rotatoria superan ampliamente
+a los de otros tipos, si bien no de forma tan aplastante como ocurre en el mundo militar, ya que sólo suponen un 76\% del total» \cite{dron2}.
+
+Esta inclinación, hacia las aeronaves multirrotor (ver Figura~\ref{fig:multirrotor}) en el entorno civil, se debe a que son altamente apropiadas para la principal actividad desempeñada en estos momentos, la toma de imágenes y videos, que según las estimaciones de la Asociación Española de RPAS\footnote{\url{http://www.aerpas.es/}} constituyen posiblemente más del 90\% de las tareas ejecutadas por drones \cite{AERPAS}, al igual que ocurre en otros países europeos.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/multicopter.jpg}
+\caption[Caption]{Multirrotor}
+\label{fig:multirrotor}
+\end{center}
+\end{figure}
+
+Las principales ventajas de los multirrotores son las siguientes:
+
+\begin{itemize}
+\item \textbf{Despegue y aterrizaje vertical}: que minimiza las necesidades del espacio requerido en tierra para su puesta en marcha	.
+\item La posibilidad de \textbf{volar a punto fijo} o \textbf{a muy baja velocidad}: lo cual resulta idóneo para software en la que la observación sea un requisito vital.
+\item Mayor \textbf{maniobrabilidad} y \textbf{precisión} de vuelo: mientras que los sistemas de ala fija siguen rutas curvilíneas, los multirrotores son capaces de volar siguiendo cualquier trayectoria deseada en las tres dimensiones.
+\item Su diseño les permite acarrear \textbf{cargas más voluminosas}, en relación con su propio tamaño, que los aviones.
+\end{itemize}
+
+Por el contrario, los multirrotores tienen una serie de desventajas frente a los sistemas de ala fija:
+
+\begin{itemize}
+\item Son \textbf{menos eficientes}: lo que provoca que aunque tenga el mismo tamaño, la autonomía sea menor.
+\item Vuelan a \textbf{menor velocidad}: lo que combinado con su menor autonomía significa que pueden cubrir un área mucho menor.
+\item Tienen una \textbf{huella sonora sensiblemente mayor}, por lo que resultan poco indicados para operaciones de vigilancia.
+\end{itemize}
+
+A la vista de lo expuesto anteriormente se justifica que los multirrotores dominen hoy en hoy en día el mercado, 
+«si bien es previsible que en el futuro, a medida que se desarrollen aplicaciones de ejecución más complejas, cubriendo 
+mayores distancias y desarrolladas a mayor altura sobre el terreno, al igual que ocurre en el caso militar, los sistemas de ala 
+fija aumentarán su peso» \cite{dron2}.
+
+\subsection{Modos de operación}
+\label{sec:mododeoperacion}
+
+Sólo existen cuatro modos de operación en cuanto a la manera de guiar una aeronave de forma remota, 
+con un grado de automatización creciente:
+
+\begin{itemize}
+\item \textbf{Modo manual}: el piloto remoto actúa sobre las superficies de control y la potencia de los motores, 
+a través de una emisora de radiocontrol.
+\item \textbf{Modo asistido}: similar al modo manual, pero el piloto remoto no interviene directamente sobre las superficies de 
+control o los motores, sino que indica sus intenciones (girar a la derecha, subir, etc.), desde el puesto de radiocontrol, y el 
+autopiloto las transforma en actuaciones que logren ese propósito.
+\item \textbf{Modo automático}: el piloto remoto traza un plan de vuelo, es decir, un número de puntos de paso o «waypoints» antes del 
+inicio del vuelo. La aeronave dispone de un piloto automático que sigue el plan previsto, realizando automáticamente las acciones 
+requeridas en cada momento. Aun así el piloto mantiene el control en todo momento, pudiendo modificar los puntos de paso durante el vuelo, ejecutar maniobras predeterminadas (como por ejemplo la «vuelta a casa») o incluso tomar el control directamente.
+\item \textbf{Modo autónomo}: es semejante al modo automático, en cuanto que se establece un plan de vuelo con anterioridad, 
+pero una vez iniciado el vuelo se continúa con el plan de forma completamente autónoma, sin precisar la intervención del piloto 
+incluso en caso de producirse situaciones de emergencia.
+\end{itemize}
+
+Es obvio que el modo manual y el modo asistido requieren que la aeronave se encuentre a la vista del piloto o, que al menos, 
+transmita información suficiente para que el piloto posea el conocimiento necesario de la situación y del escenario como para poder tomar las decisiones adecuadas. Por ello, el uso de estos modos suele estar restringido a las circunstancias de vuelo en línea de vista visual o \acs{VLOS}.
+
+Se destaca el hecho de que el modo manual se utiliza normalmente en las aeronaves de ala fija. Las de ala rotatoria, 
+sobre todo los multirrotores, suelen utilizar el modo asistido, por la dificultad que implica el coordinar todas las acciones 
+para mantener la aeronave estabilizada y ejecutar las maniobras deseadas. En ambos casos es necesaria una considerable destreza 
+por parte del piloto para controlar la aeronave desde tierra.
+
+Por esta razón existe una tendencia a utilizar de forma exclusiva \acs{RPAS} en modo automático, o por lo menos en una forma de modo 
+asistido en la que el piloto recibe una imagen tomada por una cámara dirigida hacia adelante, denominada visión en primera persona 
+o \acs{FPV}, lo que le permite actuar como si estuviera embarcado en ella. Este modo resulta también muy indicado en vuelos en línea de vista para misiones rutinarias. La principal ventaja que proporciona el modo automático es la posibilidad de utilizar pilotos de menor capacitación y, por lo tanto, de reducir el coste de operación.
 
 \section{Listados de código}
 \label{sec:listado}
@@ -202,11 +340,10 @@ existentes o crees entornos nuevos, en lugar de añadir los mismos cambios en
 muchas partes del documento.
 
 
-
 \section{Citas y referencias cruzadas}
 
 Puedes ver aquí una cita~\cite{design_patterns} y una referencia a la segunda sección
-(véase \S\,\ref{sec:uncuadro}). Para hacer referencias debes definir etiquetas en el punto
+(véase \S\,. Para hacer referencias debes definir etiquetas en el punto
 que quieras referenciar (normalmente justo debajo). Es útil que los nombres de las
 etiquetas (comando label) tengan los siguientes prefijos (incluyendo los dos puntos ``:''
 del final):

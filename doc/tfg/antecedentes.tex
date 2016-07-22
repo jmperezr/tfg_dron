@@ -262,7 +262,7 @@ A la vista de lo expuesto anteriormente se justifica que los multirrotores domin
 mayores distancias y desarrolladas a mayor altura sobre el terreno, al igual que ocurre en el caso militar, los sistemas de ala 
 fija aumentarán su peso» \cite{dron2}.
 
-\subsection{Modos de operación}
+\subsection{Modos de operación en el guiado de una aeronave no tripulada}
 \label{sec:mododeoperacion}
 
 Sólo existen cuatro modos de operación en cuanto a la manera de guiar una aeronave de forma remota, 
@@ -293,6 +293,56 @@ por parte del piloto para controlar la aeronave desde tierra.
 Por esta razón existe una tendencia a utilizar de forma exclusiva \acs{RPAS} en modo automático, o por lo menos en una forma de modo 
 asistido en la que el piloto recibe una imagen tomada por una cámara dirigida hacia adelante, denominada visión en primera persona 
 o \acs{FPV}, lo que le permite actuar como si estuviera embarcado en ella. Este modo resulta también muy indicado en vuelos en línea de vista para misiones rutinarias. La principal ventaja que proporciona el modo automático es la posibilidad de utilizar pilotos de menor capacitación y, por lo tanto, de reducir el coste de operación.
+
+\subsection{Visión por computador en \acs{UAV}s}
+\label{sec:visionporcomputador}
+
+«La \textbf{visión por computador} es un campo de la inteligencia artificial en el que se busca, a través de lenguajes de programación, que un computador sea capaz de identificar y ejecutar órdenes con el reconocimiento de ciertas características de imágenes, imágenes completas o secuencias de éstas» \cite{visionporcomputador}.
+
+Los sistemas de visión artificial están formados por: 
+\begin{itemize}
+\item Una \textbf{fuente de luz}.
+\item Un \textbf{sensor de imagen} que capture las imágenes que después se procesan.
+\item Una \textbf{tarjeta de adquisición de imágenes}, como interfaz entre sensor y el computador.
+\item Una serie de \textbf{algoritmos de análisis} en los que se procesan, segmentan y se aplican las transformaciones necesarias para obtener los resultados deseados. 
+\item Un \textbf{procesador} que analice las imágenes recibidas ejecutando los algoritmos diseñados. 
+\item Un \textbf{sistema de respuesta} a tiempo real que ejecute los comandos.
+\end{itemize}
+
+El ser humano percibe la luz gracias a los ojos y la información captada se traslada al cerebro por el nervio óptico. El cerebro procesa la imagen, analiza la escena y actúa en consecuencia. Los sistemas de visión por computador buscan imitar este comportamiento, para lo cual, se definen cuatro fases (ver Figura~\ref{fig:fasescv}), estas fases son:
+
+\begin{itemize}
+\item \textbf{Captura}: se adquieren las imágenes.
+\item \textbf{Procesamiento}: se aplican filtros o transformaciones que eliminan partes no deseadas, facilitando las próximas etapas.
+\item \textbf{Segmentación}: se abstraen los elementos que interesan del resto de la imagen para su comprensión.
+\item \textbf{Reconocimiento}: se distinguen los objetos segmentados haciéndose uso de una serie de características que previamente se han establecido.
+\end{itemize}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/fasescv.jpg}
+\caption[Fases de un sistema de visión por computador]{Fases de un sistema de visión por computador \cite{visionporcomputador}}
+\label{fig:fasescv}
+\end{center}
+\end{figure}
+
+En el campo de los sistemas aéreos no tripulados, la visión por computador es una parte importante para la navegación y el control, 
+y en ella se basan numerosas aplicaciones. Los \acs{UAV}s aparecen como una alternativa barata y adecuada en muchas campos
+de aplicación, dadas sus capacidades de vuelo y a la posibilidad de integrar sistemas de visión que permiten mejorar determinadas 
+tareas como el pilotaje, el guiado autónomo del vehículo o la obtención de imágenes.
+
+En la actualidad, se han desarrollado aplicaciones con vehículos aéreos no tripulados, que hacen uso de la visión por computador, en distintos ámbitos de aplicación como: la gestión del tráfico \cite{controltrafico}, la detección de incendios \cite{incendios} o la evitación de obstáculos \cite{obstaculos}.
+
+\subsection{Aplicaciones en el sector civil}
+\label{sec:ingenieriacivil}
+
+Los drones se pueden considerar como robots no antropomorfos con una inmensa autonomía de vuelo y una gran gama de posibilidades  de  aplicación.
+
+Gracias al uso de procesadores electrónicos, de software especializado y \acs{GPS}, las capacidades de  control automático en base a la información procedente de los sensores instalados en las aeronaves, y la rápida reacción correctiva como consecuencia del procesamiento local de la información del estado de vuelo, hacen posible que la retroalimentación aporte un inmenso potencial, minimizando para estos artefactos las posibles desviaciones entre el comportamiento real y el esperado.
+
+Actualmente, y dejando a un lado los usos bélicos tanto defensivos como ofensivos, estos equipos ofrecen amplias posibilidades de aplicación al sector de la ingeniería civil: inspecciones de infraestructuras, investigación atmosférica, levantamientos topográficos, filmación de películas y fotografía deportiva, cultivos de precisión, control de caza, localización de bancos de pesca, mantenimiento de parque eólicos e infraestructuras energéticas, control medioambiental, gestión de riegos y desastres naturales, exploración geológico-minera, etc.
+
+Por otro lado, en los países más avanzados se están impulsando diferentes proyectos de investigación con este tipo de aeronaves no tripuladas, que abarcan desde el ensayo de material aeronáutico en condiciones peligrosas de hielo, viento, lluvia intensa, etc., evitando la exposición a riesgos de los equipos humanos en vuelos tripulados, pasando por el desplazamiento y reparto de grandes cargas e incluso personas en vuelos comerciales en vuelos no tripulados, hasta el desarrollo de tecnologías concretas como son  las  pilas  de  combustible  de  hidrógeno  que  permitirían triplicar la duración de los vuelos, etc.
 
 \section{Herramientas y entornos de desarrollo}
 \label{herrmientas}

@@ -300,13 +300,35 @@ o \acs{FPV}, lo que le permite actuar como si estuviera embarcado en ella. Este 
 \subsection{3DR IRIS+}
 \label{sec:3driris}
 
+«El \textbf{3DR IRIS+} (ver Figura~\ref{fig:3dririsplus}) es un vehículo aéreo autónomo todo en uno, producido por 3D Robotics\footnote{\url{https://www.3dr.com}}, que se ejecuta sobre el sistema de piloto automático Pixhawk, lo último en electrónica avanzada para el piloto automático desde el proyecto del PX4. Con la ayuda de puntos \acs{GPS} preprogramados es capaz de efectuar operaciones de nivel profesional, como el mapeo, la toma de imágenes con scripts, la investigación científica, y otras aplicaciones donde se requieren planes de vuelo repetitivos» \cite{3driris}. Es concebido como una plataforma de captación de imágenes aéreas potenciado por hardware, software y firmware de código abierto.
+
+El 3DR IRIS+ cuenta con una serie de componentes y especificaciones (ver Cuadro~\ref{tab:especificaciones}) como: GPS integrado, que permite establecer una ruta de antemano o volver a casa en caso de pérdida, o un kit de telemetría que permite obtener información de vuelo como la distancia, altitud, velocidad, nivel de batería e intensidad de la señal \acs{GPS}. Como en cualquier dron, se puede personalizar, y es posible la inclusión de una cámara GoPro Hero si se quiere mejorar la calidad de la imagen.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/3driris.jpg}
+\caption[3DR IRIS+]{3DR IRIS+}
+\label{fig:3dririsplus}
+\end{center}
+\end{figure}
+
+
+\begin{table}[htb]
+  \centering
+  {\small
+  \input{tables/especificaciones3dr.tex}
+  }
+  \caption[Especificaciones técnicas del 3DR IRIS+]
+  {Especificaciones técnicas del 3DR IRIS+ \cite{especifaciones3dr}}
+  \label{tab:especificaciones}
+\end{table}
+
 \subsection{ArduPilot}
 \label{sec:ardupilot}
 
 \textbf{ArduPilot} \footnote{\url{http://www.ardupilot.com}} es una plataforma de código abierto para pilotos automáticos, de bajo coste y fácil de usar, creada en 2007 por Chris Anderson y Jordi Muñoz, miembros de la comunidad DIY Drones \footnote{\url{http://diydrones.com}}. Se apoya en la plataforma de prototipado electrónico Arduino \footnote{\url{https://www.arduino.cc/}} y es capaz de controlar multirrotores, aeronaves de ala fija, helicópteros tradicionales y vehículos de exploración terrestre. ArduPilot es una plataforma galardonada en 2012 y 2014 en las competiciones UAV Challenge \footnote{\url{https://www.uavchallenge.org}}.
 
-La primera versión de ArduPilot (ver Figura~\ref{fig:APMHistory}), lanzada en 2009, se basó en una termopila, cuya clave era la determinación de la ubicación del horizonte con respecto al avión por la medición de la diferencia de temperatura entre el cielo y el suelo. Más tarde, el sistema se mejoró reemplazando 
-las termopilas con una unidad de medición inercial y utilizando una combinación de acelerómetros, giróscopos y magnetómetros.
+La primera versión de ArduPilot (ver Figura~\ref{fig:APMHistory}), lanzada en 2009, se basó en una termopila, cuya clave era la determinación de la ubicación del horizonte con respecto al avión por la medición de la diferencia de temperatura entre el cielo y el suelo. Más tarde, el sistema se mejoró reemplazando las termopilas con una unidad de medición inercial y utilizando una combinación de acelerómetros, giróscopos y magnetómetros.
 
 \begin{figure}[!h]
 \begin{center}

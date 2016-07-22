@@ -44,7 +44,7 @@ class FPVSystem:
 		#	self.cap = cv2.VideoCapture(0)
 		
 		if self.numVehicle == 0:
-			self.cap = cv2.VideoCapture(0)
+			self.cap = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0293.MP4')
 		else:
 			self.cap = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0293.MP4')
 
@@ -60,11 +60,17 @@ class FPVSystem:
 
 		#cv2.cv.startWindowThread()
 		t0 = time.time()
+		result= ["Label not found"]
 
 		while self.cap.isOpened() and not self.stopVideoCapture:
+			coordY= 30
 			ch = 0xFF & cv2.waitKey(1)
 			ret, frame = self.cap.read()
 			if ret == True:
+				for i in result: 
+					cv2.putText(frame, i, (20, coordY), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+					coordY = coordY + 20
+
 				self.out.write(frame)
         			cv2.imshow("Drone %s" %self.numVehicle,frame)
 
@@ -73,7 +79,7 @@ class FPVSystem:
             				photoFile = time.strftime("Images/%d-%m-%Y_%H:%M:%S")+".jpg"
             				cv2.imwrite(photoFile, frame)
             				print chr(27) + "[1;33m" + "Drone %s: " %self.numVehicle + photoFile, "saved", ; print chr(27) + "[0m"
-					self.labelDetection(photoFile)
+					result = self.labelDetection(photoFile, result)	
     			else:
         			break
 
@@ -85,7 +91,7 @@ class FPVSystem:
 		cv2.waitKey(1)
 		cv2.waitKey(1)
 					
-	def labelDetection(self, photoFile):
+	def labelDetection(self, photoFile, result):
     		# [START construct_request]
     		with open(photoFile, 'rb') as image:
         		image_content = base64.b64encode(image.read())
@@ -96,7 +102,7 @@ class FPVSystem:
                 			},
                 			'features': [{
                     				'type': 'LABEL_DETECTION',
-                    				'maxResults': 10
+                    				'maxResults': 5
                 			}]
             			}]
         		})
@@ -106,13 +112,15 @@ class FPVSystem:
         	response = service_request.execute()
 		responseLength = len(response['responses'][0])
 		if responseLength == 0:
-			print chr(27) + "[0;31m" + "Label not found", ; print chr(27) + "[0m"
+			result = ["Label not found"]
 		else:
 			labelLength = len(response['responses'][0]['labelAnnotations'])
+			result= []
 			for i in range(labelLength):
         			label = response['responses'][0]['labelAnnotations'][i]['description']
-				print chr(27) + "[0;32m" + "  Found a label: %s" %label , ; print chr(27) + "[0m"
-
+				result.append(label)
+				
+		return result
 def main():
 	fpv = FPVSystem(4)
 	fpv.videoCapture()

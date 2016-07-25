@@ -51,36 +51,40 @@ class Coordinator():
 	
 		
 def main():
-	coordinator = Coordinator(args.vehicles, args.secondWait, args.secondsPerPhoto)
-	coordinator.readXml()
+        try:
+		coordinator = Coordinator(args.vehicles, args.secondWait, args.secondsPerPhoto)
+		coordinator.readXml()
+	
+		lock = threading.Lock()
+	
+		coordinator.waypointsByPriority(1, [])
+	
+		proxy= []
 
-	lock = threading.Lock()
-	
-	coordinator.waypointsByPriority(1, [])
-	
-	proxy= []
-
-	for i in range(coordinator.numVehicles):
-		proxy.append(proxyDrone.proxyDrone(i,lock))
-		t = threading.Thread(target=proxy[i].connectDrone, args=(coordinator.secondsPerPhoto,))
-		t.start()
-			
-	#Pausa para ajustar pruebas de video
-	#try:
-    	#	input("Press enter to continue")
-	#except SyntaxError:
-    	#	pass
-	
-	while coordinator.waypoints:
 		for i in range(coordinator.numVehicles):
-			if proxy[i].status == "idle" and proxy[i].inFlight:
-				proxy[i].insertWaypoints(coordinator.waypoints.pop(0))
-				t = threading.Thread(target=proxy[i].doMission, args=(False, coordinator.secondWait,))
-				t.start()
-
-	for i in range(coordinator.numVehicles):
-		t = threading.Thread(target=proxy[i].doMission, args=(True, coordinator.secondWait))
-		t.start()
+			proxy.append(proxyDrone.proxyDrone(i,lock))
+			t = threading.Thread(target=proxy[i].connectDrone, args=(coordinator.secondsPerPhoto,))
+			t.start()
+			
+		#Pausa para ajustar pruebas de video
+		#try:
+    		#	input("Press enter to continue")
+		#except SyntaxError:
+    		#	pass
+		
+		while coordinator.waypoints:
+			for i in range(coordinator.numVehicles):
+				if proxy[i].status == "idle" and proxy[i].inFlight:
+					proxy[i].insertWaypoints(coordinator.waypoints.pop(0))
+					t = threading.Thread(target=proxy[i].doMission, args=(False, coordinator.secondWait,))
+					t.daemon = True
+					t.start()
+	
+		for i in range(coordinator.numVehicles):
+			t = threading.Thread(target=proxy[i].doMission, args=(True, coordinator.secondWait))
+			t.start()
+	except (KeyboardInterrupt, SystemExit):
+		exit()
 
 if __name__ == "__main__":
 	main()

@@ -44,7 +44,7 @@ class FPVSystem:
 		#	self.cap = cv2.VideoCapture(0)
 		
 		if self.numVehicle == 0:
-			self.cap = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0293.MP4')
+			self.cap = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0465.MP4')
 		else:
 			self.cap = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0293.MP4')
 
@@ -63,13 +63,13 @@ class FPVSystem:
 		result= ["Label not found"]
 
 		while self.cap.isOpened() and not self.stopVideoCapture:
-			coordY= 30
+			coordY= 50
 			ch = 0xFF & cv2.waitKey(1)
 			ret, frame = self.cap.read()
 			if ret == True:
 				for i in result: 
-					cv2.putText(frame, i, (20, coordY), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
-					coordY = coordY + 20
+					cv2.putText(frame, i, (20, coordY), cv2. FONT_HERSHEY_DUPLEX, 1.5, (0, 0, 255), 2)
+					coordY = coordY + 50
 
 				self.out.write(frame)
         			cv2.imshow("Drone %s" %self.numVehicle,frame)
@@ -117,7 +117,7 @@ class FPVSystem:
 			labelLength = len(response['responses'][0]['labelAnnotations'])
 			result= []
 			for i in range(labelLength):
-        			label = response['responses'][0]['labelAnnotations'][i]['description']
+        			label = str(i+1) + ". " + response['responses'][0]['labelAnnotations'][i]['description']
 				result.append(label)
 				
 		return result

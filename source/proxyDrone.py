@@ -74,6 +74,7 @@ class proxyDrone():
 		
 		self.FPV = FPVSystem.FPVSystem(secondsPerPhoto, self.numVehicle)
 		t = threading.Thread(target=self.FPV.videoCapture)
+		t.daemon = True
 		t.start()
 
 		self.takeoff(10)

@@ -34,7 +34,7 @@ que dos nombres entre aproximadamente la docena que han recibido las aeronaves r
 Unidas para la aviación civil y del cual España forma parte al haber suscrito el Convenio de Chicago de 1944, 
 publicó su Circular 328 en la cual por vez primera reconoce a las aeronaves no tripuladas como aeronaves, 
 con todo lo que ello trae consigo, y de entre todas las posibles tipologías escoge a las que se pilotan de manera 
-remota para ser consideradas como aptas para la aviación civil» \cite{dron1}. Así es como se acuñan los términos que a continuación se detallan, y que en la actualidad tienen una validez internacional y practicamente única en todos los ámbitos. Estos términos son:
+remota para ser consideradas como aptas para la aviación civil» \cite{dron1}. Así es como se acuñan los términos que a continuación se detallan, y que en la actualidad tienen una validez internacional y prácticamente única en todos los ámbitos. Estos términos son:
 
 \begin{itemize}
 \item \textbf{Aeronave pilotada remotamente} o \textbf{\acs{RPA}}: aeronave en la que el piloto al mando no está a bordo.
@@ -121,7 +121,7 @@ Otra aplicación relevante durante la \textbf{Posguerra} fue la de señuelos ant
 \begin{center}
 \subfigure[Northrop Falconer]{\includegraphics[width=0.6\textwidth]{/falconer.jpg}}
 \subfigure[Señuelo antirradar Northrop Crossbow]{\includegraphics[width=0.3\textwidth]{/crossbow.jpg}}
-\caption[Aeronaves no tripuladas de la compañia Northrop]{Aeronaves no tripuladas de la compañia Northrop}
+\caption[Aeronaves no tripuladas de la compañía Northrop]{Aeronaves no tripuladas de la compañía Northrop}
 \label{fig:northrop}
 \end{center}
 \end{figure}
@@ -333,7 +333,7 @@ El ser humano percibe la luz gracias a los ojos y la información captada se tra
 \end{figure}
 
 En el campo de los sistemas aéreos no tripulados, la visión por computador es una parte importante para la navegación y el control, 
-y en ella se basan numerosas aplicaciones. Los \acs{UAV}s aparecen como una alternativa barata y adecuada en muchas campos
+y en ella se basan numerosas aplicaciones. Los \acs{UAV}s aparecen como una alternativa barata y adecuada en muchos campos
 de aplicación, dadas sus capacidades de vuelo y a la posibilidad de integrar sistemas de visión que permiten mejorar determinadas 
 tareas como el pilotaje, el guiado autónomo del vehículo o la obtención de imágenes.
 
@@ -403,14 +403,14 @@ De acuerdo con Sycara \cite{sma2}, un \acs{SMA} está caracterizado por lo sigui
  
 La teoría de agentes y \acs{SMA} propicia dar un mayor realismo a la gestión de ciertos problemas, sumando a los modelos características que normalmente no se tienen en cuenta por la dificultad que incrementan al proceso de resolución del mismo. Cuando los problemas que se quieren solventar incorporan peculiaridades como: gran tamaño, alto grado de incertidumbre, dinamismo, o singularidad en la distribución de sus elementos, son extraordinarios candidatos a la aplicación de agentes para obtener ventajas en el proceso de resolución. 
 
-Para que un \acs{SMA} pueda adaptarser rapidamente a los cambios de su entorno, los agentes deben poder \textbf{coordinarse} cuando es necesario realizar cambios en sus metas o en los roles que tienen asignados.
+Para que un \acs{SMA} pueda adaptarse rápidamente a los cambios de su entorno, los agentes deben poder \textbf{coordinarse} cuando es necesario realizar cambios en sus metas o en los roles que tienen asignados.
 
-\subsection{Esquemas de coordinación}
+\subsection{Coordinación y esquemas de planificación}
 \label{sec:esquemascoordinacion}
 
 La comunicación adquiere relevancia en el comportamiento de los agentes en el momento de coordinar sus acciones, consiguiendo sistemas más consistentes. 
 
-«La \textbf{coordinación} es una propiedad de los \acs{SMA} que posibilita el desarrollo de una acción en un entorno compartido. El grado de coordinación determinará hasta que punto el sistema es capaz de evitar acciones innecesarias o ajenas para minimizar el gasto de recursos, evitar situaciones de bloqueo y mantener unas determinadas condiciones de seguridad» \cite{coordinacion}. Ejemplos convencionales de coordinación son proveer la información pertinente a otros agentes, garantizar que las acciones de los agentes están sincronizadas y evitar la solución redundante de problemas.
+«La \textbf{coordinación} es una propiedad de los \acs{SMA} que posibilita el desarrollo de una acción en un entorno compartido. El grado de coordinación determinará hasta qué punto el sistema es capaz de evitar acciones innecesarias o ajenas para minimizar el gasto de recursos, evitar situaciones de bloqueo y mantener unas determinadas condiciones de seguridad» \cite{coordinacion}. Ejemplos convencionales de coordinación son proveer la información pertinente a otros agentes, garantizar que las acciones de los agentes están sincronizadas y evitar la solución redundante de problemas.
 
 En consecuencia, la cooperación (ver Figura~\ref{fig:coordinacion}) surge como la intercomunicación entre agentes que no se enfrentan entre ellos, es decir, que comparten un propósito, mientras que la negociación (ver Figura~\ref{fig:coordinacion}) se corresponde con la coordinación entre agentes competitivos o interesados en su beneficio. Normalmente, la cooperación entre agentes tiene éxito si mantienen un modelo interno del resto de agentes y un modelo para llevar a cabo futuras interacciones.
 
@@ -431,18 +431,16 @@ Existen tres aspectos principales para estudiar de una manera formal la comunica
 
 El significado se considera una combinación de la semántica y la pragmática. Los agentes se comunican con el fin de comprender y ser comprendidos, por lo que es importante tener en cuenta las diferentes dimensiones de significado que están asociadas con la comunicación.
 
-«Debido a que normalmente los agentes que forman parte de un mismo sistema multiagente tienen distintas capacidades a la hora de comunicarse,
-es importante definir un esquema de comunicación a varios niveles. Normalmente, se identifican distintos roles en una conversación, destacando los de activo, pasivo o ambos. Así mismo, existen dos tipos principales de mensajes (ver Cuadro~\ref{tab:tiposmensaje}): afirmaciones y preguntas» \cite{coordinacion2}.
+Una cuestión obvia en la resolución de problemas multiagente es la planificación de las actividades de un grupo de agentes. La \textbf{planificación}, se puede definir como «un mecanismo de coordinación en el que los agentes construyen secuencias de acciones o planes, los cuales especifican todas sus acciones futuras e interacciones con respecto a un objetivo particular. Cuando estos planes se ejecutan correctamente y en orden, llevan al sistema a un estado u objetivo deseado» \cite{PLANIFICACION}. 
 
-\begin{table}[htbp]
-  \centering
-  {\small
-  \input{tables/tiposmensaje.tex}
-  }
-  \caption[Principales tipos de mensajes entre agentes]
-  {Principales tipos de mensajes entre agentes}
-  \label{tab:tiposmensaje}
-\end{table}
+«La planificación multiagente debe tomar en consideración el hecho de que las actividades de los agentes pueden interferir entre sí, por lo tanto, sus actividades deben ser coordinadas» \cite{PLANIFICACION3}. Generalizando existen dos opciones para la planificación multiagente:
+
+\begin{itemize}
+\item \textbf{Planificación centralizada} para planes distribuidos: un sistema de planificación centralizado desarrolla un plan para un grupo de agentes, en el que se define la división y ordenación del trabajo. Este agente «maestro» distribuye el plan entre los «esclavos», que luego ejecutan su parte del plan.
+\item \textbf{Planificación distribuida}: un grupo de agentes cooperan para formar un plan centralizado. Por lo general, existirán agentes que son «especialistas» en diferentes aspectos del plan, y contribuirán a una parte de él. Sin embargo, los agentes que forman el plan no serán los que lo ejecuten; su función es meramente para generar el plan.	
+\end{itemize}
+
+Por lo general, la planificación centralizada será más simple que la planificación descentralizada, debido a que el «maestro» puede tener una visión de conjunto, y puede dictar las relaciones de coordinación según se requiera. 	
 	
 \section{Herramientas y entornos de desarrollo}
 \label{sec:herrmientas}
@@ -601,15 +599,15 @@ El uso de cada una de estas características conlleva gastos.
 \section{Sistemas para catástrofes}
 \label{sec:sistemas}
 
-La alta frecuencia de desastres, tanto naturales como artificiales, que puedan causar la perdida de seres humanos, son un problema en el que los drones pueden contribuir a una notable mejoría en los tiempos de respuesta y actuación.
+La alta frecuencia de desastres, tanto naturales como artificiales, que puedan causar la pérdida de seres humanos, es un problema en el que los drones pueden contribuir a una notable mejoría en los tiempos de respuesta y actuación.
 
-Un grupo multidisciplinar de voluntariado con equipos de alta tecnología puede ayudar a conservar la vida de una persona o a realizar un análisis más rápido en situaciones de emergencia, en las cuales pueden correr peligro, no ya una, sino cientos de vidas. Es evidente que visión global aérea de un cataclismo puede brindar la posibilidad de tomar decisiones más correctas.
+Un grupo multidisciplinar de voluntarios con equipos de alta tecnología puede colaborar en la búsqueda de personas o realizar un análisis más veloz en situaciones de emergencia, en las cuales pueden estar en peligro cientos de vidas. Es evidente que una visión global aérea de un cataclismo proporciona una toma de decisiones más correcta.
 
-Si algo ha cambiado rápido en estos últimos tiempos es la visión popular a cerca de los drones. Hoy es muy habitual que quien observa el vuelo de un dron se pregunte si está prohibido hacerlo (Anexar normativa de vuelo de drones). Y es que parece ser que se está estigmatizando esta herramienta cuyas capacidades son tan beneficiosas que deberían despejar las dudas sobre la legalidad de su manejo.
+Si algo ha cambiado en estos últimos meses, es la percepción pública acerca de los drones. Es usual que quien observa el vuelo de un dron se cuestione si está prohibido hacerlo. Da la impresión que se está estigmatizando este instrumento cuyas capacidades son tan beneficiosas que deberían despejar la incertidumbre sobre la legalidad de su manejo (Anexar normativa de vuelo de drones).
 
-El despliegue de esta tecnología supone un cambio radical en labores de ayuda y rescate de vidas humanas, desde el posicionamiento óptimo, la logística y aporte de medios, hasta el rescate de vidas en sí mismo.
+El despliegue de esta tecnología implica una renovación radical en las tareas de ayuda y rescate de vidas humanas, desde el posicionamiento óptimo, la logística y aporte de medios, hasta el rescate de vidas en sí mismo.
 
-Los drones, a diferencia que una UVI móvil, no pueden atender al paciente en movimiento durante su traslado con la participación de varios doctores. Pero sí que es posible el transporte urgente y existen proyectos para el envío de un dron que pueda portar un desfibrilador \footnote{\url{http://www.io.tudelft.nl/onderzoek/delft-design-labs/applied-labs/ambulance-drone/}} (ver Figura~\ref{fig:ambulancedrone}).
+Los drones, en contraste con una UVI móvil, no pueden socorrer a un paciente en movimiento durante su transporte con la participación de varios doctores. Pero sí que es posible el transporte urgente y existen proyectos para el envío de un dron que pueda portar un desfibrilador \footnote{\url{http://www.io.tudelft.nl/onderzoek/delft-design-labs/applied-labs/ambulance-drone/}} (ver Figura~\ref{fig:ambulancedrone}).
 
 \begin{figure}[!h]
 \begin{center}
@@ -621,27 +619,25 @@ Los drones, a diferencia que una UVI móvil, no pueden atender al paciente en mo
 
 «Los drones de rescate han entrado en acción en zonas de contaminación, tras un accidente nuclear, en terremotos o inundaciones. Son pequeños y pueden buscar personas y objetos en grandes áreas, incluso de noche. Consiguen imágenes accediendo a edificios a punto de caer, buscando supervivientes y obteniendo datos e información vital. Son capaces de realizar vuelos entre el humo de los incendios e identifican térmicamente siluetas de personas para saber dónde están atrapados o si se han desmayado y están inconscientes. En atmósferas explosivas y tras accidentes por explosión de gas, inspeccionan y toman muestras del aire, pasan entre los escombros localizando a las personas, se mueven rápido y pueden recoger muestras de agua contaminada o sustancias químicas tras acceder a sitios inverosímiles. Y todo ello en apenas unos minutos, visualmente, y en tiempo real, enviándolo al instante a los centros de control, mejorando así los resultados y disminuyendo los costes» \cite{dron3}.
 
-En resumen, es posible concebir un futuro muy próximo con aplicaciones en las que los ciudadanos tengan la seguridad de poder solicitar y contar con un dron ante cualquier situación de necesidad, urgencia y de peligro.
+En conclusión, es factible imaginar un futuro muy cercano con aplicaciones en las que los ciudadanos tengan la seguridad de poder solicitar y disponer de un dron ante cualquier situación de necesidad, urgencia y riesgo.
 
 \subsection{Proyecto ICARUS}
 \label{sec:icarus}
 
-Después de los terremotos en L'Aquila, Haití y Japón, la Comisión Europea confirmó que existe una gran discrepancia entre la tecnología, que se desarrolla en el laboratorio, y el uso de dicha tecnología, en el terreno para las operaciones de búsqueda y rescate (\acs{ByR}) y la gestión de crisis.
+Tras los terremotos en L'Aquila, Haití y Japón, la Comisión Europea corroboró que existe una gigantesca discrepancia entre la tecnología, que se desarrolla en el laboratorio, y el empleo de dicha tecnología, en el terreno para las operaciones de búsqueda y rescate (\acs{ByR}) y la gestión de crisis.
 
-De este modo, la Dirección General de Empresa e Industria de la Comisión Europea decidió financiar ICARUS \footnote{\url{http://www.fp7-icarus.eu/}}, un proyecto de investigación, con un presupuesto total de 17,5 millones de euros, que tiene como objetivo desarrollar herramientas robóticas pueden ayudar a los equipos de intervención en situaciones de crisis.
+De este modo, la Dirección General de Empresa e Industria de la Comisión Europea decidió financiar ICARUS \footnote{\url{http://www.fp7-icarus.eu/}}, un proyecto de investigación, con un presupuesto total de 17,5 millones de euros, cuyo objetivo es desarrollar herramientas robóticas que puedan ayudar a los equipos de intervención en situaciones de crisis y de este modo, reducir el riesgo y el impacto de la crisis sobre los ciudadanos.
 
-La introducción de dispositivos no tripulados, en misiones de \acs{ByR}, pueden ofrecer una herramienta de valor para salvar vidas humanas y para acelerar el proceso de \acs{ByR}. ICARUS se concentra en el desarrollo de las tecnologías de búsqueda y rescate, con \acs{UAV}s, para la detección, localización y el rescate de seres humanos.
+La inclusión de dispositivos no tripulados, en misiones de \acs{ByR}, aporta una herramienta de utilidad para salvar vidas humanas y para acelerar el proceso de \acs{ByR}. ICARUS se concentra en el desarrollo de las tecnologías de búsqueda y rescate, con \acs{UAV}s, para la detección, localización y el rescate de seres humanos.
 
-Existe una amplia literatura sobre los esfuerzos de investigación hacia el desarrollo de herramientas de \acs{ByR}. Sin embargo, este esfuerzo de investigación está en contraste con la realidad práctica en el campo, donde herramientas de búsqueda y salvamento no tripuladas tienen grandes dificultades para encontrar a usuarios finales. El proyecto ICARUS se ocupa de estos problemas, con el objetivo de cerrar la brecha entre la comunidad científica y los usuarios finales.
+Existe una abundante literatura sobre los esfuerzos de investigación hacia el desarrollo de herramientas de \acs{ByR}. Sin embargo, esas investigaciones están en contraste con la realidad práctica en el campo, en el que las herramientas de búsqueda y salvamento no tripuladas tienen muchas dificultades para encontrar a usuarios finales. El proyecto ICARUS se ocupa de estos problemas, con el objetivo de cerrar la brecha entre la comunidad científica y los usuarios finales.
 
-El objetivo general del proyecto ICARUS es aplicar sus innovaciones para la mejora de la gestión de una crisis y de este modo, reducir el riesgo y el impacto de la crisis sobre los ciudadanos. 
-
-El uso de dispositivos no tripulados de \acs{ByR}, embebidos en una arquitectura apropiada e integrados en las infraestructuras existentes, ayudarán al personal de crisis, proporcionando información detallada y fácil de entender sobre la situación. El sistema propuesto debe informar al personal de crisis sobre los peligros reales presentes en el suelo, y por lo tanto aumentará su rendimiento en la resolución de la situación.
+El uso de dispositivos no tripulados de \acs{ByR}, embebidos en una arquitectura apropiada e integrados en las infraestructuras existentes, ayudarán al personal de crisis, proporcionando información detallada y fácil de entender sobre la situación. El sistema propuesto debe informar al equipo sobre los peligros reales presentes en el terreno, y por lo tanto aumentará su rendimiento en la resolución de la situación.
 
 \subsection{Sistema Pelícano}
 \label{sec:pelicano}
 
-El sistema Pelícano de Indra \footnote{\url{http://www.indracompany.com/es/}} (ver Figura~\ref{fig:pelicano}), está formado por cuatro helicópteros no tripulados y una estación de control, que proporciona capacidad para operar las 24 horas del día durante periodos prolongados. Su diseño ha sido pensado para responder a los requisitos y necesidades de las fuerzas armadas y de seguridad.
+El sistema Pelícano de Indra \footnote{\url{http://www.indracompany.com/es/}} (ver Figura~\ref{fig:pelicano}), está constituido por cuatro helicópteros no tripulados y una estación de control, que proporciona autonomía suficiente para operar las 24 horas del día durante ciclos de tiempo prolongados. Su diseño está pensado para satisfacer los requisitos y necesidades de las fuerzas armadas y de seguridad.
 
 \begin{figure}[!h]
 \begin{center}
@@ -651,19 +647,18 @@ El sistema Pelícano de Indra \footnote{\url{http://www.indracompany.com/es/}} (
 \end{center}
 \end{figure}
 
-El sistema de \acs{UAV}s Pelícano \cite{PELICANO} esta preparado para dar apoyo, tanto en misiones de inteligencia como en gestión de emergencias, tales como 
-desastres naturales o medioambientales, que impliquen el seguimiento, vigilancia y reconocimiento de amplias superficies, eliminando así pérdidas humanas.
+El sistema de \acs{UAV}s Pelícano \cite{PELICANO} está preparado para proporcionar apoyo, tanto en misiones de inteligencia como en gestión de emergencias, tales como desastres naturales o medioambientales, que impliquen el seguimiento, vigilancia y reconocimiento de amplias superficies, eliminando así pérdidas humanas.
 
-Indra ha basado el sistema en un helicóptero de tamaño medio de la compañía sueca CybAero e incorporará los sistemas tecnológicos más avanzados para adaptarlo a las necesidades operativas militares y civiles. 
+Indra ha cimentado el sistema sobre un helicóptero de tamaño medio de la compañía sueca CybAero \footnote{\url{http://www.cybaero.se}} e incorporará los sistemas tecnológicos más avanzados para adaptarlo a las necesidades operativas militares y civiles. 
 
-Entre los sensores con que está dotada la aeronave figuran sistemas electro-ópticos de visión diurna e infrarroja, capaces de tomar imágenes de muy alta resolución  a gran altura. También esta acondicionado para poder portar un radar ligero, así como sistemas de inteligencia electrónica y sensores de detección de amenazas químicas, bacteriológicas, radioactivas y nucleares.
+Entre los sensores con los que está equipada la aeronave destacan los sistemas electro-ópticos de visión diurna e infrarroja, capaces de tomar imágenes de muy alta resolución a gran altura. También esta acondicionado para poder portar un radar ligero, así como sistemas de inteligencia electrónica y sensores de detección de amenazas químicas, bacteriológicas, radioactivas y nucleares.
 
 \subsection{Proyecto ATLANTE}
 \label{sec:atlante}
 
-El Centro para el Desarrollo Tecnológico Industrial (CDTI) actuó como organismo gestor de programas del sector aeronáutico, y lanzó el programa \acs{ATLANTE}, liderado por Cassidian, tras constatar el interés de la Industria española por los \acs{UAS} y con el fin de potenciar el desarrollo de la tecnología asociada a este tipo de sistemas mediante un proyecto realizado íntegramente en España.
+El Centro para el Desarrollo Tecnológico Industrial (CDTI) actuó como organismo gestor de programas del sector aeronáutico, y lanzó el programa \acs{ATLANTE} \footnote{\url{http://www.indracompany.com/es/indra/avion-tactico-largo-alcance-tripulado-espanol-atlante}}, liderado por Cassidian, tras constatar el interés de la Industria española por los \acs{UAS} y con el fin de potenciar el desarrollo de la tecnología asociada a este tipo de sistemas mediante un proyecto realizado íntegramente en España.
 
-El \acs{ATLANTE} (ver Figura~\ref{fig:atlante}) es un sistema diseñado para responder a las necesidades de las fuerzas terrestres militares desplegadas en el teatro de operaciones, que les permite realizar misiones de inteligencia, vigilancia y reconocimiento de día y noche en condiciones climatológicas adversas. También permite llevar a cabo labores de identificación de blancos, corrección de tiro y evaluación de daños.
+El \acs{ATLANTE} (ver Figura~\ref{fig:atlante}) es un sistema diseñado para responder a las exigencias de las fuerzas terrestres militares, que les permite realizar misiones de inteligencia, vigilancia y reconocimiento, de día y noche, en condiciones climatológicas adversas. También permite llevar a cabo labores de identificación de blancos, corrección de tiro y evaluación de daños.
 
 \begin{figure}[!h]
 \begin{center}
@@ -673,11 +668,9 @@ El \acs{ATLANTE} (ver Figura~\ref{fig:atlante}) es un sistema diseñado para res
 \end{center}
 \end{figure}
 
-El sistema está formado por cuatro o más vehículos aéreos no tripulados, una estación de control terrestre, una unidad de transporte, lanzamiento y recogida y terminales de video remoto. Los equipos de misión de la plataforma aérea recogen la información de los sensores y los transmite a tierra mediante los enlaces de datos de alta velocidad para su posterior explotación.
+Entre las aplicaciones no militares se encuentran la lucha anti-terrorista y contra la piratería, el control de inmigración ilegal y el tráfico de drogas, la supervisión de infraestructuras críticas y, cómo no, la lucha contra incendios y otros desastres naturales.
 
-Como características principales de sistema cabe destacar la facilidad de despliegue por tierra, mar y aire, y el despegue y aterrizaje tanto en pistas convencionales como no preparadas, así como el despegue fuera de pistas mediante catapulta neumática y la recuperación mediante paracaídas.
-
-Entre las aplicaciones no militares estarían las orientadas hacia la lucha anti-terrorista y contra la piratería, control de inmigración ilegal y tráfico de drogas y, cómo no, para la lucha contra incendios y otros desastres naturales y supervisión de infraestructuras críticas y vías de comunicación.
+El sistema se compone de cuatro o más vehículos aéreos no tripulados, una estación de control terrestre, una unidad de transporte y terminales de vídeo remoto. Los equipos de misión de la plataforma aérea recogen la información de los sensores y los transmiten a tierra a través de los enlaces de datos de alta velocidad para su posterior aprovechamiento.
 
 
 % Local Variables:

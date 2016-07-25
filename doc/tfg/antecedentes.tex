@@ -65,7 +65,7 @@ planeadores a los aviones propulsados no tripulados, y de los vuelos no tripulad
 tripulados (ver Cuadro~\ref{tab:pioneros}). Su limitación tecnológica, no disponer de un motor con suficiente relación potencia-peso, 
 impidió que sus diseños pudieran mantenerse en el aire.
 
-\begin{table}[htb]
+\begin{table}[htbp]
   \centering
   {\small
   \input{tables/pioneros.tex}
@@ -167,14 +167,12 @@ descubrimiento de fuerzas enemigas.
 Otras líneas de avance, en este periodo de tiempo, son las que tratan de aumentar la automatización, reduciendo así
 la carga de trabajo y los errores de las tripulaciones en tierra.
 
-\textbf{Más allá del 2010} el mercado militar de los \acs{RPAS} continúa con una tendencia positiva desde el final de la Guerra Fría y se espera que se acelere en las primeras décadas del siglo XXI.
-
-La tendencia comercial en el mercado de la robótica está también en constante crecimiento (ver Figura~\ref{fig:prevision}). Como consecuencia de esta corriente, la tecnología está apoyando estas tendencias con microprocesadores cada vez más baratos y competentes que incentiven su utilización.
+\textbf{Más allá del 2010}, el mercado militar de los \acs{RPAS} continúa con una tendencia positiva desde el final de la Guerra Fría y se espera que se acelere en las primeras décadas del siglo XXI. La tendencia comercial en el mercado de la robótica está también en constante crecimiento (ver Figura~\ref{fig:prevision}). Como consecuencia de esta corriente, la tecnología está apoyando estas tendencias con microprocesadores cada vez más baratos y competentes que incentiven su utilización.
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{/DCA-15-chart.png}
-\caption[Previsión de ingresos por regiones en el periodo 2015-2025]{Previsión de ingresos por regiones en el periodo 2015-2025 \cite{cuotamercado}}
+\includegraphics[width=0.8\textwidth]{/prevision.png}
+\caption[Estimación del mercado de drones en el periodo 2013-2023]{Estimación del mercado de drones en el periodo 2013-2023 \cite{prevision}}
 \label{fig:prevision}
 \end{center}
 \end{figure}
@@ -216,13 +214,21 @@ Por otra parte, aparecen aeronaves de nuevas clases, como los híbridos, que eje
 
 El uso de vehículos aéreos no tripulados ha alcanzado un grado de madurez significativo en el terreno militar. Tanto es así, que 
 en el ejército norteamericano constituyen cerca de un tercio de la flota de aeronaves, desempeñando en exclusiva las misiones 
-de inteligencia, vigilancia y reconocimiento que deben cumplir las fuerzas armadas. «De acuerdo con la consultora de defensa Teal Group Corporation \footnote{\url{http://www.tealgroup.com}}, el inventario a 1 de enero de 2013 de sistemas aéreos no tripulados contaba con 10.730 \acs{UAS} [...], de lo que se deduce que en el ámbito militar la preponderancia de los sistemas de ala fija (ver Figura~\ref{fig:alafija}) es casi absoluta (97\%)» \cite{dron2}.
+de inteligencia, vigilancia y reconocimiento que deben cumplir las fuerzas armadas. «De acuerdo con la consultora de defensa Teal Group Corporation \footnote{\url{http://www.tealgroup.com}}, el inventario en 2013 de sistemas aéreos no tripulados contaba con más de 10.000 \acs{UAS} (ver Figura~\ref{fig:flota})  [...], de lo que se deduce que en el ámbito militar la preponderancia de los sistemas de ala fija (ver Figura~\ref{fig:alafija}) es casi absoluta (97\%)» \cite{dron2}.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/flota.jpg}
+\caption[Aviones no tripulados del Departamento de Defensa de EE.UU. en el 2013]{Aviones no tripulados del Departamento de Defensa de EE.UU. en el 2013 \cite{ambitocivil2}}
+\label{fig:flota}
+\end{center}
+\end{figure}
 
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width=0.73\textwidth]{/alafija.jpg}
-\caption[Sistema de ala fija]{Ala fija}
+\includegraphics[width=0.8\textwidth]{/alafija.jpg}
+\caption[Sistema de ala fija]{Sistema de ala fija}
 \label{fig:alafija}
 \end{center}
 \end{figure}
@@ -235,7 +241,7 @@ Esta inclinación, hacia las aeronaves multirrotor (ver Figura~\ref{fig:multirro
 \begin{figure}[!h]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{/multicopter.jpg}
-\caption[Sistema multirrotor]{Multirrotor}
+\caption[Sistema multirrotor]{Sistema multirrotor}
 \label{fig:multirrotor}
 \end{center}
 \end{figure}
@@ -333,26 +339,120 @@ tareas como el pilotaje, el guiado autónomo del vehículo o la obtención de im
 
 En la actualidad, se han desarrollado aplicaciones con vehículos aéreos no tripulados, que hacen uso de la visión por computador, en distintos ámbitos de aplicación como: la gestión del tráfico \cite{controltrafico}, la detección de incendios \cite{incendios} o la evitación de obstáculos \cite{obstaculos}.
 
-\subsection{Aplicaciones en el sector civil}
+\subsection{Aplicación de \acs{UAV}s en el sector civil}
 \label{sec:ingenieriacivil}
 
-Los drones se pueden considerar como robots no antropomorfos con una inmensa autonomía de vuelo y una gran gama de posibilidades  de  aplicación.
+Los drones pueden ser calificados como robots no antropomorfos con una enorme autonomía de vuelo y con un abanico de posibilidades de  aplicación.
 
-Gracias al uso de procesadores electrónicos, de software especializado y \acs{GPS}, las capacidades de  control automático en base a la información procedente de los sensores instalados en las aeronaves, y la rápida reacción correctiva como consecuencia del procesamiento local de la información del estado de vuelo, hacen posible que la retroalimentación aporte un inmenso potencial, minimizando para estos artefactos las posibles desviaciones entre el comportamiento real y el esperado.
+«Gracias al uso de procesadores electrónicos, de software especializado y del Sistema de Posicionamiento Global (\acs{GPS}), las capacidades de control automático en base a la información procedente de los sensores instalados en las aeronaves, y la rápida reacción correctiva como consecuencia del procesamiento local de la información del estado de vuelo, hacen posible que la retroalimentación aporte un inmenso potencial,
+minimizando para estos artefactos las posibles desviaciones entre el comportamiento real y el esperado» \cite{ambitocivil}.
 
-Actualmente, y dejando a un lado los usos bélicos tanto defensivos como ofensivos, estos equipos ofrecen amplias posibilidades de aplicación al sector de la ingeniería civil: inspecciones de infraestructuras, investigación atmosférica, levantamientos topográficos, filmación de películas y fotografía deportiva, cultivos de precisión, control de caza, localización de bancos de pesca, mantenimiento de parque eólicos e infraestructuras energéticas, control medioambiental, gestión de riegos y desastres naturales, exploración geológico-minera, etc.
+Actualmente, haciendo caso omiso a los usos bélicos, estos equipos brindan \textbf{amplias oportunidades} de aplicación \textbf{al sector de la ingeniería civil} (ver Cuadro~\ref{tab:ambitocivil2}): investigación atmosférica, filmación de películas y fotografía deportiva, gestión de riegos y desastres naturales, inspecciones de infraestructuras, levantamientos topográficos, agricultura de precisión, control de caza, localización de bancos de pesca, mantenimiento de parque eólicos e infraestructuras energéticas (ver Figura~\ref{fig:unionfenosa}), control medioambiental, exploración geológico-minera, etc.
 
-Por otro lado, en los países más avanzados se están impulsando diferentes proyectos de investigación con este tipo de aeronaves no tripuladas, que abarcan desde el ensayo de material aeronáutico en condiciones peligrosas de hielo, viento, lluvia intensa, etc., evitando la exposición a riesgos de los equipos humanos en vuelos tripulados, pasando por el desplazamiento y reparto de grandes cargas e incluso personas en vuelos comerciales en vuelos no tripulados, hasta el desarrollo de tecnologías concretas como son  las  pilas  de  combustible  de  hidrógeno  que  permitirían triplicar la duración de los vuelos, etc.
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/drones-6.jpg}
+\caption[Revisión de líneas eléctricas con drones en Ciudad Real]{Revisión de líneas eléctricas con drones en Ciudad Real \cite{unionfenosa}}
+\label{fig:unionfenosa}
+\end{center}
+\end{figure}
 
+
+\begin{table}[htbp]
+  \centering
+  {\small
+  \input{tables/sectorcivil.tex}
+  }
+  \caption[Principales actividades civiles desde septiembre de 2013]
+  {Principales actividades civiles desde septiembre de 2013 \cite{ambitocivil2}}
+  \label{tab:ambitocivil2}
+\end{table}
+
+En los países más avanzados se está fomentando el uso de estos aparatos en diferentes proyectos de investigación \cite{UA}, que abarcan desde el ensayo de material aeronáutico en condiciones peligrosas, pasando por el reparto de cargas, hasta el desarrollo de tecnologías, como las pilas de combustible de hidrógeno, que triplicarían la duración de los vuelos.
+
+\section{Inteligencia Artificial Distribuida}
+\label{sec:inteligenciaartificial}
+
+La evolución de los procesadores multinúcleo y de las redes informáticas combinadas con que muchas actividades, incluyendo la resolución de problemas de las personas, involucran a grupos de gente condujo al desarrollo de un nuevo campo de investigación: la \textbf{Inteligencia Artificial Distribuida} (\acs{IAD}). Fusiona la Inteligencia Artificial (\acs{IA}) con la Computación Distribuida y es definida como «un subcampo de la \acs{IA} que se centra en los comportamientos inteligentes colectivos que son producto de la cooperación de diversas entidades» \cite{IAD}.
+
+La \acs{IAD} aparece en la década de los 80 para estudiar los sistemas inteligentes, que están formados por un conjunto de varios agentes, e intenta resolver problemas donde una conducta colectiva es más eficiente que una conducta individual. Según Iglesias \cite{IAD2}, a pesar de ser una disciplina joven, podemos distinguir tres periodos cronológicos bien diferenciados:
+
+\begin{itemize}
+\item \textbf{\acs{IAD} clásica}: centrada en el estudio de la conducta colectiva, en oposición a la \acs{IA}, que estudia la conducta individual.
+\item \textbf{\acs{IAD} autónoma}: focalizada en el estudio de los agentes individuales situados en un mundo social.
+\item \textbf{\acs{IAD} comercial}: centrada en la aplicación de la \acs{IAD} clásica y autónoma, desarrollando agentes con características muy
+diferenciadas que están siendo explotados de forma comercial.
+\end{itemize}
+
+El campo de investigación de la \acs{IAD} desencadenó en campos más específicos: la Inteligencia Artificial Paralela, la Resolución Distribuida de Problemas y los \textbf{Sistemas Multiagente} (\acs{SMA}). El nacimiento de estos \acs{SMA} implicó la irrupción de un nuevo paradigma en el desarrollo del software que no solo afectó en las fases de conceptualización, diseño e implementación, sino también en la aplicabilidad de las soluciones propuestas.  
+
+\subsection{Sistemas Multiagente}
+\label{sec:sismultiagente}
+
+Cada agente «es un sistema computacional que está situado en algún entorno, y que es capaz de actuar autónomamente en dicho entorno con el fin de cumplir sus objetivos» \cite{agente}. Sin embargo, muchas aplicaciones requieren la interacción entre diversos individuos para poder alcanzar un determinado objetivo. Estos sistemas, compuestos de varios agentes, son denominados \textbf{Sistemas Multiagente}.
+
+Un \acs{SMA} puede ser definido formalmente como «una organización o sociedad de agentes, donde un conjunto de agentes interactúan y cooperan entre sí para alcanzar algún objetivo colectivo» \cite{sma}.
+
+De acuerdo con Sycara \cite{sma2}, un \acs{SMA} está caracterizado por lo siguiente:
+\begin{itemize}
+\item Cada agente tiene \textbf{información incompleta} o \textbf{no tiene} la \textbf{suficiente capacidad} para resolver el problema global. Es decir, tiene un punto de vista limitado.
+\item \textbf{Necesitan} de formas de \textbf{coordinarse} .
+\item Los \textbf{datos} están \textbf{descentralizados}.
+\item Los \textbf{cálculos} son \textbf{asíncronos}.
+\end{itemize}
+ 
+La teoría de agentes y \acs{SMA} propicia dar un mayor realismo a la gestión de ciertos problemas, sumando a los modelos características que normalmente no se tienen en cuenta por la dificultad que incrementan al proceso de resolución del mismo. Cuando los problemas que se quieren solventar incorporan peculiaridades como: gran tamaño, alto grado de incertidumbre, dinamismo, o singularidad en la distribución de sus elementos, son extraordinarios candidatos a la aplicación de agentes para obtener ventajas en el proceso de resolución. 
+
+Para que un \acs{SMA} pueda adaptarser rapidamente a los cambios de su entorno, los agentes deben poder \textbf{coordinarse} cuando es necesario realizar cambios en sus metas o en los roles que tienen asignados.
+
+\subsection{Esquemas de coordinación}
+\label{sec:esquemascoordinacion}
+
+La comunicación adquiere relevancia en el comportamiento de los agentes en el momento de coordinar sus acciones, consiguiendo sistemas más consistentes. 
+
+«La \textbf{coordinación} es una propiedad de los \acs{SMA} que posibilita el desarrollo de una acción en un entorno compartido. El grado de coordinación determinará hasta que punto el sistema es capaz de evitar acciones innecesarias o ajenas para minimizar el gasto de recursos, evitar situaciones de bloqueo y mantener unas determinadas condiciones de seguridad» \cite{coordinacion}. Ejemplos convencionales de coordinación son proveer la información pertinente a otros agentes, garantizar que las acciones de los agentes están sincronizadas y evitar la solución redundante de problemas.
+
+En consecuencia, la cooperación (ver Figura~\ref{fig:coordinacion}) surge como la intercomunicación entre agentes que no se enfrentan entre ellos, es decir, que comparten un propósito, mientras que la negociación (ver Figura~\ref{fig:coordinacion}) se corresponde con la coordinación entre agentes competitivos o interesados en su beneficio. Normalmente, la cooperación entre agentes tiene éxito si mantienen un modelo interno del resto de agentes y un modelo para llevar a cabo futuras interacciones.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/coordinacion.png}
+\caption[Clasificación de las principales vías de coordinación entre agentes]{Clasificación de las principales vías de coordinación entre agentes \cite{coordinacion2}}
+\label{fig:coordinacion}
+\end{center}
+\end{figure}
+
+Existen tres aspectos principales para estudiar de una manera formal la comunicación entre agentes \cite{coordinacion}: 
+\begin{itemize}
+\item La \textbf{sintaxis}: cómo se estructuran los símbolos de la comunicación,
+\item La \textbf{semántica}: qué significan los símbolos.
+\item La \textbf{pragmática}: cómo se interpretan los símbolos.
+\end{itemize}
+
+El significado se considera una combinación de la semántica y la pragmática. Los agentes se comunican con el fin de comprender y ser comprendidos, por lo que es importante tener en cuenta las diferentes dimensiones de significado que están asociadas con la comunicación.
+
+«Debido a que normalmente los agentes que forman parte de un mismo sistema multiagente tienen distintas capacidades a la hora de comunicarse,
+es importante definir un esquema de comunicación a varios niveles. Normalmente, se identifican distintos roles en una conversación, destacando los de activo, pasivo o ambos. Así mismo, existen dos tipos principales de mensajes (ver Cuadro~\ref{tab:tiposmensaje}): afirmaciones y preguntas» \cite{coordinacion2}.
+
+\begin{table}[htbp]
+  \centering
+  {\small
+  \input{tables/tiposmensaje.tex}
+  }
+  \caption[Principales tipos de mensajes entre agentes]
+  {Principales tipos de mensajes entre agentes}
+  \label{tab:tiposmensaje}
+\end{table}
+	
 \section{Herramientas y entornos de desarrollo}
-\label{herrmientas}
+\label{sec:herrmientas}
+
+En esta sección se analizan los elementos principales escogidos para el desarrollo del proyecto.
 
 \subsection{3DR IRIS+}
 \label{sec:3driris}
 
-«El \textbf{3DR IRIS+} (ver Figura~\ref{fig:3dririsplus}) es un vehículo aéreo autónomo todo en uno, producido por 3D Robotics\footnote{\url{https://www.3dr.com}}, que se ejecuta sobre el sistema de piloto automático Pixhawk, lo último en electrónica avanzada para el piloto automático desde el proyecto del PX4. Con la ayuda de puntos \acs{GPS} preprogramados es capaz de efectuar operaciones de nivel profesional, como el mapeo, la toma de imágenes con scripts, la investigación científica, y otras aplicaciones donde se requieren planes de vuelo repetitivos» \cite{3driris}. Es concebido como una plataforma de captación de imágenes aéreas potenciado por hardware, software y firmware de código abierto.
-
-El 3DR IRIS+ cuenta con una serie de componentes y especificaciones (ver Cuadro~\ref{tab:especificaciones}) como: GPS integrado, que permite establecer una ruta de antemano o volver a casa en caso de pérdida, o un kit de telemetría que permite obtener información de vuelo como la distancia, altitud, velocidad, nivel de batería e intensidad de la señal \acs{GPS}. Como en cualquier dron, se puede personalizar, y es posible la inclusión de una cámara GoPro Hero si se quiere mejorar la calidad de la imagen.
+«El \textbf{3DR IRIS+} (ver Figura~\ref{fig:3dririsplus}) es un vehículo aéreo autónomo todo en uno, producido por 3D Robotics \footnote{\url{https://www.3dr.com}}, que se ejecuta sobre el sistema de piloto automático Pixhawk, lo último en electrónica avanzada para el piloto automático desde el proyecto del PX4. Con la ayuda de puntos \acs{GPS} preprogramados es capaz de efectuar operaciones de nivel profesional, como el mapeo, la toma de imágenes con scripts, la investigación científica, y otras aplicaciones donde se requieren planes de vuelo repetitivos» \cite{3driris}. Es concebido como una plataforma de captación de imágenes aéreas potenciado por hardware, software y firmware de código abierto.
 
 \begin{figure}[!h]
 \begin{center}
@@ -362,8 +462,9 @@ El 3DR IRIS+ cuenta con una serie de componentes y especificaciones (ver Cuadro~
 \end{center}
 \end{figure}
 
+El 3DR IRIS+ cuenta con una serie de componentes y especificaciones (ver Cuadro~\ref{tab:especificaciones}) como: GPS integrado, que permite establecer una ruta de antemano o volver a casa en caso de pérdida, o un kit de telemetría que permite obtener información de vuelo como la distancia, altitud, velocidad, nivel de batería e intensidad de la señal \acs{GPS}. Como en cualquier dron, se puede personalizar, y es posible la inclusión de una cámara GoPro Hero si se quiere mejorar la calidad de la imagen.
 
-\begin{table}[htb]
+\begin{table}[htbp]
   \centering
   {\small
   \input{tables/especificaciones3dr.tex}
@@ -396,7 +497,7 @@ En el presente, el proyecto ArduPilot se sustenta sobre cuatro pilares fundament
 \item \textbf{Hardware}: Los sistemas embebidos y sensores periféricos que actúan como el cerebro del vehículo, los ojos, las orejas, etc. Entre ellos se encuentra la línea APM y \textbf{Pixhawk}/PX4 de pilotos automáticos.
 \item \textbf{Firmware}: El código que implementa el conjunto de habilidades que se ejecuta en el hardware, configurado para el 
 tipo de vehículo que se elija. El firmware elegido puede ser \textbf{ArduCopter}(véase \S\,\ref{sec:arducopter}), ArduPlane o ArduRover.
-\item \textbf{Software}: La interfaz con el hardware. Por ejemplo, la aplicación de estación de tierra \textbf{Mission Planner}(Anexar).
+\item \textbf{Software}: La interfaz con el hardware. Por ejemplo, la aplicación de estación de tierra \textbf{Mission Planner}(Anexar documento sobre Mision Planner).
 \item \textbf{Comunidad}: Un área para el discurso abierto entre los desarrolladores y sus clientes.
 \end{itemize}
 
@@ -497,106 +598,86 @@ Vision API ofrece las siguientes funcionalidades:
 
 El uso de cada una de estas características conlleva gastos.
 
-\section{Listados de código}
-\label{sec:listado}
+\section{Sistemas para catástrofes}
+\label{sec:sistemas}
 
-Puedes referenciar un listado así (ver Listado~\ref{code:hello}). Éste es un
-listado flotante, pero también pueden ser «no flotantes» quitando el parámetro
-\texttt{float} (mira el fuente de este documento o la referencia del paquete
-\href{http://www.ctan.org/get/macros/latex/contrib/listings/listings.pdf}{«listings»}).
+La alta frecuencia de desastres, tanto naturales como artificiales, que puedan causar la perdida de seres humanos, son un problema en el que los drones pueden contribuir a una notable mejoría en los tiempos de respuesta y actuación.
 
-\begin{listing}[
-  float=ht,
-  language = C,
-  caption  = {«Hola mundo» en C},
-  label    = code:hello]
-#include <stdio.h>
-int main(int argc, char *argv[]) {
-    puts("Hola mundo\n");
-}
-\end{listing}
+Un grupo multidisciplinar de voluntariado con equipos de alta tecnología puede ayudar a conservar la vida de una persona o a realizar un análisis más rápido en situaciones de emergencia, en las cuales pueden correr peligro, no ya una, sino cientos de vidas. Es evidente que visión global aérea de un cataclismo puede brindar la posibilidad de tomar decisiones más correctas.
 
-\noindent
-Puedes incluir un fichero de código fuente (o un fragmento) con \texttt{lstinputlisting}:
+Si algo ha cambiado rápido en estos últimos tiempos es la visión popular a cerca de los drones. Hoy es muy habitual que quien observa el vuelo de un dron se pregunte si está prohibido hacerlo (Anexar normativa de vuelo de drones). Y es que parece ser que se está estigmatizando esta herramienta cuyas capacidades son tan beneficiosas que deberían despejar las dudas sobre la legalidad de su manejo.
 
-\lstinputlisting[language=C, firstline=3, texcl]{code/hello.c}
+El despliegue de esta tecnología supone un cambio radical en labores de ayuda y rescate de vidas humanas, desde el posicionamiento óptimo, la logística y aporte de medios, hasta el rescate de vidas en sí mismo.
 
-\noindent
-Y también existe un comando \texttt{console} para representar ejecución de
-comandos:
+Los drones, a diferencia que una UVI móvil, no pueden atender al paciente en movimiento durante su traslado con la participación de varios doctores. Pero sí que es posible el transporte urgente y existen proyectos para el envío de un dron que pueda portar un desfibrilador \footnote{\url{http://www.io.tudelft.nl/onderzoek/delft-design-labs/applied-labs/ambulance-drone/}} (ver Figura~\ref{fig:ambulancedrone}).
 
-\begin{console}
-$ uname --operating-system
-GNU/Linux
-\end{console} %$
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/ambulancedrone.jpg}
+\caption[Ambulance Drone]{Ambulance Drone}
+\label{fig:ambulancedrone}
+\end{center}
+\end{figure}
 
-Puedes modificar el estilo por defecto para tus listados añadiendo un comando
-\texcmd{lstset} en tu \texttt{custom.sty}. El código \LaTeX{} del listado
-\ref{code:custom-listings} añade un fondo gris claro y una línea en el margen
-izquierdo.
+«Los drones de rescate han entrado en acción en zonas de contaminación, tras un accidente nuclear, en terremotos o inundaciones. Son pequeños y pueden buscar personas y objetos en grandes áreas, incluso de noche. Consiguen imágenes accediendo a edificios a punto de caer, buscando supervivientes y obteniendo datos e información vital. Son capaces de realizar vuelos entre el humo de los incendios e identifican térmicamente siluetas de personas para saber dónde están atrapados o si se han desmayado y están inconscientes. En atmósferas explosivas y tras accidentes por explosión de gas, inspeccionan y toman muestras del aire, pasan entre los escombros localizando a las personas, se mueven rápido y pueden recoger muestras de agua contaminada o sustancias químicas tras acceder a sitios inverosímiles. Y todo ello en apenas unos minutos, visualmente, y en tiempo real, enviándolo al instante a los centros de control, mejorando así los resultados y disminuyendo los costes» \cite{dron3}.
 
-\begin{listing}[
-  float=h!,
-  caption  = {Personalizando los listados de código},
-  label    = code:custom-listings]
-\lstset{%
-  backgroundcolor = \color{gray95},
-  rulesepcolor    = \color{black},
-}
-\end{listing}
+En resumen, es posible concebir un futuro muy próximo con aplicaciones en las que los ciudadanos tengan la seguridad de poder solicitar y contar con un dron ante cualquier situación de necesidad, urgencia y de peligro.
 
-En cualquier caso, si lo necesitas siempre es mejor que redefinas los comandos y entornos
-existentes o crees entornos nuevos, en lugar de añadir los mismos cambios en
-muchas partes del documento.
+\subsection{Proyecto ICARUS}
+\label{sec:icarus}
 
+Después de los terremotos en L'Aquila, Haití y Japón, la Comisión Europea confirmó que existe una gran discrepancia entre la tecnología, que se desarrolla en el laboratorio, y el uso de dicha tecnología, en el terreno para las operaciones de búsqueda y rescate (\acs{ByR}) y la gestión de crisis.
 
-\section{Citas y referencias cruzadas}
+De este modo, la Dirección General de Empresa e Industria de la Comisión Europea decidió financiar ICARUS \footnote{\url{http://www.fp7-icarus.eu/}}, un proyecto de investigación, con un presupuesto total de 17,5 millones de euros, que tiene como objetivo desarrollar herramientas robóticas pueden ayudar a los equipos de intervención en situaciones de crisis.
 
-Puedes ver aquí una cita~\cite{design_patterns} y una referencia a la segunda sección
-(véase \S\,. Para hacer referencias debes definir etiquetas en el punto
-que quieras referenciar (normalmente justo debajo). Es útil que los nombres de las
-etiquetas (comando label) tengan los siguientes prefijos (incluyendo los dos puntos ``:''
-del final):
+La introducción de dispositivos no tripulados, en misiones de \acs{ByR}, pueden ofrecer una herramienta de valor para salvar vidas humanas y para acelerar el proceso de \acs{ByR}. ICARUS se concentra en el desarrollo de las tecnologías de búsqueda y rescate, con \acs{UAV}s, para la detección, localización y el rescate de seres humanos.
 
-\begin{description}
-\item[chap:] para los capítulos. Ej: ``\texttt{chap:objetivos}''.
-\item[sec:] para secciones, subsecciones, etc.
-\item[fig:] para las figuras.
-\item[tab:] para las tablas.
-\item[code:] para los listados de código.
-\end{description}
+Existe una amplia literatura sobre los esfuerzos de investigación hacia el desarrollo de herramientas de \acs{ByR}. Sin embargo, este esfuerzo de investigación está en contraste con la realidad práctica en el campo, donde herramientas de búsqueda y salvamento no tripuladas tienen grandes dificultades para encontrar a usuarios finales. El proyecto ICARUS se ocupa de estos problemas, con el objetivo de cerrar la brecha entre la comunidad científica y los usuarios finales.
 
-Si estás viendo la versión PDF de este documento puedes pinchar la cita o el número de
-sección. Son hiper-enlaces que llevan al elemento correspondiente. Todos los elementos que
-hacen referencia a otra cosa (figuras, tablas, listados, secciones, capítulos, citas,
-páginas web, etc.) son «pinchables» gracias al paquete
-\href{http://latex.tugraz.at/_media/docs/hyperref.pdf}{\emph{hyperref}}.
+El objetivo general del proyecto ICARUS es aplicar sus innovaciones para la mejora de la gestión de una crisis y de este modo, reducir el riesgo y el impacto de la crisis sobre los ciudadanos. 
 
-Para citar páginas web usa el comando \texttt{url} como en: \url{http://www.uclm.es}
+El uso de dispositivos no tripulados de \acs{ByR}, embebidos en una arquitectura apropiada e integrados en las infraestructuras existentes, ayudarán al personal de crisis, proporcionando información detallada y fácil de entender sobre la situación. El sistema propuesto debe informar al personal de crisis sobre los peligros reales presentes en el suelo, y por lo tanto aumentará su rendimiento en la resolución de la situación.
 
+\subsection{Sistema Pelícano}
+\label{sec:pelicano}
 
-\section{Páginas}
-\label{sec:paginas}
+El sistema Pelícano de Indra \footnote{\url{http://www.indracompany.com/es/}} (ver Figura~\ref{fig:pelicano}), está formado por cuatro helicópteros no tripulados y una estación de control, que proporciona capacidad para operar las 24 horas del día durante periodos prolongados. Su diseño ha sido pensado para responder a los requisitos y necesidades de las fuerzas armadas y de seguridad.
 
-La normativa aconseja imprimir el documento a doble cara, pero si el número de
-páginas es bajo puede imprimirse a una cara. Como eso es bastante subjetivo, mi
-consejo es que ronde las 100 \textbf{hojas}. Una hoja impresa a doble cara
-contiene 2 páginas, a una cara contiene una. Es decir, si el documento tiene más
-de 200 páginas imprímelo a doble cara, si tiene menos imprímelo a una.
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/indra-pelicano.jpg}
+\caption[\acs{UAV} Pelícano de Indra]{\acs{UAV} Pelícano de Indra}
+\label{fig:pelicano}
+\end{center}
+\end{figure}
 
-Por defecto, \esitfg{} imprime a una cara (oneside), si quieres imprimir a doble cara,
-escribe en el preámbulo:
+El sistema de \acs{UAV}s Pelícano \cite{PELICANO} esta preparado para dar apoyo, tanto en misiones de inteligencia como en gestión de emergencias, tales como 
+desastres naturales o medioambientales, que impliquen el seguimiento, vigilancia y reconocimiento de amplias superficies, eliminando así pérdidas humanas.
 
-\begin{listing}
-  \documentclass[twoside]{esi-tfg}
-\end{listing}
+Indra ha basado el sistema en un helicóptero de tamaño medio de la compañía sueca CybAero e incorporará los sistemas tecnológicos más avanzados para adaptarlo a las necesidades operativas militares y civiles. 
 
-Esto es importante porque a doble cara los márgenes son simétricos y a una cara
-no. Si llevas el TFG a la copistería y pides que te lo impriman de modo
-diferente al generado, quedará mal ¡Cuidado!
+Entre los sensores con que está dotada la aeronave figuran sistemas electro-ópticos de visión diurna e infrarroja, capaces de tomar imágenes de muy alta resolución  a gran altura. También esta acondicionado para poder portar un radar ligero, así como sistemas de inteligencia electrónica y sensores de detección de amenazas químicas, bacteriológicas, radioactivas y nucleares.
 
-Tal como indica la normativa, los capítulos siempre empiezan en la página
-derecha, la impar cuando se usa doble cara.
+\subsection{Proyecto ATLANTE}
+\label{sec:atlante}
+
+El Centro para el Desarrollo Tecnológico Industrial (CDTI) actuó como organismo gestor de programas del sector aeronáutico, y lanzó el programa \acs{ATLANTE}, liderado por Cassidian, tras constatar el interés de la Industria española por los \acs{UAS} y con el fin de potenciar el desarrollo de la tecnología asociada a este tipo de sistemas mediante un proyecto realizado íntegramente en España.
+
+El \acs{ATLANTE} (ver Figura~\ref{fig:atlante}) es un sistema diseñado para responder a las necesidades de las fuerzas terrestres militares desplegadas en el teatro de operaciones, que les permite realizar misiones de inteligencia, vigilancia y reconocimiento de día y noche en condiciones climatológicas adversas. También permite llevar a cabo labores de identificación de blancos, corrección de tiro y evaluación de daños.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/atlante.jpg}
+\caption[\acs{UAV} \acs{ATLANTE}]{\acs{UAV} \acs{ATLANTE}}
+\label{fig:atlante}
+\end{center}
+\end{figure}
+
+El sistema está formado por cuatro o más vehículos aéreos no tripulados, una estación de control terrestre, una unidad de transporte, lanzamiento y recogida y terminales de video remoto. Los equipos de misión de la plataforma aérea recogen la información de los sensores y los transmite a tierra mediante los enlaces de datos de alta velocidad para su posterior explotación.
+
+Como características principales de sistema cabe destacar la facilidad de despliegue por tierra, mar y aire, y el despegue y aterrizaje tanto en pistas convencionales como no preparadas, así como el despegue fuera de pistas mediante catapulta neumática y la recuperación mediante paracaídas.
+
+Entre las aplicaciones no militares estarían las orientadas hacia la lucha anti-terrorista y contra la piratería, control de inmigración ilegal y tráfico de drogas y, cómo no, para la lucha contra incendios y otros desastres naturales y supervisión de infraestructuras críticas y vías de comunicación.
 
 
 % Local Variables:

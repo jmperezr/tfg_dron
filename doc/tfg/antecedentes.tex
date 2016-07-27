@@ -5,7 +5,7 @@
 que se han efectuado hasta la fecha, de modo que se contextualice el \acs{TFG} en el ámbito 
 de la utilización de \acs{UAV}s, en diferentes entornos de la ingeniería civil en general y, más
 concretamente, en situaciones de emergencia. Asimismo se analizarán las tecnologías de mayor 
-relevancia para el desarrollo e implementación del sistema adaptativo.  
+relevancia para el desarrollo e implementación del sistema adaptativo. 
 
 \section{Vehículo aéreo no tripulado}
 \label{sec:vehiculonotripulado}
@@ -65,14 +65,14 @@ planeadores a los aviones propulsados no tripulados, y de los vuelos no tripulad
 tripulados (ver Cuadro~\ref{tab:pioneros}). Su limitación tecnológica, no disponer de un motor con suficiente relación potencia-peso, 
 impidió que sus diseños pudieran mantenerse en el aire.
 
-\begin{table}[htbp]
-  \centering
-  {\small
-  \input{tables/pioneros.tex}
-  }
-  \caption[Primeros vuelos conocidos en diversos países]
-  {Primeros vuelos conocidos en diversos países \cite{dron1}}
-  \label{tab:pioneros}
+\begin{table}[!h]
+ \centering
+ {\small
+ \input{tables/pioneros.tex}
+ }
+ \caption[Primeros vuelos conocidos en diversos países]
+ {Primeros vuelos conocidos en diversos países \cite{dron1}}
+ \label{tab:pioneros}
 \end{table}
 
 Durante la \textbf{Primera Guerra Mundial}, la aviación no tripulada se veía entorpecida por la falta de progreso tecnológico. 
@@ -95,27 +95,21 @@ Finalmente, tras dos años de intentos fallidos, el torpedo aéreo de Sperry (ve
 Los primeros sistemas fueron creados como armamento de largo alcance en artefactos tales como el torpedo aéreo de Sperry, mencionado anteriormente, y el blanco aéreo británico Aerial Target. El Aerial Target era un monoplano, sin piloto, controlado por radio que sirvió para verificar la viabilidad de utilizar señales de radio como sistema de guiado.
 
 En el transcurso de la \textbf{Segunda Guerra Mundial}, Gran Bretaña abandonó la elaboración de misiles de crucero y se introdujo en el sector de los blancos aéreos con control completo por radio, a pesar de que el alcance era muy limitado.
-En paralelo en Estados Unidos se fabricó el RP-4 (ver Figura~\ref{fig:rp4}) de Radioplane Company. A través de estos aviones, se fue perfeccionando la tecnología y el uso del control remoto por radio (ver Figura~\ref{fig:controlador}).
+En paralelo en Estados Unidos se fabricó el RP-4 (ver Figura~\ref{fig:rp4}) de Radioplane Company. A través de estos aviones, se fue perfeccionando la tecnología y el uso del control remoto por radio.
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{/rp4.jpeg}
-\caption[RP-4 listo para volar]{RP-4 listo para volar}
+\subfigure[RP-4 listo para volar]{\includegraphics[width=0.5\textwidth]{/rp4.jpeg}}
+\subfigure[Controlador de vuelo]{\includegraphics[width=0.3\textwidth]{/rp4controlador.jpeg}}
+\caption[Sistema RP-4]{Sistema RP-4}
 \label{fig:rp4}
 \end{center}
 \end{figure}
 
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[width=0.65\textwidth]{/rp4controlador.jpeg}
-\caption[Controlador de vuelo]{Controlador de vuelo}
-\label{fig:controlador}
-\end{center}
-\end{figure}
-
 En la \textbf{Posguerra} de la \textbf{Segunda Guerra Mundial}, la compañía Northrop produjo una serie de blancos aéreos no tripulados, llamados Falconer (ver Figura~\ref{fig:northrop}), que llevaban integrados sistemas de radiocontrol más modernos. 
-Otra aplicación relevante durante la \textbf{Posguerra} fue la de señuelos antirradar (ver Figura~\ref{fig:northrop}). Estos eran soltados desde bombarderos, donde también eran controlados por radio con la ayuda de imágenes de vídeo, con la finalidad de confundir a los sistemas radar enemigos.
+Otra aplicación relevante durante la \textbf{Posguerra} fue la de señuelos antirradar (ver Figura~\ref{fig:northrop}). Estos eran soltados desde bombarderos, donde eran controlados por radio con la ayuda de imágenes de vídeo, con la finalidad de confundir a los sistemas radar enemigos.
+
+\clearpage
 
 \begin{figure}[!h]
 \begin{center}
@@ -137,6 +131,8 @@ Posteriormente estos \acs{UAV}s fueron equipados con cámaras para misiones de r
 \label{fig:ryanfirebee}
 \end{center}
 \end{figure}
+
+\clearpage
 
 Los \textbf{años 70} iban a ser testigos de la inclusión de \acs{UAS} en misiones de 
 reconocimiento y vigilancia tanto de corto alcance, como de largo alcance y elevada altitud. Fueron sistemas 
@@ -183,7 +179,7 @@ la carga de trabajo y los errores de las tripulaciones en tierra.
 En conformidad con la Organización de Aviación Civil Internacional, «El hecho de que la aeronave sea tripulada o no tripulada no afecta su condición de aeronave. Cada categoría de aeronave tendrá posiblemente versiones no tripuladas en el futuro.
 Este punto es fundamental para todos los aspectos futuros relativos a las \acs{UA} y proporciona la base para tratar la aeronavegabilidad, el otorgamiento de licencias al personal, las normas de separación, etc.» \cite{OACI}. En otras palabras, las aeronaves no tripuladas son, en primer lugar, aeronaves, por lo que están sujetas a las mismas normas y restricciones que las aeronaves tripuladas.
 
-Existen múltiples formas de clasificar las aeronaves, pero lo habitual es utilizar una clasificación atendiendo al modo en la que las aeronaves consiguen su sustentación en la atmósfera. A continuación se propone una clasificación en la que se presenta los principales tipos de aeronaves:  
+Existen múltiples formas de clasificar las aeronaves, pero lo habitual es utilizar una clasificación atendiendo al modo en la que las aeronaves consiguen su sustentación en la atmósfera. A continuación se propone una clasificación en la que se presenta los principales tipos de aeronaves: 
 
 \begin{itemize}
 \item \textbf{Aerostato}: Más ligeros que el aire.
@@ -214,16 +210,15 @@ Por otra parte, aparecen aeronaves de nuevas clases, como los híbridos, que eje
 
 El uso de vehículos aéreos no tripulados ha alcanzado un grado de madurez significativo en el terreno militar. Tanto es así, que 
 en el ejército norteamericano constituyen cerca de un tercio de la flota de aeronaves, desempeñando en exclusiva las misiones 
-de inteligencia, vigilancia y reconocimiento que deben cumplir las fuerzas armadas. «De acuerdo con la consultora de defensa Teal Group Corporation \footnote{\url{http://www.tealgroup.com}}, el inventario en 2013 de sistemas aéreos no tripulados contaba con más de 10.000 \acs{UAS} (ver Figura~\ref{fig:flota})  [...], de lo que se deduce que en el ámbito militar la preponderancia de los sistemas de ala fija (ver Figura~\ref{fig:alafija}) es casi absoluta (97\%)» \cite{dron2}.
+de inteligencia, vigilancia y reconocimiento que deben cumplir las fuerzas armadas. «De acuerdo con la consultora de defensa Teal Group Corporation \footnote{\url{http://www.tealgroup.com}}, el inventario en 2013 de sistemas aéreos no tripulados contaba con más de 10.000 \acs{UAS} (ver Figura~\ref{fig:flota}) [...], de lo que se deduce que en el ámbito militar la preponderancia de los sistemas de ala fija (ver Figura~\ref{fig:alafija}) es casi absoluta (97\%)» \cite{dron2}.
 
 \begin{figure}[!h]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{/flota.jpg}
-\caption[Aviones no tripulados del Departamento de Defensa de EE.UU. en el 2013]{Aviones no tripulados del Departamento de Defensa de EE.UU. en el 2013 \cite{ambitocivil2}}
+\caption[\acs{UAV}s del Departamento de Defensa de EE.UU. en el 2013]{\acs{UAV}s del Departamento de Defensa de EE.UU. en el 2013 \cite{ambitocivil2}}
 \label{fig:flota}
 \end{center}
 \end{figure}
-
 
 \begin{figure}[!h]
 \begin{center}
@@ -235,6 +230,8 @@ de inteligencia, vigilancia y reconocimiento que deben cumplir las fuerzas armad
 
 En el ámbito civil, mucho menos avanzado que el militar, la situación es la contraria. «De acuerdo con la información suministrada por la Dirección General de la Aviación Civil francesa \footnote{\url{http://www.developpement-durable.gouv.fr/-Secteur-Aerien,1633-.html}} (DGAC) referida a las autorizaciones otorgadas hasta octubre de 2013, [...] los sistemas basados en aeronaves de ala rotatoria superan ampliamente
 a los de otros tipos, si bien no de forma tan aplastante como ocurre en el mundo militar, ya que sólo suponen un 76\% del total» \cite{dron2}.
+
+\clearpage
 
 Esta inclinación, hacia las aeronaves multirrotor (ver Figura~\ref{fig:multirrotor}) en el entorno civil, se debe a que son altamente apropiadas para la principal actividad desempeñada en estos momentos, la toma de imágenes y videos, que según las estimaciones de la Asociación Española de RPAS \footnote{\url{http://www.aerpas.es/}} constituyen posiblemente más del 90\% de las tareas ejecutadas por drones \cite{AERPAS}, al igual que ocurre en otros países europeos.
 
@@ -252,9 +249,8 @@ Las principales ventajas de los multirrotores son las siguientes:
 \item \textbf{Despegue y aterrizaje vertical}: que minimiza las necesidades del espacio requerido en tierra para su puesta en marcha	.
 \item La posibilidad de \textbf{volar a punto fijo} o \textbf{a muy baja velocidad}: lo cual resulta idóneo para software en la que la observación sea un requisito vital.
 \item Mayor \textbf{maniobrabilidad} y \textbf{precisión} de vuelo: mientras que los sistemas de ala fija siguen rutas curvilíneas, los multirrotores son capaces de volar siguiendo cualquier trayectoria deseada en las tres dimensiones.
-\item Su diseño les permite acarrear \textbf{cargas más voluminosas}, en relación con su propio tamaño, que los aviones.
+\item Su diseño les permite acarrear \textbf{cargas más voluminosas}, en relación con su propio tamaño, que los aviones. 
 \end{itemize}
-
 Por el contrario, los multirrotores tienen una serie de desventajas frente a los sistemas de ala fija:
 
 \begin{itemize}
@@ -303,7 +299,7 @@ o \acs{FPV}, lo que le permite actuar como si estuviera embarcado en ella. Este 
 \subsection{Visión por computador en \acs{UAV}s}
 \label{sec:visionporcomputador}
 
-«La \textbf{visión por computador} es un campo de la inteligencia artificial en el que se busca, a través de lenguajes de programación, que un computador sea capaz de identificar y ejecutar órdenes con el reconocimiento de ciertas características de imágenes, imágenes completas o secuencias de éstas» \cite{visionporcomputador}.
+«El objetivo de la \textbf{visión por computador} es modelar y automatizar el proceso de reconocimiento visual, un término que se interpreta en líneas generales como ``percibir distinciones entre objetos con diferencias importantes entre ellos''. La visión por computador utiliza métodos estadísticos para separar los datos, haciendo uso de modelos que han sido construidos con la ayuda de la geometría, la física y la teoría del aprendizaje. De este modo la visión por computador se basa en un sólido conocimiento de las cámaras y del proceso físico para la formación de imágenes» \cite{visionporcomputador}.
 
 Los sistemas de visión artificial están formados por: 
 \begin{itemize}
@@ -342,7 +338,7 @@ En la actualidad, se han desarrollado aplicaciones con vehículos aéreos no tri
 \subsection{Aplicación de \acs{UAV}s en el sector civil}
 \label{sec:ingenieriacivil}
 
-Los drones pueden ser calificados como robots no antropomorfos con una enorme autonomía de vuelo y con un abanico de posibilidades de  aplicación.
+Los drones pueden ser calificados como robots no antropomorfos con una enorme autonomía de vuelo y con un abanico de posibilidades de aplicación.
 
 «Gracias al uso de procesadores electrónicos, de software especializado y del Sistema de Posicionamiento Global (\acs{GPS}), las capacidades de control automático en base a la información procedente de los sensores instalados en las aeronaves, y la rápida reacción correctiva como consecuencia del procesamiento local de la información del estado de vuelo, hacen posible que la retroalimentación aporte un inmenso potencial,
 minimizando para estos artefactos las posibles desviaciones entre el comportamiento real y el esperado» \cite{ambitocivil}.
@@ -357,18 +353,19 @@ Actualmente, haciendo caso omiso a los usos bélicos, estos equipos brindan \tex
 \end{center}
 \end{figure}
 
-
-\begin{table}[htbp]
-  \centering
-  {\small
-  \input{tables/sectorcivil.tex}
-  }
-  \caption[Principales actividades civiles desde septiembre de 2013]
-  {Principales actividades civiles desde septiembre de 2013 \cite{ambitocivil2}}
-  \label{tab:ambitocivil2}
+\begin{table}[!h]
+ \centering
+ {\small
+ \input{tables/sectorcivil.tex}
+ }
+ \caption[Principales actividades civiles desde septiembre de 2013]
+ {Principales actividades civiles desde septiembre de 2013 \cite{ambitocivil2}}
+ \label{tab:ambitocivil2}
 \end{table}
 
 En los países más avanzados se está fomentando el uso de estos aparatos en diferentes proyectos de investigación \cite{UA}, que abarcan desde el ensayo de material aeronáutico en condiciones peligrosas, pasando por el reparto de cargas, hasta el desarrollo de tecnologías, como las pilas de combustible de hidrógeno, que triplicarían la duración de los vuelos.
+
+\clearpage
 
 \section{Inteligencia Artificial Distribuida}
 \label{sec:inteligenciaartificial}
@@ -384,14 +381,34 @@ La \acs{IAD} aparece en la década de los 80 para estudiar los sistemas intelige
 diferenciadas que están siendo explotados de forma comercial.
 \end{itemize}
 
-El campo de investigación de la \acs{IAD} desencadenó en campos más específicos: la Inteligencia Artificial Paralela, la Resolución Distribuida de Problemas y los \textbf{Sistemas Multiagente} (\acs{SMA}). El nacimiento de estos \acs{SMA} implicó la irrupción de un nuevo paradigma en el desarrollo del software que no solo afectó en las fases de conceptualización, diseño e implementación, sino también en la aplicabilidad de las soluciones propuestas.  
+El campo de investigación de la \acs{IAD} desencadenó en campos más específicos: la Inteligencia Artificial Paralela, la Resolución Distribuida de Problemas y los \textbf{Sistemas Multiagente} (\acs{SMA}). El nacimiento de estos \acs{SMA} implicó la irrupción de un nuevo paradigma en el desarrollo del software que no solo afectó en las fases de conceptualización, diseño e implementación, sino también en la aplicabilidad de las soluciones propuestas. 
 
 \subsection{Sistemas Multiagente}
 \label{sec:sismultiagente}
 
-Cada agente «es un sistema computacional que está situado en algún entorno, y que es capaz de actuar autónomamente en dicho entorno con el fin de cumplir sus objetivos» \cite{agente}. Sin embargo, muchas aplicaciones requieren la interacción entre diversos individuos para poder alcanzar un determinado objetivo. Estos sistemas, compuestos de varios agentes, son denominados \textbf{Sistemas Multiagente}.
+Cada agente «es un sistema computacional que está situado en algún entorno, y que es capaz de actuar autónomamente en dicho entorno con el fin de cumplir sus objetivos» \cite{agente}. En esta definición debe remarcarse que:
+\begin{itemize}
+\item No se refiere a agente inteligente, solo a agente.
+\item No habla sobre el tipo de entorno al que se refiere.
+\item No se define el término autonomía.
+\end{itemize}
 
-Un \acs{SMA} puede ser definido formalmente como «una organización o sociedad de agentes, donde un conjunto de agentes interactúan y cooperan entre sí para alcanzar algún objetivo colectivo» \cite{sma}.
+Sobre la autonomía, aunque no sea un concepto simple a la hora de definirlo, se puede decir que se refiere a que «los agentes son capaces de decidir por sí mismos que tienen que hacer con el fin de satisfacer sus objetivos de diseño» \cite{PLANIFICACION3}. 
+
+\clearpage
+
+No se acostumbra a pensar en un termostato o un proceso Unix como agentes, y desde luego no como \textbf{agentes inteligentes}. Para considerar a estos agentes como inteligentes deben cumplir una serie de capacidades propuestas por Wooldridge y Jennings en 1995 \cite{agente}:
+\begin{itemize}
+\item \textbf{Reactividad}: Los agentes inteligentes son capaces de percibir su entorno y responder de manera oportuna a los cambios que se producen en él con el fin de satisfacer sus objetivos de diseño.
+\item \textbf{Proactividad}: Los agentes inteligentes son capaces de mostrar un comportamiento dirigido por sus objetivos tomando la iniciativa con el fin de satisfacerlos.
+\item \textbf{Habilidad social}: Los agentes inteligentes son capaces de interactuar con otros agentes (e incluso con humanos) con el fin de satisfacer sus objetivos de diseño.
+\end{itemize}
+
+Sin embargo, muchas aplicaciones requieren la interacción entre diversos individuos para poder alcanzar un determinado objetivo. Estos sistemas, compuestos de varios agentes, son denominados \textbf{Sistemas Multiagente}.
+
+Un \acs{SMA} puede ser definido formalmente como «una organización o sociedad de agentes, donde un conjunto de agentes interactúan y cooperan entre sí para alcanzar algún objetivo colectivo» \cite{sma}. Los \acs{SMA} son un subcampo de la informática relativamente nuevo, estudiado desde 1980 y con un amplio reconocimiento desde aproximadamente mediados de la década de los 90. Desde entonces, el interés internacional ha crecido enormemente. Este rápido crecimiento ha sido estimulado, en parte, por la creencia de que los agentes son un paradigma de software adecuado a través del cual se pueden explotar las posibilidades presentadas por los sistemas distribuidos masivos.
+
+Cuando los problemas que se quieren solventar incorporan peculiaridades como: gran tamaño, alto grado de incertidumbre, dinamismo, o singularidad en la distribución de sus elementos, son extraordinarios candidatos a la aplicación de agentes para obtener ventajas en el proceso de resolución. 
 
 De acuerdo con Sycara \cite{sma2}, un \acs{SMA} está caracterizado por lo siguiente:
 \begin{itemize}
@@ -400,15 +417,22 @@ De acuerdo con Sycara \cite{sma2}, un \acs{SMA} está caracterizado por lo sigui
 \item Los \textbf{datos} están \textbf{descentralizados}.
 \item Los \textbf{cálculos} son \textbf{asíncronos}.
 \end{itemize}
- 
-La teoría de agentes y \acs{SMA} propicia dar un mayor realismo a la gestión de ciertos problemas, sumando a los modelos características que normalmente no se tienen en cuenta por la dificultad que incrementan al proceso de resolución del mismo. Cuando los problemas que se quieren solventar incorporan peculiaridades como: gran tamaño, alto grado de incertidumbre, dinamismo, o singularidad en la distribución de sus elementos, son extraordinarios candidatos a la aplicación de agentes para obtener ventajas en el proceso de resolución. 
 
-Para que un \acs{SMA} pueda adaptarse rápidamente a los cambios de su entorno, los agentes deben poder \textbf{coordinarse} cuando es necesario realizar cambios en sus metas o en los roles que tienen asignados.
+La teoría de agentes y \acs{SMA} propicia dar un mayor realismo a la gestión de ciertos problemas, sumando a los modelos características que normalmente no se tienen en cuenta por la dificultad que incrementan al proceso de resolución del mismo. Dicha gestión se logra mediante la \textbf{coordinación} de los distintos subsistemas que lo componen e integrando los objetivos particulares de cada subsistema en un objetivo común.
+
+Si cada subsistema tiene una capacidad de decisión local, el problema de la gestión se puede abordar definiendo políticas de cooperación, coordinación y negociación entre agentes. En general, un \acs{SMA} cooperante presentará las siguientes características:
+
+\begin{itemize}
+\item Está \textbf{formado por un conjunto de agentes}, cada uno de los cuales mantiene sus propias habilidades.
+\item El sistema multiagente \textbf{tiene una misión común}, la cual puede \textbf{descomponerse} en diferentes \textbf{tareas independientes}, de forma que se puedan ejecutar en paralelo.
+\item Cada agente del sistema tiene un \textbf{conocimiento limitado}.
+\item Cada agente del sistema tiene \textbf{cierta especialización para realizar determinadas tareas}, en función de lo que conoce, la capacidad del proceso y la habilidad requerida.
+\end{itemize}
 
 \subsection{Coordinación y esquemas de planificación}
 \label{sec:esquemascoordinacion}
 
-La comunicación adquiere relevancia en el comportamiento de los agentes en el momento de coordinar sus acciones, consiguiendo sistemas más consistentes. 
+La comunicación adquiere relevancia, en el comportamiento de los agentes, en el momento de coordinar sus acciones, consiguiendo sistemas más consistentes que logren alcanzar los objetivos individuales de dichos agentes y el objetivo global de la sociedad a la que pertenecen de la mejor manera posible.
 
 «La \textbf{coordinación} es una propiedad de los \acs{SMA} que posibilita el desarrollo de una acción en un entorno compartido. El grado de coordinación determinará hasta qué punto el sistema es capaz de evitar acciones innecesarias o ajenas para minimizar el gasto de recursos, evitar situaciones de bloqueo y mantener unas determinadas condiciones de seguridad» \cite{coordinacion}. Ejemplos convencionales de coordinación son proveer la información pertinente a otros agentes, garantizar que las acciones de los agentes están sincronizadas y evitar la solución redundante de problemas.
 
@@ -426,12 +450,29 @@ Existen tres aspectos principales para estudiar de una manera formal la comunica
 \begin{itemize}
 \item La \textbf{sintaxis}: cómo se estructuran los símbolos de la comunicación,
 \item La \textbf{semántica}: qué significan los símbolos.
-\item La \textbf{pragmática}: cómo se interpretan los símbolos.
+\item La \textbf{pragmática}: cómo se interpretan los símbolos. \\ \\
 \end{itemize}
 
 El significado se considera una combinación de la semántica y la pragmática. Los agentes se comunican con el fin de comprender y ser comprendidos, por lo que es importante tener en cuenta las diferentes dimensiones de significado que están asociadas con la comunicación.
 
+Las acciones de varios agentes deben coordinarse porque normalmente existe una dependencia entre ellas, debido a la necesidad de cumplir unas restricciones globales y a que ningún agente tiene la capacidad, los recursos o la información necesaria para alcanzar dichas metas globales.
+
+Con el objetivo de obtener sistemas coordinados, gran parte de la investigación en el ámbito de la \acs{IAD} ha sido el desarrollo de técnicas para dividir el control y los datos. Esta acción implica que los agentes tengan la suficiente autonomía para tomar sus propias decisiones y
+generar las acciones oportunas para alcanzar unos determinados objetivos. Sin embargo, la principal desventaja de este enfoque es que el conocimiento global del sistema está disperso, de manera que cada agente mantiene una visión parcial e imprecisa del problema global.
+
 Una cuestión obvia en la resolución de problemas multiagente es la planificación de las actividades de un grupo de agentes. La \textbf{planificación}, se puede definir como «un mecanismo de coordinación en el que los agentes construyen secuencias de acciones o planes, los cuales especifican todas sus acciones futuras e interacciones con respecto a un objetivo particular. Cuando estos planes se ejecutan correctamente y en orden, llevan al sistema a un estado u objetivo deseado» \cite{PLANIFICACION}. 
+
+Con esta aproximación los agentes saben de antemano qué acciones llevarán a cabo ellos mismos y los restantes agentes, y qué interacciones se producirán. Esta técnica de coordinación tiene un horizonte temporal corto, debido a que los planes requieren una especificación de comportamiento completa, y pueden producirse en el entorno eventos inesperados que eviten la ejecución con éxito de los planes, siendo necesaria una replanificación.
+
+A la hora de realizar la planificación multiagente hay que tener en cuenta un conjunto de criterios:
+\begin{itemize}
+\item El \textbf{coste computacional}.
+\item Los \textbf{costos de comunicación}: número de mensajes, volumen de datos y latencia necesaria.
+\item La \textbf{flexibilidad}: el grado de libertad que cada agente da a los otros, la hora, los recursos y la elección de la acción.
+\item La \textbf{robustez}: la capacidad de tener éxito si se produce un cambio en el entorno.
+\item El \textbf{plan de calidad}.
+\item La \textbf{escalabilidad} en cuanto a: número de agentes, tamaño de entrada/salida del problema y las interacciones.
+\end{itemize}
 
 «La planificación multiagente debe tomar en consideración el hecho de que las actividades de los agentes pueden interferir entre sí, por lo tanto, sus actividades deben ser coordinadas» \cite{PLANIFICACION3}. Generalizando existen dos opciones para la planificación multiagente:
 
@@ -440,16 +481,243 @@ Una cuestión obvia en la resolución de problemas multiagente es la planificaci
 \item \textbf{Planificación distribuida}: un grupo de agentes cooperan para formar un plan centralizado. Por lo general, existirán agentes que son «especialistas» en diferentes aspectos del plan, y contribuirán a una parte de él. Sin embargo, los agentes que forman el plan no serán los que lo ejecuten; su función es meramente para generar el plan.	
 \end{itemize}
 
-Por lo general, la planificación centralizada será más simple que la planificación descentralizada, debido a que el «maestro» puede tener una visión de conjunto, y puede dictar las relaciones de coordinación según se requiera. 	
-	
-\section{Herramientas y entornos de desarrollo}
+Por lo general, la planificación centralizada es más rápida, más simple y suele dar mejores resultados que la planificación descentralizada, debido a que el «maestro» puede tener una visión de conjunto, y puede dictar las relaciones de coordinación según se requiera. 	
+
+\section{Sistemas de ayuda y emergencia en catástrofes}
+\label{sec:sistemas}
+
+La alta frecuencia de desastres, tanto naturales como artificiales, que puedan causar la pérdida de seres humanos, es un problema en el que los drones pueden contribuir a una notable \textbf{mejoría en los tiempos de respuesta y actuación}.
+
+Un grupo multidisciplinar de voluntarios con \textbf{equipos de alta tecnología} puede colaborar en la búsqueda de personas o realizar un análisis más veloz en situaciones de emergencia, en las cuales pueden estar en peligro cientos de vidas. Es evidente que una visión global aérea de un cataclismo proporciona una \textbf{toma de decisiones más correcta}.
+
+Si algo ha cambiado en estos últimos meses, es la percepción pública acerca de los drones. Es usual que quien observa el vuelo de un dron se cuestione si está prohibido hacerlo. Da la impresión que se está estigmatizando este instrumento cuyas capacidades son tan beneficiosas que deberían despejar la incertidumbre sobre la legalidad de su manejo (Anexar normativa de vuelo de drones).
+
+El despliegue de esta tecnología implica una \textbf{renovación radical en las tareas de ayuda y rescate} de vidas humanas, desde el posicionamiento óptimo, la logística y aporte de medios, hasta el rescate de vidas en sí mismo.
+
+Los drones, en contraste con una UVI móvil, no pueden socorrer a un paciente en movimiento durante su transporte con la participación de varios doctores. Pero sí que es posible el transporte urgente y existen proyectos para el envío de un dron que pueda portar un desfibrilador \footnote{\url{http://www.io.tudelft.nl/onderzoek/delft-design-labs/applied-labs/ambulance-drone/}} (ver Figura~\ref{fig:ambulancedrone}).
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/ambulancedrone.jpg}
+\caption[Ambulance Drone]{Ambulance Drone}
+\label{fig:ambulancedrone}
+\end{center}
+\end{figure}
+
+«Los drones de rescate han entrado en acción en zonas de contaminación, tras un accidente nuclear, en terremotos o inundaciones. Son pequeños y pueden buscar personas y objetos en grandes áreas, incluso de noche. Consiguen imágenes accediendo a edificios a punto de caer, buscando supervivientes y obteniendo datos e información vital. Son capaces de realizar vuelos entre el humo de los incendios e identifican térmicamente siluetas de personas para saber dónde están atrapados o si se han desmayado y están inconscientes. En atmósferas explosivas y tras accidentes por explosión de gas, inspeccionan y toman muestras del aire, pasan entre los escombros localizando a las personas, se mueven rápido y pueden recoger muestras de agua contaminada o sustancias químicas tras acceder a sitios inverosímiles. Y todo ello en apenas unos minutos, visualmente, y en tiempo real, enviándolo al instante a los centros de control, mejorando así los resultados y disminuyendo los costes» \cite{dron3}.
+
+\clearpage
+
+En conclusión, es factible imaginar un futuro muy cercano con aplicaciones en las que los ciudadanos tengan la seguridad de poder solicitar y disponer de un dron ante cualquier situación de necesidad, urgencia y riesgo.
+
+\subsection{Proyecto ICARUS}
+\label{sec:icarus}
+
+Tras los terremotos en L'Aquila, Haití y Japón, la Comisión Europea corroboró que existe una gigantesca discrepancia entre la tecnología, que se desarrolla en el laboratorio, y el empleo de dicha tecnología, en el terreno para las operaciones de búsqueda y rescate (\acs{ByR}) y la gestión de crisis.
+
+De este modo, la Dirección General de Empresa e Industria de la Comisión Europea decidió financiar \textbf{ICARUS} \footnote{\url{http://www.fp7-icarus.eu/}}, un proyecto de investigación, con un presupuesto total de 17,5 millones de euros, cuyo objetivo es desarrollar herramientas robóticas que puedan ayudar a los equipos de intervención en situaciones de crisis y de este modo, reducir el riesgo y el impacto de la crisis sobre los ciudadanos.
+
+La inclusión de dispositivos no tripulados, en misiones de \acs{ByR}, aporta una \textbf{herramienta de utilidad para salvar vidas humanas} y para \textbf{acelerar el proceso de \acs{ByR}}. ICARUS se concentra en el desarrollo de las tecnologías de búsqueda y rescate, con \acs{UAV}s, para la detección, localización y el rescate de seres humanos.
+
+Existe una abundante literatura sobre los esfuerzos de investigación hacia el desarrollo de herramientas de \acs{ByR}. Sin embargo, esas investigaciones están en contraste con la realidad práctica en el campo, en el que las herramientas de búsqueda y salvamento no tripuladas tienen muchas dificultades para encontrar a usuarios finales. El proyecto ICARUS se ocupa de estos problemas, con el objetivo de cerrar la brecha entre la comunidad científica y los usuarios finales.
+
+El uso de dispositivos no tripulados de \acs{ByR}, embebidos en una arquitectura apropiada e integrados en las infraestructuras existentes, ayudarán al personal de crisis, proporcionando \textbf{información detallada} y fácil de entender sobre la situación. El sistema propuesto debe informar al equipo sobre los peligros reales presentes en el terreno, y por lo tanto \textbf{aumentará su rendimiento} en la resolución de la situación.
+
+\subsection{Sistema Pelícano}
+\label{sec:pelicano}
+
+El \textbf{sistema Pelícano} de Indra \footnote{\url{http://www.indracompany.com/es/}} (ver Figura~\ref{fig:pelicano}), está constituido por cuatro helicópteros no tripulados y una estación de control, que proporciona autonomía suficiente para operar las 24 horas del día durante ciclos de tiempo prolongados. Su diseño está pensado para satisfacer los requisitos y necesidades de las fuerzas armadas y de seguridad. \\
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/indra-pelicano.jpg}
+\caption[\acs{UAV} Pelícano de Indra]{\acs{UAV} Pelícano de Indra}
+\label{fig:pelicano}
+\end{center}
+\end{figure}
+ 
+
+El sistema de \acs{UAV}s Pelícano \cite{PELICANO} está preparado para proporcionar apoyo, tanto en misiones de inteligencia como en gestión de emergencias, tales como \textbf{desastres naturales o medioambientales}, que impliquen el seguimiento, vigilancia y reconocimiento de amplias superficies, eliminando así pérdidas humanas.
+
+Indra ha cimentado el sistema sobre un helicóptero de tamaño medio de la compañía sueca CybAero \footnote{\url{http://www.cybaero.se}} e incorporará los sistemas tecnológicos más avanzados para adaptarlo a las necesidades operativas militares y civiles. 
+
+Entre los sensores con los que está equipada la aeronave destacan los sistemas electro-ópticos de visión diurna e infrarroja, capaces de \textbf{tomar imágenes de muy alta resolución a gran altura}. También esta acondicionado para poder portar un radar ligero, así como sistemas de inteligencia electrónica y sensores de detección de amenazas químicas, bacteriológicas, radioactivas y nucleares.
+
+\subsection{Proyecto ATLANTE}
+\label{sec:atlante}
+
+El Centro para el Desarrollo Tecnológico Industrial (CDTI) actuó como organismo gestor de programas del sector aeronáutico, y lanzó el programa \textbf{\acs{ATLANTE}} \footnote{\url{http://www.indracompany.com/es/indra/avion-tactico-largo-alcance-tripulado-espanol-atlante}}, liderado por Cassidian, tras constatar el interés de la Industria española por los \acs{UAS} y con el fin de potenciar el desarrollo de la tecnología asociada a este tipo de sistemas mediante un proyecto realizado íntegramente en España.
+
+El \acs{ATLANTE} (ver Figura~\ref{fig:atlante}) es un sistema diseñado para responder a las exigencias de las fuerzas terrestres militares. Permite realizar misiones de inteligencia, vigilancia y reconocimiento, de día y noche, en condiciones climatológicas adversas. También puede llevar a cabo labores de identificación de blancos, corrección de tiro y evaluación de daños.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/atlante.jpg}
+\caption[\acs{UAV} \acs{ATLANTE}]{\acs{UAV} \acs{ATLANTE}}
+\label{fig:atlante}
+\end{center}
+\end{figure}
+
+Entre las aplicaciones no militares se encuentran la lucha anti-terrorista y contra la piratería, el control de inmigración ilegal y el tráfico de drogas, la supervisión de infraestructuras críticas y, cómo no, la \textbf{lucha contra incendios y otros desastres naturales}.
+
+El sistema se compone de cuatro o más vehículos aéreos no tripulados, una estación de control terrestre, una unidad de transporte y \textbf{terminales de vídeo remoto}. Los equipos de misión de la plataforma aérea recogen la información de los sensores y los transmiten a tierra a través de los enlaces de datos de alta velocidad para su posterior aprovechamiento.
+
+\subsection{Proyecto Multielfo}
+\label{sec:usol}
+
+Unmanned Solutions, también conocida como \textbf{USol}, es una de las empresas españolas con una oferta más variada en el sector de los drones. 
+
+Desde el 2004, USol ha trabajado, y sigue haciéndolo, en la Serie K, unos drones de ala fija en varias configuraciones, con pesos máximos al despegue de hasta 150 kg y autonomía superior a las 18 horas. El mundo de los multirrotores lo tienen también cubierto con el \textbf{proyecto Multielfo} \footnote{\url{http://www.multielfo.es/index.html}}, con drones de cuatro y seis rotores de varios pesos y configuraciones.
+
+Los drones del proyecto Multielfo, entre los que se encuentran el Elfo Mini, el Elfo IV (ver Figura~\ref{fig:elfoiv}), el Hexaelfo y el Metaelfo, tienen capacidades comunes:
+\begin{itemize}
+\item \textbf{Admiten diferentes modelos de cámaras} y permiten \textbf{adaptar cualquier gimbal}.
+\item \textbf{Despegue y aterrizaje manual o autónomo}, con \textbf{vuelta a casa} y \textbf{recorrido por puntos \acs{GPS}}.
+\end{itemize}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/ELFOIV.jpg}
+\caption[Multirrotor Elfo IV]{Multirrotor Elfo IV}
+\label{fig:elfoiv}
+\end{center}
+\end{figure}
+
+Las aplicaciones del proyecto MultiElfo son muy diversas, incluyendo: 
+\begin{itemize}
+\item \textbf{Filmaciones} y fotografía aérea.
+\item Cartografía y fotogrametría.
+\item Monitorización de infraestructuras industriales.
+\item Soporte en acciones de \textbf{búsqueda y rescate}.
+\item Agricultura de precisión.
+\item Vigilancia perimetral, durante el día y la noche.
+\item Soporte en emergencias y \textbf{desastres naturales}.
+\end{itemize}
+
+Se pueden encontrar grabaciones aéreas \footnote{\url{https://www.youtube.com/watch?v=vZ2-hFHZs9s}} en las que el proyecto Multielfo participa en un \textbf{simulacro de emergencia} celebrado en Daimiel el 15 de Marzo de 2015.
+
+\subsection{Robot Aéreo Fotogramétrico}
+\label{sec:raf}
+
+El \textbf{\acs{RAF}} \footnote{\url{http://www.cartodata.com/technologies/raf-4/}} (ver Figura~\ref{fig:raf}) es una nueva tecnología para monitoreo y levantamientos fotogramétricos detallados. El Robot Aéreo Fotogramétrico es un novedoso hexacóptero inteligente basado en tecnología de multirotores coordinados, ideal para aplicaciones de monitoreo, cartografía, \textbf{inspección} y vigilancia. \\ \\
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/RAF.jpg}
+\caption[Hexacóptero \acs{RAF}]{Hexacóptero \acs{RAF}}
+\label{fig:raf}
+\end{center}
+\end{figure}
+
+Comparado con otros drones, el \acs{RAF} presenta las siguientes ventajas:
+\begin{itemize}
+\item Estabilidad de cámara.
+\item Resistente a impacto.
+\item Sensores de proximidad.
+\item Piloto automático.
+\item Despegue y aterrizaje automático.
+\item Trayectoria de vuelo programable.
+\end{itemize}
+
+La tecnología innovadora del \acs{RAF} permite generar fotografías aéreas en un tiempo récord, simplificando así la consecución de diversos objetivos como por ejemplo, la seguridad y vigilancia, \textbf{la inspección y evaluación de desastres} o la monitorización del desgaste de infraestructuras.
+
+\subsection{Proyecto Hawk}
+\label{sec:hawk}
+
+El grupo de investigación BISITE \footnote{\url{http://bisite.usal.es/es}}, de la Universidad de Salamanca, mediante el \textbf{proyecto HAWK} \footnote{\url{http://bisite.usal.es/es/apps/hawk-multicopter}} pretende diseñar, crear y controlar un \acs{VTOL} \acs{UAV} (ver Figura~\ref{fig:hawk}), o vehículo aéreo no tripulado de aterrizaje y despegue vertical, de tipo multirrotor.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.73\textwidth]{/hawk.jpg}
+\caption[\acs{UAV} para el proyecto Hawk]{\acs{UAV} para el proyecto Hawk}
+\label{fig:hawk}
+\end{center}
+\end{figure}
+
+BISITE considera que de momento hay un espacio vacío en el mercado de los \acs{UAV}s multirotores desde un punto de vista tecnológico. El proyecto HAWK intenta llenar ese hueco a través del uso de nuevas tecnologías. 
+
+El control de los \acs{UAV}s es un área con muchas posibilidades y BISITE está actualmente trabajando en un proyecto para las fuerzas de seguridad del estado en colaboración con un consorcio de compañías. Se ha desarrollado un software de control y monitorización que se ejecuta desde una estación base y que permite el control manual y automático desde el puesto de control en tierra.
+
+Algunos posibles usos potenciales son:
+\begin{itemize}
+\item Estudios de \textbf{imágenes aéreas}.
+\item Control de líneas de alto voltaje.
+\item Reconocimiento de aerogeneradores.
+\item Análisis de estructuras arquitectónicas.
+\item \textbf{Inspección de zonas dañadas por desastres}.
+\item Control de plagas.
+\item Filmación aérea profesional.
+\item Supervisión de la vida salvaje.
+\item Estudios científicos y técnicos.
+\item Usos de la policía y cuerpo militar.
+\end{itemize}
+
+\section{Hardware, herramientas y entornos de desarrollo}
 \label{sec:herrmientas}
 
-En esta sección se analizan los elementos principales escogidos para el desarrollo del proyecto.
+En esta sección se estudia tanto el hardware como las principales herramientas y entornos involucrados en el desarrollo de sistemas con drones.
 
-\subsection{3DR IRIS+}
+\subsection{UAVs más utilizados en el ámbito del desarrollo}
+\label{sec:uavdesarrollo}
+
+\subsubsection{DJI Matrice 100}
+\label{sec:matrice100}
+
+El \textbf{DJI Matrice 100} (ver Figura~\ref{fig:matrice100}) es una plataforma de vuelo estable, flexible y de gran alcance. Su plataforma abierta y su diseño altamente personalizable lo hace adecuado para una amplia gama de aplicaciones en las áreas de investigación, los negocios y el ocio.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/matrice100.png}
+\caption[DJI Matrice 100]{DJI Matrice 100}
+\label{fig:matrice100}
+\end{center}
+\end{figure}
+
+El DJI Matrice 100 es un dron expansible (ver Cuadro~\ref{tab:especificaciones100}) que hace que sea fácil montar componentes adicionales para conseguir una mayor funcionalidad. Cuenta con compartimiento de batería adicional para una segunda batería de vuelo inteligente puede ser instalado para ofrecer un tiempo de vuelo extendido de hasta 40 minutos.
+
+\begin{table}[!h]
+ \centering
+ {\small
+ \input{tables/especificacionesmatrice100.tex}
+ }
+ \caption[Especificaciones técnicas del DJI Matrice 100]
+ {Especificaciones técnicas del DJI Matrice 100 \cite{especifacionesmatrice100}}
+ \label{tab:especificaciones100}
+\end{table}
+
+A los desarrolladores se les concede un control total sobre su plataforma de vuelo, dándoles la libertad de personalizar una solución integral aérea utilizando el \textbf{DJI SDK}. Esta SDK permite usar el sistema dedicado para comunicarse con el controlador de vuelo DJI a través de una conexión serie directa. Posibilita la monitorización y el control del comportamiento de vuelo de la aeronave con las funciones que implemente la \acs{API}, mientras se utilizan los modos de navegación inteligentes integrados para crear trayectorias de vuelo y maniobras autónomas.
+
+\subsubsection{Parrot AR Drone 2}
+\label{sec:ARDrone}
+
+El \textbf{Parrot AR Drone 2} (ver Figura~\ref{fig:ardrone}) es un vehículo aéreo no tripulado radiocontrolado de uso recreativo civil.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/ardrone.jpg}
+\caption[Parrot AR Drone 2]{Parrot AR Drone 2}
+\label{fig:ardrone}
+\end{center}
+\end{figure} 
+
+Funciona propulsado por cuatro motores eléctricos en configuración cuadricóptero y es similar en su estructura básica y aerodinámica a otros modelos radiocontrolados (ver Cuadro~\ref{tab:especificacionesardrone}), pero se diferencia de todos ellos en que cuenta con un microprocesador y una serie de sensores, entre los cuales se incluyen dos cámaras que le permiten captar lo que ocurre a su alrededor, más un conector Wi-Fi integrado que le permite vincularse a dispositivos móviles personales que cuenten con los sistemas operativos iOS, Android o Linux.
+
+\begin{table}[!h]
+ \centering
+ {\small
+ \input{tables/especificacionesardrone.tex}
+ }
+ \caption[Especificaciones técnicas del Parrot AR Drone 2]
+ {Especificaciones técnicas del Parrot AR Drone 2 \footnotemark}
+ \label{tab:especificacionesardrone}
+\end{table}
+
+\footnotetext{\url{http://ardrone-2.es/especificaciones-ar-drone-2/}}
+
+El \textbf{Software Development Kit} del AR.Drone permite a los desarrolladores realizar aplicaciones y proporciona la \acs{API} necesaria para compilar los programas. Según la versión, tiene soporte para crear aplicaciones en iOS, Linux, Windows y Android.
+
+\subsubsection{3DR IRIS+}
 \label{sec:3driris}
-
 «El \textbf{3DR IRIS+} (ver Figura~\ref{fig:3dririsplus}) es un vehículo aéreo autónomo todo en uno, producido por 3D Robotics \footnote{\url{https://www.3dr.com}}, que se ejecuta sobre el sistema de piloto automático Pixhawk, lo último en electrónica avanzada para el piloto automático desde el proyecto del PX4. Con la ayuda de puntos \acs{GPS} preprogramados es capaz de efectuar operaciones de nivel profesional, como el mapeo, la toma de imágenes con scripts, la investigación científica, y otras aplicaciones donde se requieren planes de vuelo repetitivos» \cite{3driris}. Es concebido como una plataforma de captación de imágenes aéreas potenciado por hardware, software y firmware de código abierto.
 
 \begin{figure}[!h]
@@ -460,16 +728,18 @@ En esta sección se analizan los elementos principales escogidos para el desarro
 \end{center}
 \end{figure}
 
+Este \acs{UAV} está capacitado para formar parte de sistemas, programándolo mediante la \textbf{\acs{API} DroneKit} (véase \S\,\ref{sec:dronekit}), que se ajusten a ciertos propósitos como: una aplicación agrícola que monitorice el terreno, una aplicación de búsqueda y rescate o una aplicación de cartografía. El 3DR IRIS+ puede formar parte de sistemas desarrollados para aplicaciones móviles, aplicaciones basadas en la web o aplicaciones para computadores.
+
 El 3DR IRIS+ cuenta con una serie de componentes y especificaciones (ver Cuadro~\ref{tab:especificaciones}) como: GPS integrado, que permite establecer una ruta de antemano o volver a casa en caso de pérdida, o un kit de telemetría que permite obtener información de vuelo como la distancia, altitud, velocidad, nivel de batería e intensidad de la señal \acs{GPS}. Como en cualquier dron, se puede personalizar, y es posible la inclusión de una cámara GoPro Hero si se quiere mejorar la calidad de la imagen.
 
-\begin{table}[htbp]
-  \centering
-  {\small
-  \input{tables/especificaciones3dr.tex}
-  }
-  \caption[Especificaciones técnicas del 3DR IRIS+]
-  {Especificaciones técnicas del 3DR IRIS+ \cite{especifaciones3dr}}
-  \label{tab:especificaciones}
+\begin{table}[!h]
+ \centering
+ {\small
+ \input{tables/especificaciones3dr.tex}
+ }
+ \caption[Especificaciones técnicas del 3DR IRIS+]
+ {Especificaciones técnicas del 3DR IRIS+ \cite{especifaciones3dr}}
+ \label{tab:especificaciones}
 \end{table}
 
 \subsection{ArduPilot}
@@ -494,18 +764,38 @@ En el presente, el proyecto ArduPilot se sustenta sobre cuatro pilares fundament
 \begin{itemize}
 \item \textbf{Hardware}: Los sistemas embebidos y sensores periféricos que actúan como el cerebro del vehículo, los ojos, las orejas, etc. Entre ellos se encuentra la línea APM y \textbf{Pixhawk}/PX4 de pilotos automáticos.
 \item \textbf{Firmware}: El código que implementa el conjunto de habilidades que se ejecuta en el hardware, configurado para el 
-tipo de vehículo que se elija. El firmware elegido puede ser \textbf{ArduCopter}(véase \S\,\ref{sec:arducopter}), ArduPlane o ArduRover.
+tipo de vehículo que se elija. El firmware elegido puede ser \textbf{ArduCopter} (véase \S\,\ref{sec:arducopter}), ArduPlane o ArduRover.
 \item \textbf{Software}: La interfaz con el hardware. Por ejemplo, la aplicación de estación de tierra \textbf{Mission Planner}(Anexar documento sobre Mision Planner).
 \item \textbf{Comunidad}: Un área para el discurso abierto entre los desarrolladores y sus clientes.
 \end{itemize}
 
+El código de vuelo principal de ArduPilot está escrito en C++, mientras que las herramientas de apoyo se escriben en diversos lenguajes, siendo Python el más común. Actualmente el código principal del vehículo está escrito en archivos «.pde», que provienen del sistema de compilación Arduino. Los archivos PDE son preprocesados en un archivo .cpp como parte de la compilación.
+
 El enfoque de ArduPilot respecto a su software libre es que el bajo coste y la disponibilidad permitan el uso en pequeños aviones 
 pilotados a distancia.
+
+\subsubsection{Pixhawk}
+\label{sec:pixhawk}
+
+Pixhawk \footnote{\url{https://www.pixhawk.org}} es un \textbf{piloto automático de alto rendimiento} adecuado para vehículos aereos de ala fija, multirrotores y cualquier otra plataforma robótica que se pueda mover. Está dirigido a las necesidades en el ámbito de la investigación, de la industria y del ocio. Es el piloto automático estándar de la industria, diseñado en colaboración con 3D Robotics.
+
+El piloto automático Pixhawk (ver Figura~\ref{fig:pixhawk}) cuenta con un procesador avanzado, tecnología de sensores y un sistema operativo en tiempo real, que ofrece un alto rendimiento, flexibilidad y fiabilidad para controlar cualquier vehículo autónomo.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/pixhawk.jpg}
+\caption[Piloto automático Pixhawk]{Piloto automático Pixhawk}
+\label{fig:pixhawk}
+\end{center}
+\end{figure}
+
+Los beneficios del sistema Pixhawk incluyen multi-threading, un entorno de programación Unix, funciones de piloto automático completamente nuevas y una capa de control personalizada que asegure la sincronización en los procesos integrados. Estas capacidades avanzadas garantizan que no existan limitaciones en el vehículo autónomo.
+
 
 \subsection{ArduCopter}
 \label{sec:arducopter}
 
-«\textbf{ArduCopter} \footnote{\url{http://www.arducopter.co.uk}} es el firmware desarrollado por la comunidad del Proyecto ArduPilot que permite el vuelo, y la monitorización, de aeronaves que basan su funcionamiento, generalmente, en motores eléctricos con hélices  que  ejerzan  la  fuerza  actuadora.  Esta característica  reúne  vehículos  aéreos  como  los  quadrotors, hexarotors, trirotors, octarotors o helicópteros» \cite{arducopter}. Ofrece tanto una experiencia mejorada de vuelo por control remoto como la ejecución de misiones totalmente autónomas.
+«\textbf{ArduCopter} \footnote{\url{http://www.arducopter.co.uk}} es el firmware desarrollado por la comunidad del Proyecto ArduPilot que permite el vuelo, y la monitorización, de aeronaves que basan su funcionamiento, generalmente, en motores eléctricos con hélices que ejerzan la fuerza actuadora. Esta característica reúne vehículos aéreos como los quadrotors, hexarotors, trirotors, octarotors o helicópteros» \cite{arducopter}. Ofrece tanto una experiencia mejorada de vuelo por control remoto como la ejecución de misiones totalmente autónomas.
 
 ArduCopter facilita el uso de \acs{UAV}s, de tipo multirrotor o helicoptero, pudiendo ser ejecutado sobre un piloto automático de ArduPilot.
 Junto con el uso de un módulo \acs{GPS}, se convierte en una solución completa que lo diferencia de multirrotores tradicionales que sólo 
@@ -533,7 +823,9 @@ ejecutan en un ordenador. Dichas aplicaciones se comunican con el controlador de
 
 Se comunica con los vehículos por medio del protocolo \textbf{MAVLink}. Proporciona acceso, mediante programación, a la información 
 de telemetría, al estado y parámetros de información del vehículo, y permite gestionar las misiones y tener un control directo 
-sobre el vehículo. Se ejecuta en Linux, Mac OS X o Windows.
+sobre el vehículo. Se ejecuta en Linux, Mac OS X o Windows. 
+
+\clearpage
 
 Dronekit-Python proporciona clases y métodos para realizar múltiples funciones, entre otras:
 \begin{itemize}
@@ -558,26 +850,32 @@ en tiempo real, iniciado en Intel en 1999 por Gary Bradsky. Se encuentra bajo li
 académico como en el comercial. Posee interfaces en C++, C, Python y Java, y es compatible con Windows, Linux, Android, iOS y Mac OS.
 Cuenta con más de 2500 algoritmos optimizados y más de 9 millones de descargas.
 
-«La librería OpenCV está dirigida fundamentalmente a la visión por computador en tiempo real. Entre sus muchas áreas de 
-aplicación destacarían: interacción hombre-máquina, segmentación y reconocimiento de objetos, reconocimiento de gestos, 
-seguimiento del movimiento, estructura del movimiento y robots móviles» \cite{opencv}.
+«La librería OpenCV está dirigida fundamentalmente a la visión por computador en tiempo real. Entre sus muchas áreas de aplicación destacarían: interacción hombre-máquina, segmentación y reconocimiento de objetos, reconocimiento de gestos, seguimiento del movimiento, estructura del movimiento y robots móviles» \cite{opencv}.
 
-El  conjunto  de  funciones   suministradas por la librería OpenCV se agrupan en los siguientes bloques: 
+El conjunto de funciones suministradas por la librería OpenCV se agrupan en los siguientes bloques: 
 \begin{itemize}
 \item Estructuras y \textbf{operaciones básicas}: matrices, grafos, árboles, etc.
 \item Procesamiento y \textbf{análisis de imágenes}: filtros, momentos, histogramas, etc.
 \item \textbf{Análisis estructural}: geometría, procesamiento del contorno, etc.
-\item \textbf{Análisis del movimiento} y \textbf{seguimiento de objetos}: plantillas  de  movimiento, seguidores, flujo óptico, etc.
+\item \textbf{Análisis del movimiento} y \textbf{seguimiento de objetos}.
 \item \textbf{Reconocimiento de objetos}: objetos propios, modelos \acs{HMM}, etc.
 \item \textbf{Calibración de la cámara}: morphing, geometría epipolar, estimación de la pose, etc.
-\item \textbf{Reconstrucción tridimensional}: detección de objetos, seguimiento de objetos tridimensionales, etc.
+\item \textbf{Reconstrucción tridimensional}.
 \item Interfaces gráficos de usuarios y \textbf{adquisición de video}.
 \end{itemize}
 
 \subsection{Google Cloud Vision API}
 \label{sec:visionapi}
 
-\textbf{Google Cloud Vision API} \footnote{\url{https://cloud.google.com/vision/}} permite a los desarrolladores entender el contenido de una imagen, mediante la encapsulación de potentes modelos de aprendizaje automático. Esta REST API clasifica rápidamente las imágenes en miles de categorías, detecta objetos individuales y caras, y encuentra y lee palabras impresas.
+\textbf{Google Cloud Vision API} \footnote{\url{https://cloud.google.com/vision/}} permite a los desarrolladores entender el contenido de una imagen, mediante la encapsulación de potentes modelos de aprendizaje automático. Esta REST API clasifica rápidamente las imágenes en miles de categorías (ver Figura~\ref{fig:visionapi}), detecta objetos individuales y caras, y encuentra y lee palabras impresas.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/visionapi.png}
+\caption[Funcionamiento de Google Cloud Vision API]{Funcionamiento de Google Cloud Vision API}
+\label{fig:visionapi}
+\end{center}
+\end{figure}
 
 Es capaz de detectar conjuntos de objetos en las imágenes, como flores, automóviles, animales u otros de los muchos elementos 
 que se encuentran comúnmente dentro de las fotografías. También, puede analizar atributos faciales emocionales de las personas en sus imágenes, como la alegría, la tristeza y la ira. Se encuentra en constante progreso a medida que se introducen nuevos conceptos y se mejora la precisión.
@@ -596,86 +894,10 @@ Vision API ofrece las siguientes funcionalidades:
 
 El uso de cada una de estas características conlleva gastos.
 
-\section{Sistemas para catástrofes}
-\label{sec:sistemas}
-
-La alta frecuencia de desastres, tanto naturales como artificiales, que puedan causar la pérdida de seres humanos, es un problema en el que los drones pueden contribuir a una notable mejoría en los tiempos de respuesta y actuación.
-
-Un grupo multidisciplinar de voluntarios con equipos de alta tecnología puede colaborar en la búsqueda de personas o realizar un análisis más veloz en situaciones de emergencia, en las cuales pueden estar en peligro cientos de vidas. Es evidente que una visión global aérea de un cataclismo proporciona una toma de decisiones más correcta.
-
-Si algo ha cambiado en estos últimos meses, es la percepción pública acerca de los drones. Es usual que quien observa el vuelo de un dron se cuestione si está prohibido hacerlo. Da la impresión que se está estigmatizando este instrumento cuyas capacidades son tan beneficiosas que deberían despejar la incertidumbre sobre la legalidad de su manejo (Anexar normativa de vuelo de drones).
-
-El despliegue de esta tecnología implica una renovación radical en las tareas de ayuda y rescate de vidas humanas, desde el posicionamiento óptimo, la logística y aporte de medios, hasta el rescate de vidas en sí mismo.
-
-Los drones, en contraste con una UVI móvil, no pueden socorrer a un paciente en movimiento durante su transporte con la participación de varios doctores. Pero sí que es posible el transporte urgente y existen proyectos para el envío de un dron que pueda portar un desfibrilador \footnote{\url{http://www.io.tudelft.nl/onderzoek/delft-design-labs/applied-labs/ambulance-drone/}} (ver Figura~\ref{fig:ambulancedrone}).
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/ambulancedrone.jpg}
-\caption[Ambulance Drone]{Ambulance Drone}
-\label{fig:ambulancedrone}
-\end{center}
-\end{figure}
-
-«Los drones de rescate han entrado en acción en zonas de contaminación, tras un accidente nuclear, en terremotos o inundaciones. Son pequeños y pueden buscar personas y objetos en grandes áreas, incluso de noche. Consiguen imágenes accediendo a edificios a punto de caer, buscando supervivientes y obteniendo datos e información vital. Son capaces de realizar vuelos entre el humo de los incendios e identifican térmicamente siluetas de personas para saber dónde están atrapados o si se han desmayado y están inconscientes. En atmósferas explosivas y tras accidentes por explosión de gas, inspeccionan y toman muestras del aire, pasan entre los escombros localizando a las personas, se mueven rápido y pueden recoger muestras de agua contaminada o sustancias químicas tras acceder a sitios inverosímiles. Y todo ello en apenas unos minutos, visualmente, y en tiempo real, enviándolo al instante a los centros de control, mejorando así los resultados y disminuyendo los costes» \cite{dron3}.
-
-En conclusión, es factible imaginar un futuro muy cercano con aplicaciones en las que los ciudadanos tengan la seguridad de poder solicitar y disponer de un dron ante cualquier situación de necesidad, urgencia y riesgo.
-
-\subsection{Proyecto ICARUS}
-\label{sec:icarus}
-
-Tras los terremotos en L'Aquila, Haití y Japón, la Comisión Europea corroboró que existe una gigantesca discrepancia entre la tecnología, que se desarrolla en el laboratorio, y el empleo de dicha tecnología, en el terreno para las operaciones de búsqueda y rescate (\acs{ByR}) y la gestión de crisis.
-
-De este modo, la Dirección General de Empresa e Industria de la Comisión Europea decidió financiar ICARUS \footnote{\url{http://www.fp7-icarus.eu/}}, un proyecto de investigación, con un presupuesto total de 17,5 millones de euros, cuyo objetivo es desarrollar herramientas robóticas que puedan ayudar a los equipos de intervención en situaciones de crisis y de este modo, reducir el riesgo y el impacto de la crisis sobre los ciudadanos.
-
-La inclusión de dispositivos no tripulados, en misiones de \acs{ByR}, aporta una herramienta de utilidad para salvar vidas humanas y para acelerar el proceso de \acs{ByR}. ICARUS se concentra en el desarrollo de las tecnologías de búsqueda y rescate, con \acs{UAV}s, para la detección, localización y el rescate de seres humanos.
-
-Existe una abundante literatura sobre los esfuerzos de investigación hacia el desarrollo de herramientas de \acs{ByR}. Sin embargo, esas investigaciones están en contraste con la realidad práctica en el campo, en el que las herramientas de búsqueda y salvamento no tripuladas tienen muchas dificultades para encontrar a usuarios finales. El proyecto ICARUS se ocupa de estos problemas, con el objetivo de cerrar la brecha entre la comunidad científica y los usuarios finales.
-
-El uso de dispositivos no tripulados de \acs{ByR}, embebidos en una arquitectura apropiada e integrados en las infraestructuras existentes, ayudarán al personal de crisis, proporcionando información detallada y fácil de entender sobre la situación. El sistema propuesto debe informar al equipo sobre los peligros reales presentes en el terreno, y por lo tanto aumentará su rendimiento en la resolución de la situación.
-
-\subsection{Sistema Pelícano}
-\label{sec:pelicano}
-
-El sistema Pelícano de Indra \footnote{\url{http://www.indracompany.com/es/}} (ver Figura~\ref{fig:pelicano}), está constituido por cuatro helicópteros no tripulados y una estación de control, que proporciona autonomía suficiente para operar las 24 horas del día durante ciclos de tiempo prolongados. Su diseño está pensado para satisfacer los requisitos y necesidades de las fuerzas armadas y de seguridad.
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/indra-pelicano.jpg}
-\caption[\acs{UAV} Pelícano de Indra]{\acs{UAV} Pelícano de Indra}
-\label{fig:pelicano}
-\end{center}
-\end{figure}
-
-El sistema de \acs{UAV}s Pelícano \cite{PELICANO} está preparado para proporcionar apoyo, tanto en misiones de inteligencia como en gestión de emergencias, tales como desastres naturales o medioambientales, que impliquen el seguimiento, vigilancia y reconocimiento de amplias superficies, eliminando así pérdidas humanas.
-
-Indra ha cimentado el sistema sobre un helicóptero de tamaño medio de la compañía sueca CybAero \footnote{\url{http://www.cybaero.se}} e incorporará los sistemas tecnológicos más avanzados para adaptarlo a las necesidades operativas militares y civiles. 
-
-Entre los sensores con los que está equipada la aeronave destacan los sistemas electro-ópticos de visión diurna e infrarroja, capaces de tomar imágenes de muy alta resolución a gran altura. También esta acondicionado para poder portar un radar ligero, así como sistemas de inteligencia electrónica y sensores de detección de amenazas químicas, bacteriológicas, radioactivas y nucleares.
-
-\subsection{Proyecto ATLANTE}
-\label{sec:atlante}
-
-El Centro para el Desarrollo Tecnológico Industrial (CDTI) actuó como organismo gestor de programas del sector aeronáutico, y lanzó el programa \acs{ATLANTE} \footnote{\url{http://www.indracompany.com/es/indra/avion-tactico-largo-alcance-tripulado-espanol-atlante}}, liderado por Cassidian, tras constatar el interés de la Industria española por los \acs{UAS} y con el fin de potenciar el desarrollo de la tecnología asociada a este tipo de sistemas mediante un proyecto realizado íntegramente en España.
-
-El \acs{ATLANTE} (ver Figura~\ref{fig:atlante}) es un sistema diseñado para responder a las exigencias de las fuerzas terrestres militares, que les permite realizar misiones de inteligencia, vigilancia y reconocimiento, de día y noche, en condiciones climatológicas adversas. También permite llevar a cabo labores de identificación de blancos, corrección de tiro y evaluación de daños.
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[width=0.8\textwidth]{/atlante.jpg}
-\caption[\acs{UAV} \acs{ATLANTE}]{\acs{UAV} \acs{ATLANTE}}
-\label{fig:atlante}
-\end{center}
-\end{figure}
-
-Entre las aplicaciones no militares se encuentran la lucha anti-terrorista y contra la piratería, el control de inmigración ilegal y el tráfico de drogas, la supervisión de infraestructuras críticas y, cómo no, la lucha contra incendios y otros desastres naturales.
-
-El sistema se compone de cuatro o más vehículos aéreos no tripulados, una estación de control terrestre, una unidad de transporte y terminales de vídeo remoto. Los equipos de misión de la plataforma aérea recogen la información de los sensores y los transmiten a tierra a través de los enlaces de datos de alta velocidad para su posterior aprovechamiento.
-
 
 % Local Variables:
-%  coding: utf-8
-%  mode: latex
-%  mode: flyspell
-%  ispell-local-dictionary: "castellano8"
+% coding: utf-8
+% mode: latex
+% mode: flyspell
+% ispell-local-dictionary: "castellano8"
 % End:

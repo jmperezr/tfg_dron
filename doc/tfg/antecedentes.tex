@@ -228,8 +228,7 @@ de inteligencia, vigilancia y reconocimiento que deben cumplir las fuerzas armad
 \end{center}
 \end{figure}
 
-En el ámbito civil, mucho menos avanzado que el militar, la situación es la contraria. «De acuerdo con la información suministrada por la Dirección General de la Aviación Civil francesa \footnote{\url{http://www.developpement-durable.gouv.fr/-Secteur-Aerien,1633-.html}} (DGAC) referida a las autorizaciones otorgadas hasta octubre de 2013, [...] los sistemas basados en aeronaves de ala rotatoria superan ampliamente
-a los de otros tipos, si bien no de forma tan aplastante como ocurre en el mundo militar, ya que sólo suponen un 76\% del total» \cite{dron2}.
+En el ámbito civil, mucho menos avanzado que el militar, la situación es la contraria. De acuerdo con la información suministrada por la Agencia Estatal de Seguridad Aérea \footnote{\url{http://www.seguridadaerea.gob.es/}} (AESA) referida a las autorizaciones otorgadas hasta julio de 2016 \footnote{\url{http://www.seguridadaerea.gob.es/media/4305572/listado_operadores.pdf}}, el número de operadores habilitados en España es de 1.521. Estos operadores han registrado 2.931 aeronaves, de las cuales 88 son de ala fija y el resto de ala rotatoria. Por lo que los sistemas basados en aeronaves de ala rotatoria superan ampliamente a los de otros tipos.
 
 \clearpage
 
@@ -653,7 +652,7 @@ Algunos posibles usos potenciales son:
 \end{itemize}
 
 \section{Hardware, herramientas y entornos de desarrollo}
-\label{sec:herrmientas}
+\label{sec:herramientas}
 
 En esta sección se estudia tanto el hardware como las principales herramientas y entornos involucrados en el desarrollo de sistemas con drones.
 
@@ -685,7 +684,7 @@ El DJI Matrice 100 es un dron expansible (ver Cuadro~\ref{tab:especificaciones10
  \label{tab:especificaciones100}
 \end{table}
 
-A los desarrolladores se les concede un control total sobre su plataforma de vuelo, dándoles la libertad de personalizar una solución integral aérea utilizando el \textbf{DJI SDK}. Esta SDK permite usar el sistema dedicado para comunicarse con el controlador de vuelo DJI a través de una conexión serie directa. Posibilita la monitorización y el control del comportamiento de vuelo de la aeronave con las funciones que implemente la \acs{API}, mientras se utilizan los modos de navegación inteligentes integrados para crear trayectorias de vuelo y maniobras autónomas.
+A los desarrolladores se les concede un control total sobre su plataforma de vuelo, dándoles la libertad de personalizar una solución integral aérea utilizando el \textbf{DJI \acs{SDK}}. Esta \acs{SDK} permite usar el sistema dedicado para comunicarse con el controlador de vuelo DJI a través de una conexión serie directa. Posibilita la monitorización y el control del comportamiento de vuelo de la aeronave con las funciones que implemente la \acs{API}, mientras se utilizan los modos de navegación inteligentes integrados para crear trayectorias de vuelo y maniobras autónomas.
 
 \subsubsection{Parrot AR Drone 2}
 \label{sec:ARDrone}
@@ -718,6 +717,7 @@ El \textbf{Software Development Kit} del AR.Drone permite a los desarrolladores 
 
 \subsubsection{3DR IRIS+}
 \label{sec:3driris}
+
 «El \textbf{3DR IRIS+} (ver Figura~\ref{fig:3dririsplus}) es un vehículo aéreo autónomo todo en uno, producido por 3D Robotics \footnote{\url{https://www.3dr.com}}, que se ejecuta sobre el sistema de piloto automático Pixhawk, lo último en electrónica avanzada para el piloto automático desde el proyecto del PX4. Con la ayuda de puntos \acs{GPS} preprogramados es capaz de efectuar operaciones de nivel profesional, como el mapeo, la toma de imágenes con scripts, la investigación científica, y otras aplicaciones donde se requieren planes de vuelo repetitivos» \cite{3driris}. Es concebido como una plataforma de captación de imágenes aéreas potenciado por hardware, software y firmware de código abierto.
 
 \begin{figure}[!h]
@@ -728,7 +728,7 @@ El \textbf{Software Development Kit} del AR.Drone permite a los desarrolladores 
 \end{center}
 \end{figure}
 
-Este \acs{UAV} está capacitado para formar parte de sistemas, programándolo mediante la \textbf{\acs{API} DroneKit} (véase \S\,\ref{sec:dronekit}), que se ajusten a ciertos propósitos como: una aplicación agrícola que monitorice el terreno, una aplicación de búsqueda y rescate o una aplicación de cartografía. El 3DR IRIS+ puede formar parte de sistemas desarrollados para aplicaciones móviles, aplicaciones basadas en la web o aplicaciones para computadores.
+Este \acs{UAV} está capacitado para formar parte de sistemas, programándolo mediante la \textbf{\acs{API} DroneKit} (véase sección \ref{sec:dronekit}), que se ajusten a ciertos propósitos como: una aplicación agrícola que monitorice el terreno, una aplicación de búsqueda y rescate o una aplicación de cartografía. El 3DR IRIS+ puede formar parte de sistemas desarrollados para aplicaciones móviles, aplicaciones basadas en la web o aplicaciones para computadores.
 
 El 3DR IRIS+ cuenta con una serie de componentes y especificaciones (ver Cuadro~\ref{tab:especificaciones}) como: GPS integrado, que permite establecer una ruta de antemano o volver a casa en caso de pérdida, o un kit de telemetría que permite obtener información de vuelo como la distancia, altitud, velocidad, nivel de batería e intensidad de la señal \acs{GPS}. Como en cualquier dron, se puede personalizar, y es posible la inclusión de una cámara GoPro Hero si se quiere mejorar la calidad de la imagen.
 
@@ -764,8 +764,8 @@ En el presente, el proyecto ArduPilot se sustenta sobre cuatro pilares fundament
 \begin{itemize}
 \item \textbf{Hardware}: Los sistemas embebidos y sensores periféricos que actúan como el cerebro del vehículo, los ojos, las orejas, etc. Entre ellos se encuentra la línea APM y \textbf{Pixhawk}/PX4 de pilotos automáticos.
 \item \textbf{Firmware}: El código que implementa el conjunto de habilidades que se ejecuta en el hardware, configurado para el 
-tipo de vehículo que se elija. El firmware elegido puede ser \textbf{ArduCopter} (véase \S\,\ref{sec:arducopter}), ArduPlane o ArduRover.
-\item \textbf{Software}: La interfaz con el hardware. Por ejemplo, la aplicación de estación de tierra \textbf{Mission Planner}(Anexar documento sobre Mision Planner).
+tipo de vehículo que se elija. El firmware elegido puede ser \textbf{ArduCopter} (véase sección \ref{sec:arducopter}), ArduPlane o ArduRover.
+\item \textbf{Software}: La interfaz con el hardware. Por ejemplo, la aplicación de estación de tierra \textbf{APM Planner} (véase sección \ref{sec:planner})
 \item \textbf{Comunidad}: Un área para el discurso abierto entre los desarrolladores y sus clientes.
 \end{itemize}
 
@@ -805,7 +805,7 @@ una estación de control terrestre o \acs{GCS}, que permite la planificación de
 Las principales características que ofrece ArduCopter son las siguientes:
 \begin{itemize}
 \item \textbf{No requiere conocimientos de programación}: para usar ArduCopter solo se debe descargar una utilidad de escritorio, como 
-Mission Planner, que cargue el firmware con un solo clic.
+APM Planner (véase sección \ref{sec:planner}), que cargue el firmware con un solo clic.
 \item Uso de \textbf{puntos de ruta ilimitados}.
 \item Permite \textbf{mantener el dron en una localización} determinada valiéndose del \acs{GPS} y del sensor de altitud.
 \item \textbf{Vuelta a casa} o \textbf{\acs{RTL}}: ArduCopter establece una posición como punto de despegue, de tal modo, que accionado una palanca el dron regresa automáticamente hasta allí.
@@ -882,7 +882,7 @@ que se encuentran comúnmente dentro de las fotografías. También, puede analiz
 
 Vision API ofrece las siguientes funcionalidades:
 \begin{itemize}
-\item \textbf{Detección de etiquetas}: detecta amplios conjuntos de categorías.
+\item \textbf{Detección de etiquetas} (ver Figura~\ref{fig:visionapi2}): detecta amplios conjuntos de categorías.
 \item \textbf{Detección de rostros}: detección de múltiples caras, junto con los atributos faciales claves asociados.
 \item \textbf{Detección de contenido explícito}: detecta contenido explícito como contenido para adultos o de contenido violento.
 \item \textbf{Atributos de imagen}: detecta los atributos generales de la imagen, como el color dominante.
@@ -893,6 +893,14 @@ Vision API ofrece las siguientes funcionalidades:
 \end{itemize}
 
 El uso de cada una de estas características conlleva gastos.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/visionapi.jpg}
+\caption[Detección de etiquetas]{Detección de etiquetas}
+\label{fig:visionapi2}
+\end{center}
+\end{figure}
 
 
 % Local Variables:

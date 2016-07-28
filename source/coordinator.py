@@ -1,7 +1,7 @@
 import os
 import time
 import threading
-from dronekit import connect, Command, VehicleMode, LocationGlobalRelative
+from dronekit import LocationGlobalRelative
 from xml.etree.ElementTree import ElementTree
 import proxyDrone
 from threading import Thread
@@ -81,7 +81,7 @@ def main():
 					t.start()
 	
 		for i in range(coordinator.numVehicles):
-			t = threading.Thread(target=proxy[i].doMission, args=(True, coordinator.secondWait))
+			t = threading.Thread(target=proxy[i].doMission, args=(True, coordinator.secondWait,))
 			t.start()
 	except (KeyboardInterrupt, SystemExit):
 		exit()

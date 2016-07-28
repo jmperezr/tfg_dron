@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import dronekit_sitl
 from dronekit import connect, Command, VehicleMode, LocationGlobalRelative
 from pymavlink import mavutil
 import drone
@@ -67,7 +68,7 @@ class proxyDrone():
 		instanceDrone = drone.drone(self.numVehicle)
 		instanceDrone.startDrone()
 		print "Connected to vehicle: %s" % instanceDrone.UdpPort
-		self.vehicle = connect('127.0.0.1:%s' % instanceDrone.UdpPort, wait_ready = True, heartbeat_timeout= 120)
+		self.vehicle = connect('127.0.0.1:%s' % instanceDrone.UdpPort, wait_ready = True)
 		#	self.vehicle = connect('/dev/ttyUSB0', wait_ready = True)
 		self.vehicle.parameters['SYSID_THISMAV'] = self.numVehicle + 1
 		self.lock.release()

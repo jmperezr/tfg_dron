@@ -13,15 +13,15 @@ from oauth2client.client import GoogleCredentials
 class FPVSystem:
 	def __init__(self, secondsPerPhoto, numVehicle):
         	self.secondsPerPhoto = secondsPerPhoto
-		self.cap = None
+		self.capture = None
 		self.out = None
 		self.numVehicle = numVehicle
 		self.stopVideoCapture = False
 		# The url template to retrieve the discovery document for trusted testers.
-		self.DISCOVERY_URL = 'https://{api}.googleapis.com/$discovery/rest?version={apiVersion}'
+		self.discoveryURL = 'https://{api}.googleapis.com/$discovery/rest?version={apiVersion}'
 		# [START authenticate]
 		self.credentials = GoogleCredentials.get_application_default()
-		self.service = discovery.build('vision', 'v1', credentials = self.credentials, discoveryServiceUrl = self.DISCOVERY_URL)
+		self.service = discovery.build('vision', 'v1', credentials = self.credentials, discoveryServiceUrl = self.discoveryURL)
 		# [END authenticate]
         	print (chr(27) + "[0;32m" + "FPV System initiated."), ; print (chr(27) + "[0m")	 
 
@@ -39,33 +39,33 @@ class FPVSystem:
             	#		capAux.release()
 		
 		#if number > 1:   
-		#	self.cap = cv2.VideoCapture(1)
+		#	self.capture = cv2.VideoCapture(1)
 		#else:
-		#	self.cap = cv2.VideoCapture(0)
+		#	self.capture = cv2.VideoCapture(0)
 		
 		if self.numVehicle == 0:
-			self.cap = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0465.MP4')
+			self.capture = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0465.MP4')
 		else:
-			self.cap = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0293.MP4')
+			self.capture = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0293.MP4')
 
-		w = int(self.cap.get(cv2.cv.CV_CAP_PROP_FRAME_WIDTH))
-		h = int(self.cap.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT))
+		w = int(self.capture.get(cv2.cv.CV_CAP_PROP_FRAME_WIDTH))
+		h = int(self.capture.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT))
 
 		# video recorder
 		fourcc = cv2.cv.CV_FOURCC(*'XVID')
 		self.out = cv2.VideoWriter(time.strftime("Videos/%d-%m-%Y_%H:%M:%S")+".avi", fourcc, 25, (w, h))
 
-		if not self.cap.isOpened():
+		if not self.capture.isOpened():
 			print chr(27) + "[0;31m" + "FPV system not connected.", ; print chr(27) + "[0m"
 
 		#cv2.cv.startWindowThread()
 		t0 = time.time()
 		result= ["Label not found"]
 
-		while self.cap.isOpened() and not self.stopVideoCapture:
+		while self.capture.isOpened() and not self.stopVideoCapture:
 			coordY= 50
 			ch = 0xFF & cv2.waitKey(1)
-			ret, frame = self.cap.read()
+			ret, frame = self.capture.read()
 			if ret == True:
 				for i in result: 
 					cv2.putText(frame, i, (20, coordY), cv2. FONT_HERSHEY_DUPLEX, 1.5, (0, 0, 255), 2)
@@ -83,7 +83,7 @@ class FPVSystem:
     			else:
         			break
 
-		self.cap.release()
+		self.capture.release()
 		self.out.release()
 		cv2.destroyWindow("Drone %s" %self.numVehicle)	
 		cv2.waitKey(1)
@@ -121,9 +121,3 @@ class FPVSystem:
 				result.append(label)
 				
 		return result
-def main():
-	fpv = FPVSystem(4)
-	fpv.videoCapture()
-
-if __name__ == "__main__":
-	main()

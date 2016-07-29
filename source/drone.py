@@ -2,8 +2,8 @@ import os
 import subprocess
 
 class drone():
-	def __init__(self, vehicle):
-        	self.vehicle = vehicle
+	def __init__(self, numVehicle):
+        	self.numVehicle = numVehicle
 		self.UdpPort = 14550 + vehicle
 		self.instance = 1 + vehicle
 		self.currentDir = os.getcwd()

@@ -1,0 +1,214 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{GSC{\etalchar{+}}06}
+
+\bibitem[3D 15]{especifaciones3dr}
+3D Robotics.
+\newblock {\em IRIS+: Operation manual}, 2015.
+
+\bibitem[AG93]{IAD}
+N.~Avouris y L.~Gasser.
+\newblock {\em Distributed artificial intelligence: Theory and praxis}.
+\newblock Kluwer Academic Publishers, 1993.
+
+\bibitem[AGA]{opencv}
+V.~Arevalo, J.~González, y G.~Ambrosio.
+\newblock La librería de visión artificial OpenCV. Aplicación a la docencia
+  e investigación.
+\newblock \url{http://mapir.isa.uma.es/varevalo/drafts/arevalo2004lva1.pdf}.
+\newblock Departamento De Ingeniería de Sistemas y Automática, Universidad de
+  Málaga.
+
+\bibitem[Bal14]{prevision}
+M.~Ballve.
+\newblock Commercial drones: Assessing the potential for a new drone-powered
+  economy.
+\newblock {\em Business Insider}, Octubre 2014.
+
+\bibitem[CHC14]{ambitocivil2}
+C.~Calvo, F.~Herranz, y P.~Calvo.
+\newblock De los UAV a los RPAS.
+\newblock Technical report, IDS, Febrero 2014.
+
+\bibitem[Chi16]{unionfenosa}
+J.~Chinchilla.
+\newblock Un trabajo de altura.
+\newblock {\em Diario Lanza}, Junio 2016.
+
+\bibitem[Cue15]{dron1}
+C.~Cuerno.
+\newblock Capítulo 1: Origen y desarrollo de los sistemas de aeronaves
+  pilotadas por control remoto.
+\newblock En {\em Los drones y sus aplicaciones a la ingeniería civil}. 2015.
+\newblock E.T.S.I. Aeronáuticos, Universidad Politécnica de Madrid.
+
+\bibitem[Def14]{3driris}
+S.~Deffree.
+\newblock 8 open-source holiday gifts.
+\newblock
+  \url{http://www.edn.com/electronics-blogs/the-workbench/4438049/6/8-open-source-holiday-gifts},
+  Diciembre 2014.
+\newblock EDN Network.
+
+\bibitem[DJI16]{especifacionesmatrice100}
+DJI.
+\newblock {\em DJI Matrice 100: User Manual}, Marzo 2016.
+
+\bibitem[Dí15]{dron3}
+J.~Díaz.
+\newblock Capítulo 17: Aplicaciones de rescate.
+\newblock En {\em Los drones y sus aplicaciones a la ingeniería civil}. 2015.
+\newblock Drones Rescue Spain.
+
+\bibitem[FGM04]{sma}
+J.~Ferber, O.~Gutknecht, y F.~Michel.
+\newblock From agents to organizations: An organizational view of multi-agent
+  systems.
+\newblock En {\em Agent-Oriented Software Engineering IV}. Springer Berlin
+  Heidelberg, 2004.
+
+\bibitem[FP12]{visionporcomputador}
+D.~Forsyth y J.~Ponce.
+\newblock {\em Computer vision: A modern approach}.
+\newblock Pearson, edición 2, 2012.
+
+\bibitem[GSC{\etalchar{+}}06]{obstaculos}
+S.~Griffiths, J.~Saunders, A.~Curtis, T.~McLain, y R.~Beard.
+\newblock Obstacle and terrain avoidance for miniature aerial vehicles.
+\newblock
+  \url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.153.2575&rep=rep1&type=pdf},
+  Septiembre 2006.
+
+\bibitem[Igl98]{IAD2}
+C.~Iglesias.
+\newblock {\em Definición de una metodología para el desarrollo de sistemas
+  multiagente}.
+\newblock PhD thesis, Universidad Politécnica de Madrid, Enero 1998.
+
+\bibitem[Kni07]{scrum}
+H.~Kniberg.
+\newblock {\em Scrum y \acs{XP} desde las trincheras: Cómo hacemos Scrum}.
+\newblock Lulu.com, 2007.
+
+\bibitem[KV04]{incendios}
+M.~Kontitsis y K.~Valavanis.
+\newblock A \acs{UAV} vision system for airborne surveillance.
+\newblock
+  \url{http://www.robolab.tuc.gr/ASSETS/PAPERS_PDF/PAPERS_2004/A_UAV__AIRBORNE_SURVEILLANCE.pdf},
+  Abril 2004.
+\newblock Department of Computer Science and Engineering, University of South
+  Florida.
+
+\bibitem[LS13]{scrum2}
+P.~Letelier y E.~Sánchez.
+\newblock {\em Métodologías ágiles para el desarrollo de software}.
+\newblock Grupo ISSI, Noviembre 2013.
+
+\bibitem[LTT]{dronekit}
+A.~Lockman, G.~Tighe, y H.~Tucker.
+\newblock De-Mining with UAVs.
+\newblock
+  \url{https://www.wpi.edu/Pubs/E-project/Available/E-project-031216-112944/unrestricted/de-mining-with-uavs.pdf}.
+\newblock Robotics Engineering Program, Worcester Polytechnic Institute.
+
+\bibitem[Ló15]{ambitocivil}
+C.~López.
+\newblock Prólogo.
+\newblock En {\em Los drones y sus aplicaciones a la ingeniería civil}. 2015.
+\newblock Consejería de Economía y Hacienda, Comunidad de Madrid.
+
+\bibitem[OAC11]{OACI}
+Sistemas de aeronaves no tripuladas (\acs{UAS}).
+\newblock
+  \url{http://www.icao.int/Meetings/UAS/Documents/Circular\%20328_es.pdf},
+  2011.
+\newblock Organización de Aviación Civil Internacional, Circular OACI
+  328-AN/190.
+
+\bibitem[Oñ14]{AERPAS}
+M.~Oñate.
+\newblock Tipología de los \acs{RPAS}.
+\newblock
+  \url{http://www.aerpas.es/wp-content/uploads/2015/08/20140630-AERPAS-Tipolog\%C3\%ADa-de-RPAS.pdf},
+  Junio 2014.
+\newblock Asociación Española de \acs{RPAS}.
+
+\bibitem[Oñ15]{dron2}
+M.~Oñate.
+\newblock Capítulo 3: Tipología de aeronaves pilotadas por control remoto.
+\newblock En {\em Los drones y sus aplicaciones a la ingeniería civil}. 2015.
+\newblock USOL - Unmanned Solutions.
+
+\bibitem[PEL]{PELICANO}
+Pelícano: Seguridad y defensa nacional en cinco continentes.
+\newblock
+  \url{http://www.indracompany.com/sites/default/files/PELICANO_Esp_0.pdf}.
+\newblock Indra.
+
+\bibitem[PLA01]{PLANIFICACION}
+Modelos de coordinación para inteligencia artificial distribuida.
+\newblock Technical report, Universidad de Málaga, Junio 2001.
+\newblock Proyecto DAMMAD, Diseño y Aplicación de Modelos Multiagente para
+  Ayuda a la Decisión.
+
+\bibitem[Pur08]{controltrafico}
+A.~Puri.
+\newblock Statistical profile generation for traffic monitoring using real-time
+  \acs{UAV} based video data.
+\newblock
+  \url{http://scholarcommons.usf.edu/cgi/viewcontent.cgi?article=1461&context=etd},
+  2008.
+\newblock Department of Computer Science and Engineering, University of South
+  Florida.
+
+\bibitem[Rom15]{arducopter}
+A.~Romero.
+\newblock Revisión y modificación del firmware de libre acceso arduCopter
+  para su uso en el proyecto AirWhale.
+\newblock
+  \url{http://bibing.us.es/proyectos/abreproy/90411/fichero/Memoria+Alejandro+Romero+Gal\%C3\%A1n.pdf+},
+  2015.
+\newblock Departamento de Ingeniería de Sistemas y Automática, Escuela
+  Técnica Superior de Ingeniería Universidad de Sevilla.
+
+\bibitem[Syc98]{sma2}
+K.~Sycara.
+\newblock Multiagent systems.
+\newblock {\em AI Magazine}, 19(2), 1998.
+
+\bibitem[UA14]{UA}
+La UA, pionera en el empleo de drones como herramienta para la docencia e
+  investigación en el campo de la ingeniería civil.
+\newblock
+  \url{http://web.ua.es/es/actualidad-universitaria/2014/abril2014/abril2014-1-6/la-ua-pionera-en-el-empleo-de-drones-como-herramienta-para-la-docencia-e-investigacion-en-el-campo-de-la-ingenieria-civil.html},
+  Abril 2014.
+\newblock Universidad de Alicante.
+
+\bibitem[UAV05]{UAV}
+Dictionary of military and associated terms.
+\newblock \url{http://www.bits.de/NRANEU/others/jp-doctrine/jp1_02(05).pdf},
+  Agosto 2005.
+\newblock {D}epartamento de {D}efensa de los {E}stados {U}nidos.
+
+\bibitem[Val09]{coordinacion2}
+D.~Vallejo.
+\newblock {\em Arquitectura multi-agente basada en servicios para un sistema de
+  vigilancia cognitivo}.
+\newblock PhD thesis, Universidad de Castilla-La Mancha, Noviembre 2009.
+
+\bibitem[Wei99]{coordinacion}
+G.~Weiss.
+\newblock {\em Multiagent systems: A modern approach to distributed modern
+  approach to artificial intelligence}.
+\newblock The MIT Press, 1999.
+
+\bibitem[WJ95]{agente}
+M.~Wooldridge y N.~Jennings.
+\newblock Intelligent agents: Theory and practice.
+\newblock {\em Knowledge Engineering Review}, 10(2), 1995.
+
+\bibitem[Woo01]{PLANIFICACION3}
+M.~Woolridge.
+\newblock {\em Introduction to Multiagent Systems}.
+\newblock John Wiley \& Sons, Ltd., 2001.
+
+\end{thebibliography}

@@ -88,7 +88,7 @@ Los \textbf{módulos} que se han desarrollado son las unidades básicas que el f
 \item \textbf{Módulo de Coordinación}: se coordina la actividad de los drones para mejorar la productividad del sistema. Asigna misiones a vehículos que no estén ejecutando algún vuelo hacia algún «waypoint». Además, ordena el aterrizaje cuando en el \textit{Módulo de Interpretación de Misiones} no queden misiones por asignar.
 \item \textbf{Módulo de Despliegue de Alto Nivel}: es el módulo que se conecta y comunica con el vehículo, de modo que, actúa como mediador entre el \textit{Módulo de Coordinación} y el \textit{Módulo de Despliegue de Bajo Nivel}. Permite efectuar tareas relacionadas con el dron, así como administrar la conexión con el \textit{Módulo de Análisis de Información}.
 \item \textbf{Módulo de Despliegue de Bajo Nivel}: se encarga de crear una simulación de un dron, en una localización específica, para poder realizar pruebas, misiones o cualquier tipo de operación que se podría llevar a cabo con un dron real.
-\item \textbf{Módulo de Análisis de Información}: captura, graba y almacena imágenes, en \acs{FPV}, del vuelo del vehículo. Las imágenes son analizadas por una \acs{API} externa de Google, Google Cloud Vision \acs{API}, que detecta conjuntos de categorías y devuelve una serie de resultados después de realizar una petición HTTP. 
+\item \textbf{Módulo de Análisis de Información}: captura, graba y almacena imágenes, en \acs{FPV}, del vuelo del vehículo. Las imágenes son analizadas por una \acs{API} externa de Google, Google Cloud Vision \acs{API}, que detecta conjuntos de categorías y devuelve una serie de resultados después de realizar una petición \acs{HTTP}. 
 \end{itemize} 
 
 \subsubsection{Clases}
@@ -109,11 +109,13 @@ En el sistema la información fluye a través de las clases (ver Figura~\ref{fig
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{/Flowchart.png}
+\includegraphics[width=1\textwidth]{/Flowchart.png}
 \caption[Diagrama de flujo del sistema con un solo dron]{Diagrama de flujo del sistema con \textbf{un solo dron}}
 \label{fig:diagflujo}
 \end{center}
 \end{figure}
+
+\clearpage
 
 \subsection{Coordinador}
 \label{sec:coordinador}
@@ -138,7 +140,7 @@ Para cumplir con su función el \textit{Coordinador} debe:
 \end{itemize}
 
 \begin{listing}[
- float=h!,
+ float=,
  language = XML,
  caption = {Ejemplo de archivo XML que contiene la información de los «waypoints»},
  label  = code:archivoxml]
@@ -293,7 +295,7 @@ Las tareas que se desarrollan en esta clase son fundamentalmente tres:
 \item \textbf{Análisis de imágenes}: haciendo uso de Google Cloud Vision \acs{API} (véase Sección \ref{sec:visionapi}) se analizarán las capturas de pantalla realizadas anteriormente. Google Cloud Vision \acs{API}, mediante la detección de etiquetas, detecta amplios conjuntos de categorías y arroja resultados de los elementos que se encuentran dentro de las fotografías. Estos resultados serán imprimidos y mostrados en el vídeo que se está grabando. \\
 \end{itemize}
 
-Para llevar a cabo el análisis de imágenes es necesario realizar una \textbf{petición HTTP a Google Cloud Vision \acs{API}} en la que se especifique el tipo de análisis que se quiere realizar, en este supuesto \textit{Detección de etiquetas}, y el número máximo de resultados que se quieren obtener. \\ \\
+Para llevar a cabo el análisis de imágenes es necesario realizar una \textbf{petición \acs{HTTP} a Google Cloud Vision \acs{API}} en la que se especifique el tipo de análisis que se quiere realizar, en este supuesto \textit{Detección de etiquetas}, y el número máximo de resultados que se quieren obtener. \\ \\
 
 Un ejemplo de esta petición puede ser la especificada a continuación:
 

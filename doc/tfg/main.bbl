@@ -1,5 +1,5 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{GSC{\etalchar{+}}06}
+\begin{thebibliography}{YRED15}
 
 \bibitem[3D 15]{especifaciones3dr}
 3D Robotics.
@@ -34,6 +34,11 @@ J.~Chinchilla.
 \newblock Un trabajo de altura.
 \newblock {\em Diario Lanza}, Junio 2016.
 
+\bibitem[Cob15]{tiempomenor}
+A.~Cobo.
+\newblock El dron socorrista de Isla.
+\newblock {\em El Diario Montañés}, Julio 2015.
+
 \bibitem[Cue15]{dron1}
 C.~Cuerno.
 \newblock Capítulo 1: Origen y desarrollo de los sistemas de aeronaves
@@ -59,6 +64,13 @@ J.~Díaz.
 \newblock En {\em Los drones y sus aplicaciones a la ingeniería civil}. 2015.
 \newblock Drones Rescue Spain.
 
+\bibitem[Fer12]{notripulados}
+F.~Fernández.
+\newblock {\em Los sistemas no tripulados}, capítulo Generalidades, misión y
+  capacidades.
+\newblock Documentos de seguridad y defensa. Ministerio de Defensa,
+  Subdirección General de Publicaciones, Marzo 2012.
+
 \bibitem[FGM04]{sma}
 J.~Ferber, O.~Gutknecht, y F.~Michel.
 \newblock From agents to organizations: An organizational view of multi-agent
@@ -71,12 +83,27 @@ D.~Forsyth y J.~Ponce.
 \newblock {\em Computer vision: A modern approach}.
 \newblock Pearson, edición 2, 2012.
 
+\bibitem[Gon16]{dronsocorrista}
+M.~González.
+\newblock Los drones sustituirán a los socorristas en las playas de
+  Torrevieja.
+\newblock {\em El Mundo}, Febrero 2016.
+
 \bibitem[GSC{\etalchar{+}}06]{obstaculos}
 S.~Griffiths, J.~Saunders, A.~Curtis, T.~McLain, y R.~Beard.
 \newblock Obstacle and terrain avoidance for miniature aerial vehicles.
 \newblock
   \url{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.153.2575&rep=rep1&type=pdf},
   Septiembre 2006.
+
+\bibitem[Gut09]{aumento}
+A.~Guterres.
+\newblock Cambio climático, desastres naturales y desplazamiento humano: la
+  perspectiva del {ACNUR}.
+\newblock
+  \url{http://www.acnur.org/t3/fileadmin/Documentos/BDL/2009/6936.pdf?view=1},
+  Agosto 2009.
+\newblock Alto Comisionado de Naciones Unidas para los Refugiados.
 
 \bibitem[Igl98]{IAD2}
 C.~Iglesias.
@@ -150,6 +177,11 @@ Modelos de coordinación para inteligencia artificial distribuida.
 \newblock Proyecto DAMMAD, Diseño y Aplicación de Modelos Multiagente para
   Ayuda a la Decisión.
 
+\bibitem[Pla13]{sosdrone}
+N.~Platón.
+\newblock {SOS DRONE}: Un dron para emergencias.
+\newblock {\em La Razón}, Diciembre 2013.
+
 \bibitem[Pur08]{controltrafico}
 A.~Puri.
 \newblock Statistical profile generation for traffic monitoring using real-time
@@ -159,6 +191,14 @@ A.~Puri.
   2008.
 \newblock Department of Computer Science and Engineering, University of South
   Florida.
+
+\bibitem[PV15]{cuotamercado}
+S.~Peasgood y M.~Valentin.
+\newblock Drones: A rising market.
+\newblock
+  \url{http://sophiccapital.com/wp-content/uploads/2015/09/Download-Sophic-Capitals-Aerial-Drone-Report-Here.pdf},
+  Septiembre 2015.
+\newblock Sophic Capital.
 
 \bibitem[Rom15]{arducopter}
 A.~Romero.
@@ -210,5 +250,12 @@ M.~Wooldridge y N.~Jennings.
 M.~Woolridge.
 \newblock {\em Introduction to Multiagent Systems}.
 \newblock John Wiley \& Sons, Ltd., 2001.
+
+\bibitem[YRED15]{desastres}
+G.~Yanguas, E.~Rivera, V.~Esteban, y R.~David.
+\newblock Desastres naturales y tecnológicos.
+\newblock En {\em Perfil ambiental de {E}spaña 2014}. 2015.
+\newblock Dirección General de Calidad y Evaluación Ambiental y Medio
+  Natural, Ministerio de Agricultura, Alimentación y Medio Ambiente.
 
 \end{thebibliography}

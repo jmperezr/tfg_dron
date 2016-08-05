@@ -1,0 +1,42 @@
+\chapter{Conclusiones y trabajo futuro}
+\label{chap:conclusiones}
+
+\drop{E}{}n este capítulo se presentan las conclusiones que se pueden extraer después de todo el trabajo que se ha realizado en el proyecto. Se justificarán las competencias abordadas en el \acs{TFG}. De igual modo, se propondrá un conjunto de tareas que pueden servir como posibles líneas de trabajo futuro.
+
+\section{Conclusiones}
+\label{sec:conclusiones}
+
+La \textbf{consecuencia principal} de este proyecto es el desarrollo de un sistema capaz de monitorizar ciertos puntos de interés, mediante la coordinación de varios \acs{UAV}s, en vuelo, que retransmiten imágenes en directo de la zona afectada por una catástrofe, de modo que, los servicios de emergencia reciban una ayuda adicional que permita mejorar los tiempos y la eficiencia de las misiones en esta clase de situaciones. 
+
+Para conseguir este fin, se ha hecho uso del vehículo aéreo \textbf{3DR IRIS+}. Tras finalizar el proyecto, su compra se puede considerar un \textbf{gran acierto}, debido a que, su guiado automático es intuitivo y sencillo en su configuración. Además, implementa medidas de seguridad que son fundamentales para pilotos que, como en el supuesto del \acs{TFG}, no disponen de experiencia. Permitiendo así, que mediante el accionamiento de una palanca, el dron vuelva al punto en el que realizó el despegue o realice automáticamente un aterrizaje. 
+
+La utilización de \textbf{DroneKit-Python}, como plataforma de desarrollo de software, es otra de las \textbf{ventajas} y de los motivos por los que comprar el 3DR IRIS+ ha sido todo un acierto. DroneKit-Python cuenta con un amplio abanico de ejemplos y funciones para realizar, de una manera simple, cualquier tipo de operación con el dron. Tanto es así, que permite llevar a cabo procedimientos como la conexión con el vehículo, el despegue, el aterrizaje, la elaboración de misiones, etc.
+
+Con estos elementos, se construyó un sistema que recogía imágenes de un entorno afectado por una catástrofe, pero estas imágenes no recibían ningún tipo de procesamiento. Así es como \textbf{Google Cloud Vision \acs{API}} entró a formar parte de este proyecto. Es interesante contar con una plataforma que posibilita el \textbf{análisis de las imágenes} que la cámara, incorporada en el dron, captura. Cualquier clase de información complementaria, aunque parezca insignificante, puede ser una gran contribución a los equipos de emergencia. Aunque los resultados que ofrece Google Cloud Vision \acs{API} aun no son todo lo precisos que se quisiera, se cuenta con la seguridad y la garantía de que, al ser una plataforma mantenida por una empresa tan importante como Google y respaldada por un proyecto de drones tan destacado como Aerosense de Sony, estos resultados mejoren significativamente a corto plazo.
+
+Cabe destacar la \textbf{dificultad} que entraña al proyecto el empleo de varios \textbf{dispositivos hardware}. Al desarrollo del código se le une la complejidad, y el esfuerzo en tiempo, de estudiar y comprender el funcionamiento de los componentes. Más aún, si entre estos dispositivos se encuentra un dron, dado que, en las diferentes pruebas de vuelo que se deben realizar es más que probable que el aparato sufra alguna caída o golpe que pueda causar un determinado deterioro en alguno de sus componentes. Estos imprevistos, relacionados con la avería del hardware, provocan retrasos importantes en el desarrollo, a consecuencia de que, se debe esperar hasta el envío de repuestos nuevos.
+
+En otro orden de cosas, y en correlación con la tecnología cursada, \textbf{Computación}, se ha logrado cumplir las \textbf{competencias específicas} de la misma (ver Cuadro~\ref{tab:tecnologia}).
+
+\begin{table}[!h]
+ \centering
+ {\small
+ \input{tables/tecnologia.tex}
+ }
+ \caption[Justificación de las competencias específicas abordadas durante el \acs{TFG}]
+ {Justificación de las competencias específicas abordadas durante el \acs{TFG}}
+ \label{tab:tecnologia}
+\end{table}
+
+\section{Trabajos futuros}
+\label{sec:trabajos futuros}
+
+Con el fin de proseguir el desarrollo del proyecto, partiendo de la base de este \acs{TFG}, se proponen varias líneas de trabajo:
+
+\begin{itemize}
+\item \textbf{Aumentar la flota de vehículos}: sería importante ampliar el número de drones del que se dispone, de manera que, se pueda plantear la coordinación de los \acs{UAV}s en entornos reales y no solo simulados.
+\item \textbf{Implementar detección de movimiento}: una funcionalidad más que interesante sería que el sistema fuera capaz de detectar cualquier tipo de movimiento existente en las imágenes. La identificación de supervivientes en situaciones de emergencia resultaría mucho más sencilla. Sin embargo, este tipo de implementación es costosa, a causa de que, el dron permanece en constante movimiento y por ello no se posee una imagen fija del entorno. Por lo tanto, sería necesario entrenar al sistema mediante modelos de aprendizaje para así poder detectar el movimiento.
+\item \textbf{Utilización de ZeroC \acs{ICE}}: descentralizar la manera en la que se realiza la coordinación añadiría robustez al sistema. Para ello, puede ser adecuado el uso de un servidor en ZeroC \acs{ICE} como plataforma de comunicación.  
+\end{itemize}
+
+

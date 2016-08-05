@@ -1,0 +1,41 @@
+\chapter{Objetivos}
+\label{chap:objetivos}
+
+En este capítulo se enumeran los objetivos a cumplir en el proyecto. Se parte de un objetivo general, que será descompuesto en varios subobjetivos más específicos.
+
+\section{Objetivo general}
+\label{sec:objetivogeneral}
+
+El objetivo general del proyecto es el diseño y desarrollo de un sistema adaptativo que sea capaz de desplegar y coordinar varios \acs{UAV}s que permitan obtener información relevante, simultáneamente analizada, sobre un entorno que ha sido afectado por algún tipo de catástrofe. Mediante el cumplimiento de este objetivo se espera:
+
+\begin{itemize}
+\item \textbf{Reducir la exposición de agentes humanos} del peligro derivado de la propia catástrofe.
+\item \textbf{Disminuir el tiempo} empleado en recolectar información acerca del territorio afectado por la catástrofe para ayudar al equipo de rescate.
+\item \textbf{Minimizar el daño} resultante global.
+\end{itemize}
+
+
+\section{Objetivos específicos}
+\label{sec:objetivoespecifico}
+Para lograr el objetivo general, es necesario especificar los objetivos específicos que lo componen y que se describen a continuación:
+
+\begin{itemize}
+\item \textbf{Especificar puntos de monitorización}: el primero de los objetivos específicos, cubre la necesidad de identificar los puntos de localización a los que los drones deben acudir. Estas localizaciones serán especificadas en función a un sistema de prioridades, que tendrá como objetivo reunir información, en base a la importancia, de cada uno de los puntos del entorno que han sido especificados. Por ejemplo, un equipo de emergencias considerará más importante acudir a un lugar donde exista una mayor concentración de personas. Es decir, el sistema debe estar preparado para recibir información de una serie de puntos de interés y acudir a ellos en el orden determinado por su prioridad.
+\clearpage
+\item \textbf{Solicitar \acs{UAV}s}: el sistema debe estar listo para responder a la demanda de dispositivos de monitorización cuando sea necesario. Será capaz de desplegar los drones que son solicitados por los equipos de emergencia, siempre y cuando se disponga en la flota de ese número de vehículos. Es evidente, que varios drones son capaces de cubrir más terreno de una manera más eficiente y en un tiempo menor, por lo que el sistema debe estar diseñado para soportar el despliegue de varios drones.
+
+\item \textbf{Plantear la coordinación}: de nada sirve el empleo de varios drones, si estos no realizan acciones que sean coordinadas. Si todos los drones vuelan hacia la misma localización o no se les asignan nuevos puntos de interés, después de haber acudido a uno, el sistema sería totalmente ineficaz. En otras palabras, los \acs{UAV}s deben volar a puntos de monitorización que no se hayan asignado a otros. Además, estos puntos deben ser asignados a vehículos en el momento que hayan terminado el vuelo que tenía como destino otro punto de monitorización. 
+
+\item \textbf{Grabar y enviar de imágenes}: el sistema debe disponer de las herramientas necesarias para permitir la grabación y el visionado, en directo, del entorno que ha sido dañado por alguna clase de desastre. Una visión aérea de la zona afectada por la catástrofe, puede ofrecer grandes ventajas a los sistemas de emergencia, como por ejemplo, la identificación de supervivientes. Además, gracias a la obtención de imágenes se puede llevar a cabo una toma de decisiones más correcta, ya que se dispone de información trascendental acerca del estado del terreno.
+
+\item \textbf{Analizar imágenes}: es importante implementar algún tipo de análisis que permita realizar un estudio de las imágenes que se obtienen en directo. Este análisis debe ayudar a los equipos de emergencia a reconocer ciertas características del entorno, como puede ser la identificación de agua que bloquee los accesos a la zona afectada. En una situación de desastre es fundamental contar con toda la información posible del terreno, y este tipo de análisis con respecto a las imágenes grabadas puede brindar la oportunidad de obtener el máximo conocimiento posible sobre área perjudicada.
+
+\end{itemize}
+
+
+% Local Variables:
+%  coding: utf-8
+%  mode: latex
+%  mode: flyspell
+%  ispell-local-dictionary: "castellano8"
+% End:

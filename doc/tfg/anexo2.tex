@@ -1,0 +1,180 @@
+\chapter{DroneKit-Python: guía y buenas prácticas}
+\label{chap:dronekitguia}
+
+\drop{E}{}sta guía ofrece una visión general de cómo utilizar DroneKit-Python mediante un conjunto de buenas prácticas recomendadas. DroneKit-Python se comunica con los pilotos automáticos de los vehículos mediante el protocolo MAVLink, que define cómo se envían los comandos y la configuración de telemetría entre los vehículos, estaciones terrestres y sistemas en otros una red MAVLink.
+
+\section{Conexión}
+
+En la mayoría de los casos se debe usar la forma normal para conectar a un vehículo, es decir, se debe establecer el parámetro \textit{wait\_ready = True} para asegurar que el vehículo cuente con todos los atributos una vez que la conexión se ha realizado.
+
+\begin{listing}[
+ float=h!,
+ language = Python,
+ caption = {Conexión con el vehículo mediante DroneKit-Python},
+ label  = code:conexion]
+from dronekit import connect
+
+# Connect to the Vehicle (in this case a UDP endpoint)
+vehicle = connect('REPLACE_connection_string_for_your_vehicle', wait_ready=True)
+\end{listing}
+
+La llamada a la conexión a veces puede fallar con una excepción. Información adicional acerca de la excepción puede ser obtenida mediante la ejecución de la llamada a la conexión dentro de un bloque try-catch (ver Listado~\ref{code:conexiontry}).
+
+Si una conexión se realiza correctamente desde una estación terrestre, pero no desde DroneKit-Python puede ser que su velocidad de transmisión sea incorrecta para su hardware. Esta tasa también se puede configurar en el método \textit{connect()}.
+
+\clearpage
+
+\begin{listing}[
+ float=h!,
+ language = Python,
+ caption = {Conexión haciendo uso de try-catch},
+ label  = code:conexiontry]
+import dronekit
+import socket
+import exceptions
+
+try:
+    dronekit.connect('REPLACE_connection_string_for_your_vehicle', heartbeat_timeout=15)
+
+# Bad TCP connection
+except socket.error:
+    print 'No server exists!'
+
+# Bad TTY connection
+except exceptions.OSError as e:
+    print 'No serial exists!'
+
+# API Error
+except dronekit.APIException:
+    print 'Timeout!'
+
+# Other error
+except:
+    print 'Some other error!'
+\end{listing}
+
+ 
+\section{Secuencia de inicio}
+
+Generalmente, se debe utilizar la secuencia de lanzamiento estándar que consiste en:
+
+\begin{itemize}
+\item Consultar el parámetro \textit{Vehicle.is\_armable} hasta que el vehículo está listo para ser armado.
+\item Ajustar el \textit{Vehicle.mode} como \textit{GUIDED}.
+\item Establecer \textit{Vehicle.armed} a \textit{True} y consultar el mismo atributo hasta que el vehículo se encuentre armado.
+\item Llamar a \textit{Vehicle.simple\_takeoff} con la altitud deseada.
+\item Consultar la altitud y solo permitir que el código continúe sólo cuando se alcanza dicha altura.
+\end{itemize}
+
+Este planteamiento garantiza que los comandos se envían sólo al vehículo cuando es capaz de actuar sobre ellos.
+\clearpage
+
+\begin{listing}[
+ float=h!,
+ language = Python,
+ caption = {Secuencia de inicio},
+ label  = code:despegue]
+# Connect to the Vehicle (in this case a simulator running the same computer)
+vehicle = connect('tcp:127.0.0.1:5760', wait_ready=True)
+
+def arm_and_takeoff(aTargetAltitude):
+    """
+    Arms vehicle and fly to aTargetAltitude.
+    """
+
+    print "Basic pre-arm checks"
+    # Don't try to arm until autopilot is ready
+    while not vehicle.is_armable:
+        print " Waiting for vehicle to initialise..."
+        time.sleep(1)
+
+    print "Arming motors"
+    # Copter should arm in GUIDED mode
+    vehicle.mode    = VehicleMode("GUIDED")
+    vehicle.armed   = True
+
+    # Confirm vehicle armed before attempting to take off
+    while not vehicle.armed:
+        print " Waiting for arming..."
+        time.sleep(1)
+
+    print "Taking off!"
+    vehicle.simple_takeoff(aTargetAltitude) # Take off to target altitude
+
+    # Wait until the vehicle reaches a safe height before processing the goto (otherwise the command
+    #  after Vehicle.simple_takeoff will execute immediately).
+    while True:
+        print " Altitude: ", vehicle.location.global_relative_frame.alt
+        #Break and return from function just below target altitude.
+        if vehicle.location.global_relative_frame.alt>=aTargetAltitude*0.95:
+            print "Reached target altitude"
+            break
+        time.sleep(1)
+
+arm_and_takeoff(20)
+\end{listing}
+
+\section{Misiones y «waypoints»}
+
+DroneKit-Python puede crear y modificar misiones autónomas. Si bien es posible construir aplicaciones con DroneKit-Python de forma dinámica, mediante la construcción de misiones «on the fly», 3D Robotics recomienda utilizar el modo guiado para aplicaciones con ArduCopter.
+
+El modo \textit{AUTO} se utiliza para la ejecución de misiones con «waypoints» predefinidos.
+
+DroneKit-Python proporciona funciones básicas para descargar y borrar los comandos actuales de la misión del vehículo, agregar y cargar nuevos comandos de misión y contar el número de «waypoints» visitados. Es una buena idea apoyarse en estas primitivas básicas para crear la funcionalidad de planificación de la misión de alto nivel.
+
+\begin{listing}[
+ float=h!,
+ language = Python,
+ caption = {Creación de misiones},
+ label  = code:misiones]
+# Connect to the Vehicle (in this case a simulated vehicle at 127.0.0.1:14550)
+vehicle = connect('127.0.0.1:14550', wait_ready=True)
+
+# Get the set of commands from the vehicle
+cmds = vehicle.commands
+cmds.download()
+cmds.wait_ready()
+
+# Clear the current mission (command is sent when we call upload())
+cmds.clear()
+
+# Create and add commands
+cmd1=Command( 0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_TAKEOFF, 0, 0, 0, 0, 0, 0, 0, 0, 10)
+cmd2=Command( 0, 0, 0, mavutil.mavlink.MAV_FRAME_GLOBAL_RELATIVE_ALT, mavutil.mavlink.MAV_CMD_NAV_WAYPOINT, 0, 0, 0, 0, 0, 0, 10, 10, 10)
+cmds.add(cmd1)
+cmds.add(cmd2)
+cmds.upload() # Send commands
+\end{listing}
+
+Para iniciar una misión, solo se debe cambiar el modo a \textit{AUTO}.
+
+\begin{listing}[
+ float=h!,
+ language = Python,
+ caption = {Iniciar misión},
+ label  = code:iniciomision]
+# Connect to the Vehicle (in this case a simulated vehicle at 127.0.0.1:14550)
+vehicle = connect('127.0.0.1:14550', wait_ready=True)
+
+# Set the vehicle into auto mode
+vehicle.mode = VehicleMode("AUTO")
+\end{listing}
+
+\section{Pausar el script cuando no se necesita}
+
+Pausar la secuencia de comandos puede reducir la carga del computador.
+
+Por ejemplo, a bajas velocidades es posible que sólo tenga que comprobar si se ha alcanzado un objetivo cada pocos segundos. Usando \textit{time.sleep(2)} entre comprobaciones será más eficiente que comprobarlo más a menudo.
+
+\section{Finalizar el script}
+
+Los scripts deben llamar a \textit{Vehicle.close()} antes de salir para asegurarse de que todos los mensajes se han vaciado antes de que el script finalice.
+
+\begin{listing}[
+ float=h!,
+ language = Python,
+ caption = {Cerrar la conexión con el vehículo},
+ label  = code:cerrarvehiculo]
+# About to exit script
+vehicle.close()
+\end{listing}

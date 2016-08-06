@@ -4,16 +4,16 @@ import subprocess
 class drone():
 	def __init__(self, numVehicle):
         	self.numVehicle = numVehicle
-		self.UdpPort = 14550 + vehicle
-		self.instance = 1 + vehicle
+		self.UdpPort = 14550 + numVehicle
+		self.instance = 1 + numVehicle
 		self.currentDir = os.getcwd()
-        	print "Drone %s launched." %vehicle
+        	print "Drone %s launched." %numVehicle
 	
 	def startDrone(self):
-		if self.vehicle == 0:
+		if self.numVehicle == 0:
 			os.chdir(os.path.expanduser("~/ardupilot/ArduCopter/"))
 		
-		elif self.vehicle == 1:
+		elif self.numVehicle == 1:
 			os.chdir(os.path.expanduser("~/ardupilot2/ArduCopter/"))
 		else:					
 			os.chdir(os.path.expanduser("~/ardupilot3/ArduCopter/"))

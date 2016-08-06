@@ -1,7 +1,5 @@
-import numpy as np
 import cv2
 import time
-import argparse
 import base64
 import httplib2
 import time
@@ -44,7 +42,7 @@ class FPVSystem:
 		#	self.capture = cv2.VideoCapture(0)
 		
 		if self.numVehicle == 0:
-			self.capture = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0465.MP4')
+			self.capture = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR01.mp4')
 		else:
 			self.capture = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0293.MP4')
 

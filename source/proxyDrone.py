@@ -9,6 +9,9 @@ import FPVSystem
 import thread
 from threading import Thread
 import threading
+import socket
+import exceptions
+import dronekit
 
 class proxyDrone():
 	def __init__(self, numVehicle, lock):
@@ -68,9 +71,26 @@ class proxyDrone():
 		instanceDrone = drone.drone(self.numVehicle)
 		instanceDrone.startDrone()
 		print "Connected to vehicle: %s" % instanceDrone.UdpPort
-		self.vehicle = connect('127.0.0.1:%s' % instanceDrone.UdpPort, wait_ready = True)
-		#	self.vehicle = connect('/dev/ttyUSB0', wait_ready = True)
-		self.vehicle.parameters['SYSID_THISMAV'] = self.numVehicle + 1
+		try:
+			self.vehicle = connect('127.0.0.1:%s' % instanceDrone.UdpPort, wait_ready = True)
+			#	self.vehicle = connect('/dev/ttyUSB0', wait_ready = True)
+			self.vehicle.parameters['SYSID_THISMAV'] = self.numVehicle + 1
+		# Bad TCP connection
+		except socket.error:
+    			print 'No server exists!'
+
+		# Bad TTY connection
+		except exceptions.OSError as e:
+    			print 'No serial exists!'
+
+		# API Error
+		except dronekit.APIException:
+    			print 'Timeout!'
+		
+		# Other error
+		except:
+    			print 'Some other error!'
+
 		self.lock.release()
 		
 		self.FPV = FPVSystem.FPVSystem(secondsPerPhoto, self.numVehicle)

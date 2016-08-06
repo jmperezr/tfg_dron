@@ -65,7 +65,7 @@ def main():
 			proxy.append(proxyDrone.proxyDrone(i,lock))
 			t = threading.Thread(target=proxy[i].connectDrone, args=(coordinator.secondsPerPhoto,))
 			t.start()
-			
+
 		#Pausa para ajustar pruebas de video
 		#try:
     		#	input("Press enter to continue")

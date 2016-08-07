@@ -69,7 +69,7 @@ Cuando se emplea una capa de abstracción de hardware, las aplicaciones no acced
 
 La \acs{HAL} permite que las aplicaciones puedan extraer tanto rendimiento como sea posible del hardware; proporciona acceso directo a cada dispositivo hardware; permite que el software se comunique con el hardware a nivel general y facilita la portabilidad.
 
-Su función en este proyecto es \textbf{hacer que se lleven a cabo las instrucciones de los procesos que lo componen} como pueden ser: el almacenamiento de imágenes y videos, la transmisión de órdenes al dron a través de la interfaz USB, la transmisión de imágenes a través de la red, etc.
+Su función en este proyecto es \textbf{hacer que se lleven a cabo las instrucciones de los procesos que lo componen} como pueden ser: el almacenamiento de imágenes y vídeos, la transmisión de órdenes al dron a través de la interfaz USB, la transmisión de imágenes a través de la red, etc.
 
 \subsubsection{Framework}
 \label{sec:framework}
@@ -147,23 +147,23 @@ Para cumplir con su función el \textit{Coordinador} debe:
 <?xml version="1.0" ?>
 <mission>
 	<waypoint>
- 		<long>32.8353314496671587</long>
- 		<lat>-117.162768244743347</lat>
-		<alt>20</alt>
-		<priority>2</priority>
-	</waypoint>
-
-	<waypoint>
- 		<long>32.8353359570248671</long>
- 		<lat>-117.161904573440552</lat>
-		<alt>40</alt>
+ 		<lat>-3.9162183</lat>
+ 		<long>38.9878348</long>
+		<alt>30</alt>
 		<priority>1</priority>
 	</waypoint>
 
 	<waypoint>
- 		<long>32.8353359570248671</long>
- 		<lat>-117.161904573440552</lat>
-		<alt>10</alt>
+ 		<lat>-3.9181817</lat>
+ 		<long>38.9907202</long>
+		<alt>25</alt>
+		<priority>2</priority>
+	</waypoint>
+
+	<waypoint>
+ 		<lat>-3.9180422</lat>
+ 		<long>38.9877598</long>
+		<alt>20</alt>
 		<priority>3</priority>
 	</waypoint>
 </mission>
@@ -205,6 +205,7 @@ Un ejemplo de cómo realizar la llamada a \textit{Coordinador} puede ser:
 $ python coordinator.py --vehicles 2 --secondWait 15 --secondsPerPhoto 7
 \end{listing}
 
+Para conseguir que el sistema funcione, es necesario la instalación de varias dependencias. Se pueden consultar en el Anexo \ref{chap:dependencias}.
 
 \subsection{Proxy Dron}
 \label{sec:proxydron}

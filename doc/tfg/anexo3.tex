@@ -1,0 +1,191 @@
+\chapter{Instalación de dependencias}
+\label{chap:dependencias}
+
+Debido al uso de múltiples librerías y herramientas que han servido de ayuda en el desarrollo del proyecto, resulta adecuado explicar cuál ha sido el proceso de instalación. A continuación, se listan todos las dependencias que han sido necesarias.
+
+\section{\acs{SITL}}
+\label{sec:depsitl}
+
+Es probablemente la mayor dependencia del sistema, ya que, permite simular el dron sin disponer de ningún hardware, pudiendo así, poner a prueba el comportamiento del código sin necesidad de hardware. Gracias a él, ha sido posible plantear la coordinación con hasta 3 vehículos.
+
+Lo primero que se debe hacer para poder utilizar \acs{SITL} es descargar una copia del repositorio \textit{git} de ArduPilot:
+
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {Copia de repositorio de ardupilot},
+ label  = code:ardupilot]
+$ git clone git://github.com/ArduPilot/ardupilot.git
+\end{listing}
+
+Una vez que se dispone de una copia de ArduPilot, es necesario modificar el archivo nombrado como \textit{sim\_vehicle.sh} que se puede encontrar en la siguiente ubicación \textit{ardupilot/Tools/autotest/sim\_vehicle.sh}. Debemos modificar las líneas correspondientes a:
+
+\begin{listing}[
+ float=h!,
+ language = Python,
+ caption = {Archivo \textit{sim\_vehicle.sh} original},
+ label  = code:simvehicle]
+if [ $USER == "vagrant" ]; then
+options="$options --out 10.0.2.2:14550"
+fi
+options="$options --out 127.0.0.1:14550 --out 127.0.0.1:14551"
+\end{listing}
+
+\clearpage
+
+por las siguientes:
+
+\begin{listing}[
+ float=h!,
+ language = Python,
+ caption = {Archivo \textit{sim\_vehicle.sh}},
+ label  = code:simvehiclemodi]
+if [ $USER == "vagrant" ]; then
+options="$options"
+fi
+options="$options"
+\end{listing}
+
+Una vez realizado esto, se puede realizar tantas copias de la carpeta \textit{ardupilot}, como se desee, a más copias más simulaciones se podrán crear. En el caso del proyecto se realizan tres copias, de modo que el directorio de trabajo quede de la siguiente forma:
+
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {Estructura del directorio de trabajo tras la descarga de \textit{ardupilot}},
+ label  = code:estructura]
+TFG/
+   ardupilot/
+   ardupilot2/
+   ardupilot3/
+   Images/
+   Missions/
+   Videos/
+   Waypoints/
+   convertMission.py
+   coordinator.py
+   drone.py
+   FPVSystem.py
+   proxyDrone.py
+\end{listing}
+
+ArduPilot proporciona una serie de dependencias para trabajar con \acs{SITL}. Se deben ejecutar los siguientes comandos:
+
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {Dependencias de \acs{SITL}},
+ label  = code:dependencias]
+$ sudo apt-get install python-matplotlib python-serial python-wxgtk2.8 python-lxml
+$ sudo apt-get install python-scipy python-opencv ccache gawk git python-pip python-pexpect
+$ sudo pip install pymavlink MAVProxy
+\end{listing}
+
+Antes de hacer uso del simulador se deben añadir las siguientes lineas al final de su \textit{.bashrc}:
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {Líneas a incorporar en \textit{.bashrc} para hacer uso de \acs{SITL}},
+ label  = code:export]
+export PATH=$PATH:/directorio_donde_este_ardupilot/ardupilot/Tools/autotest
+export PATH=/usr/lib/ccache:$PATH
+\end{listing}
+
+
+Para iniciar el simulador primero se debe ejecutar \textit{sim\_vehicle.sh}, pero antes de debe cambiar al directorio del vehículo que se quiera hacer uso. Por ejemplo, para vehículos de ala rotatoria el directorio es \textit{ardupilot/ArduCopter}. La primera vez que se ejecute se debe usar la opción -w para limpiar la memoria virtual EEPROM y cargar los parámetros por defecto.
+
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {Primer inicio de \acs{SITL}},
+ label  = code:inicio]
+ardupilot/ArduCopter$ sim_vehicle.sh -w
+\end{listing}
+
+Se puede iniciar el simulador con el vehículo en un lugar determinado llamando a \textit{sim\_vehicle.sh} con el parámetro \textit{-L} y una ubicación especificada en el archivo \textit{ardupilot/Tools/autotest/locations.txt}.  
+
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {LLamada a \textit{sim\_vehicle.sh} para iniciar simulación en localización determinada},
+ label  = code:ubicacion]
+ardupilot/ArduCopter$ sim_vehicle.sh -j4 -L Ballarat --console --map
+\end{listing}
+\section{DroneKit-Python}
+\label{sec:depdronekit}
+
+DroneKit-Python se instala desde \textit{pip} en todas las plataformas. En el caso de Linux se tendrá que instalar previamente \textit{python-dev}:
+
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {Dependencias de DroneKit-Python},
+ label  = code:pythondev]
+$ sudo apt-get install python-dev
+\end{listing}
+
+A continuación, mediante \textit{pip} se instala la libreria DroneKit.
+
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {Instalación de DroneKit-Python},
+ label  = code:dronekit]
+$ sudo pip install dronekit
+\end{listing}
+
+\section{Google Cloud Vision \acs{API}}
+\label{sec:depvisionapi}
+
+Es necesario completar unos cuantos pasos de configuración antes de poder utilizar esta biblioteca:
+
+\begin{itemize}
+\item Creación de una cuenta de Google.
+\item Crear un proyecto en la consola de Google \acs{API}.
+\item Instalar la biblioteca.
+\end{itemize}
+
+\clearpage
+
+Se debe usar \textit{pip} para gestionar la instalación de la biblioteca:
+
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {Instalación de Google \acs{API}},
+ label  = code:googlecloud]
+$ sudo pip install google-api-python-client
+\end{listing}
+
+Para poder hacer uso de \textit{Google Cloud Vision \acs{API}} es necesario poseer unas credenciales de Google que se utilizan para realizar la autenticación y, poder así, hacer uso del servicio. Una vez que se disponga de las credenciales, la estructura del directorio de trabajo será la siguiente:
+
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {Estructura del directorio de trabajo tras descargar las credenciales de Google},
+ label  = code:estructura2]
+TFG/
+   GoogleCredentials/
+   ardupilot/
+   ardupilot2/
+   ardupilot3/
+   Images/
+   Missions/
+   Videos/
+   Waypoints/
+   convertMission.py
+   coordinator.py
+   drone.py
+   FPVSystem.py
+   proxyDrone.py
+\end{listing}
+
+La carpeta \textit{GoogleCredentials} contiene un archivo .json para la autenticación. Antes de hacer uso del servicio de detección de etiquetas se deben añadir las siguientes lineas al final de su \textit{.bashrc}:
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {Líneas a incorporar en \textit{.bashrc} para hacer uso de Google Cloud Vision \acs{API}},
+ label  = code:export2]
+export GOOGLE_APPLICATION_CREDENTIALS="/path/to/keyfile.json"
+\end{listing}  
+
+

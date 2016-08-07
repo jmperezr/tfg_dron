@@ -88,7 +88,112 @@ Entre los \textbf{problemas producidos} durante esta etapa se encuentra:
 \item \textbf{Baterías para el sistema \acs{FPV} deterioradas}: para que el sistema \acs{FPV} funcione, es necesario contar con dos baterias de 1300 mAh, una para el transmisor y otra para el receptor. Dos de las tres baterías de las que se disponía, sufrieron desperfectos y dejaron de cargar. Por lo tanto, el sistema \acs{FPV} quedó inoperativo. \\ La \textbf{solución} a este problema fue comprar nuevas baterías de 1300 mAh.
 \end{itemize}
  
-\section{Caso de estudio}
+\section{Caso de estudio: coordinación de \acs{UAV}s en situación de emergencia}
+
+Para probar y \textbf{demostrar la funcionalidad del sistema}, se ha diseñado una misión en la que varios \acs{UAV}s puedan coordinarse y, de este modo, ofrecer una solución al problema de monitorizar diferentes puntos de un territorio.
+
+Como solo se dispone de un dispositivo de vuelo real, se ha hecho uso de la \textbf{simulación de tres vehículos aéreos}, a través de \acs{SITL}, que llevarán a cabo labores de coordinación para inspeccionar de una forma más rápida el lugar.
+
+Recordar que, al tratarse de vehículos simulados, el \textbf{módulo de análisis de imágenes no estará activo}. 
+
+%Aún así, en el Anexo se muestran ejemplos de imágenes analizadas en diferentes entornos.
+
+\subsection{Planteamiento}
+
+El problema que se plantea es el siguiente: la \textbf{monitorización de distintos puntos} de interés dentro de una \textbf{instalación deportiva que ha sufrido un ataque terrorista}. La localización elegida, por cercanía y por familiaridad con el entorno, es el Polideportivo Juan Carlos I (ver Figura~\ref{fig:instalacion}). Sus instalaciones cuentan con:
+\begin{itemize}
+\item 3 campos de fútbol, con un aforo total de \textbf{4.500 personas}.
+\item 3 pistas polideportivas descubiertas.
+\item 1 Pabellón cubierto, con capacidad para \textbf{500 personas}.
+\item 7 pistas de pádel.
+\item 2 pistas de tenis.
+\item 2 pistas de frontón.
+\item 1 piscina cubierta, con aforo para \textbf{250 personas}.
+\item 1 piscina descubierta.
+\end{itemize}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/instalacion.png}
+\caption[Polideportivo Juan Carlos I]{Polideportivo Juan Carlos I}
+\label{fig:instalacion}
+\end{center}
+\end{figure}
+
+En definitiva, se trata de una ubicación en la que, en un momento dado, puede existir una \textbf{gran confluencia de gente}. Por lo que, tras un posible ataque terrorista es adecuada la utilización de drones, para recolectar información del entorno que sea de utilidad para los equipos de emergencia.
+
+\subsection{Diseño de la solución}
+
+Para cubrir el mayor terreno posible en el menor tiempo, se siguen las siguientes pautas en el diseño de la misión:
+
+\begin{itemize}
+\item Se fijan tres puntos, en los extremos de la instalación deportiva, con una prioridad de 1. Con esto lo que se pretende, es que los drones acudan \textbf{primero a las ubicaciones más lejanas} para que después vayan cerrando, de forma coordinada, el radio de actuación. En caso contrario, un dron podría tener que recorrer una gran distancia, haciendo el sistema menos eficiente.
+\item Se fijan tres puntos, cercanos a las ubicaciones anteriores, con una prioridad de 2. De este modo, se consigue que el \textbf{radio de actuación se estreche}, posibilitando que, posteriormente, al resto de puntos pueda volar cualquier vehículo sin que esté demasiado lejos.
+\item El resto de puntos se fijan con una prioridad de 3. Los vehículos vuelan a una distancia cercana entre ellos, por lo tanto, el vuelo a \textbf{cualquier ubicación no supondrá una pérdida de tiempo elevada}.
+\end{itemize}
+
+\clearpage
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/mision.png}
+\caption[Diseño de la misión en el Polideportivo Juan Carlos I]{Diseño de la misión en el Polideportivo Juan Carlos I}
+\label{fig:mision}
+\end{center}
+\end{figure}
+
+\subsection{Ejecución de la solución}
+
+Para comenzar el vuelo de los vehículos, que van a ejecutar la misión diseñada, se debe \textbf{llamar por línea de comandos a \textit{Coordinator.py}} con el parámetro de vehículos a 3 (ver Listado~\ref{code:iniciosimulacion}).
+
+\begin{listing}[
+ float=h!,
+ language = bash,
+ caption = {Inicio del sistema para simulación de tres vehículos},
+ label  = code:iniciosimulacion]
+$ python coordinator.py --vehicles 3
+\end{listing}
+
+El sistema seguirá la solución que se ha diseñado, de tal forma que el \textbf{dron 1 volará a cuatro puntos de interés} (ver Figura~\ref{fig:dron1}).
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/dron1.png}
+\caption[Misión realizada por el dron 1]{Misión realizada por el dron 1}
+\label{fig:dron1}
+\end{center}
+\end{figure}
+
+El \textbf{dron 2 también visitará cuatro puntos de interés} antes de volver a la zona de despegue (ver Figura~\ref{fig:dron2}).
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/dron2.png}
+\caption[Misión realizada por el dron 2]{Misión realizada por el dron 2}
+\label{fig:dron2}
+\end{center}
+\end{figure}
+
+Por último, el \textbf{dron 3 acudirá a cinco puntos de interés} (ver Figura~\ref{fig:dron3}). \\ \\
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/dron3.png}
+\caption[Misión realizada por el dron 3]{Misión realizada por el dron 3}
+\label{fig:dron3}
+\end{center}
+\end{figure}
+
+%Se pueden consultar las imágenes de la realización de la misión punto por punto en el Anexo .
+
+\subsection{Conclusión del caso de estudio}
+
+Después de la ejecución de la solución haciendo uso del sistema desarrollado, se obtienen una serie de conclusiones:
+
+\begin{itemize}
+\item Se confirma que la coordinación de varios \acs{UAV}s es una funcionalidad fundamental en situaciones de catástrofe. Utilizando tres drones, el tiempo para recorrer todos los puntos de la misión ha sido de 4 minutos y 30 segundos. Esto quiere decir, que en menos de 5 minutos los equipos de emergencia podrían haber dispuesto de información vital acerca del escenario. En cambio, haciendo uso de un solo vehículo, el tiempo para recorrer los puntos de interés por prioridad asciende hasta algo más de 13 minutos. Así pues, gracias al despliegue de varios drones se consigue \textbf{reducir el tiempo de actuación en un tercio}.
+\item Es \textbf{esencial un buen diseño a la hora de crear la misión}. Una misión en la que un dron acuda a un punto de prioridad, que se encuentra lejos de su ubicación, existiendo uno más cercano, de la misma prioridad, convierte el sistema en menos eficiente. Por ello, es primordial fijar los puntos de interés en un buen orden de ejecución. Por ejemplo, en el supuesto del caso de estudio, cerrando poco a poco el radio de actuación.
+\end{itemize}
 
 \section{Costes}
 

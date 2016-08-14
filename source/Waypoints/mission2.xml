@@ -1,25 +1,22 @@
 <?xml version="1.0" ?>
 <mission>
 	<waypoint>
- 		<long>32.8351917214644118</long>
- 		<lat>-117.162827253341675</lat>
-		<alt>20</alt>
-		<priority>2</priority>
+ 		<lat>-3.9178383</lat>
+ 		<long>38.9885854</long>
+		<alt>25</alt>
+		<priority>2</priority>	
 	</waypoint>
-
 	<waypoint>
- 		<long>32.8352007361938192</long>
- 		<lat>-117.164243459701538</lat>
-		<alt>10</alt>
-		<priority>1</priority>	
+ 		<lat>-3.9173019</lat>
+ 		<long>38.9902782</long>
+		<alt>25</alt>
+		<priority>2</priority>	
 	</waypoint>
-
 	<waypoint>
- 		<long>32.8352007361938192</long>
- 		<lat>-117.164243459701538</lat>
-		<alt>10</alt>
-		<priority>3</priority>	
+ 		<lat>-3.9161646</lat>
+ 		<long>38.9884770</long>
+		<alt>25</alt>
+		<priority>2</priority>	
 	</waypoint>
-
 
 </mission>

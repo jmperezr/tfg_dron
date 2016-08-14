@@ -18,7 +18,6 @@ class drone():
 		else:					
 			os.chdir(os.path.expanduser("~/ardupilot3/ArduCopter/"))
 
-		#cmd= 'gnome-terminal -x bash -c "sim_vehicle.sh -I %d -L prueba --console --map --out 127.0.0.1:%d --aircraft test && bash"' % (self.instance, self.UdpPort)
 		cmd= 'gnome-terminal -x bash -c "sim_vehicle.sh -I %d -L prueba --map --out 127.0.0.1:%d --aircraft test && bash"' % (self.instance, self.UdpPort)
 		subprocess.call(cmd, shell=True)
 		os.chdir(self.currentDir)

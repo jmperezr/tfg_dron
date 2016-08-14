@@ -1,8 +1,7 @@
 import os
 import sys
 import time
-import dronekit_sitl
-from dronekit import connect, Command, VehicleMode, LocationGlobalRelative
+from dronekit import connect, Command, VehicleMode, LocationGlobalRelative, APIException
 from pymavlink import mavutil
 import drone
 import FPVSystem
@@ -11,7 +10,6 @@ from threading import Thread
 import threading
 import socket
 import exceptions
-import dronekit
 
 class proxyDrone():
 	def __init__(self, numVehicle, lock):
@@ -72,24 +70,27 @@ class proxyDrone():
 		instanceDrone.startDrone()
 		print "Connected to vehicle: %s" % instanceDrone.UdpPort
 		try:
-			self.vehicle = connect('127.0.0.1:%s' % instanceDrone.UdpPort, wait_ready = True)
-			#	self.vehicle = connect('/dev/ttyUSB0', wait_ready = True)
+			self.vehicle = connect('127.0.0.1:%s' % instanceDrone.UdpPort, baud=115200, wait_ready=True, heartbeat_timeout=120)
+			#	self.vehicle = connect('/dev/ttyUSB0', baud=57600, wait_ready=True, heartbeat_timeout=120)
 			self.vehicle.parameters['SYSID_THISMAV'] = self.numVehicle + 1
 		# Bad TCP connection
 		except socket.error:
     			print 'No server exists!'
+			exit()
 
 		# Bad TTY connection
 		except exceptions.OSError as e:
     			print 'No serial exists!'
+			exit()
 
 		# API Error
-		except dronekit.APIException:
+		except APIException:
     			print 'Timeout!'
-		
+			exit()
 		# Other error
 		except:
     			print 'Some other error!'
+			exit()
 
 		self.lock.release()
 		
@@ -131,7 +132,6 @@ class proxyDrone():
 					self.vehicle.close()
 					self.FPV.stopVideoCapture = True
 					break
-		#self.vehicle.close()
 		self.status = "idle"
 	
 	def insertWaypoints(self, waypoint):

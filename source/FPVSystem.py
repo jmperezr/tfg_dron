@@ -28,23 +28,19 @@ class FPVSystem:
 		cv2.namedWindow("Drone %s" %self.numVehicle, cv2.cv.CV_WINDOW_NORMAL)
 		cv2.cv.ResizeWindow("Drone %s" %self.numVehicle, 640, 480)
 		cv2.startWindowThread()
-		#while True:
-        	#	capAux = cv2.VideoCapture(number)
-        	#	if not (capAux.isOpened()):
-        	#		break;
-     		#	else:
-            	#		number= number+1
-            	#		capAux.release()
+		while True:
+        		capAux = cv2.VideoCapture(number)
+        		if not (capAux.isOpened()):
+        			break;
+     			else:
+            			number= number+1
+            			capAux.release()
 		
-		#if number > 1:   
-		#	self.capture = cv2.VideoCapture(1)
-		#else:
-		#	self.capture = cv2.VideoCapture(0)
-		
-		if self.numVehicle == 0:
-			self.capture = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR01.mp4')
+		print number
+		if number >= 1:   
+			self.capture = cv2.VideoCapture(1)
 		else:
-			self.capture = cv2.VideoCapture('/home/juanma/Escritorio/VideosGoPro/GOPR0293.MP4')
+			self.capture = cv2.VideoCapture(0)
 
 		w = int(self.capture.get(cv2.cv.CV_CAP_PROP_FRAME_WIDTH))
 		h = int(self.capture.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT))
@@ -56,7 +52,6 @@ class FPVSystem:
 		if not self.capture.isOpened():
 			print chr(27) + "[0;31m" + "FPV system not connected.", ; print chr(27) + "[0m"
 
-		#cv2.cv.startWindowThread()
 		t0 = time.time()
 		result= ["Label not found"]
 

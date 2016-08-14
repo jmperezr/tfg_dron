@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<mission>
+	<waypoint>
+ 		<lat>-3.9185250</lat>
+ 		<long>38.9890023</long>
+		<alt>20</alt>
+		<priority>3</priority>	
+	</waypoint>
+	<waypoint>
+ 		<lat>-3.9169800</lat>
+ 		<long>38.9896445</long>
+		<alt>20</alt>
+		<priority>3</priority>	
+	</waypoint>
+	<waypoint>
+ 		<lat>-3.9169264</lat>
+ 		<long>38.9887438</long>
+		<alt>20</alt>
+		<priority>3</priority>	
+	</waypoint>
+	<waypoint>
+ 		<lat>-3.9186323</lat>
+ 		<long>38.9896278</long>
+		<alt>20</alt>
+		<priority>3</priority>	
+	</waypoint>
+	<waypoint>
+ 		<lat>-3.9180958</lat>
+ 		<long>38.9900697</long>
+		<alt>20</alt>
+		<priority>3</priority>	
+	</waypoint>
+	<waypoint>
+ 		<lat>-3.9175594</lat>
+ 		<long>38.9890524</long>
+		<alt>20</alt>
+		<priority>3</priority>	
+	</waypoint>
+	<waypoint>
+ 		<lat>-3.9179349</lat>
+ 		<long>38.9894360</long>
+		<alt>20</alt>
+		<priority>3</priority>	
+	</waypoint>
+</mission>

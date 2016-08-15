@@ -55,9 +55,24 @@ Los \acs{UAV}s son un \textbf{aliado perfecto en misiones de búsqueda y rescate
 
 Este tipo de dispositivos, utilizados de manera simultánea con la intervención humana de los equipos de rescate, resultan herramientas vitales a la hora de detectar, localizar y rescatar a víctimas de catástrofes naturales como los terremotos o incidentes como el hundimiento de minas. El auxilio de personas en esta clase de condiciones puede resultar peligroso para los miembros del servicio de respuesta rápida ante emergencias. Sin embargo, los dispositivos no tripulados pueden impedir males mayores y colaborar de manera eficaz con los humanos en condiciones complicadas.
 
-Con todo lo anterior, en este TFG se pretende \textbf{mejorar la productividad de los equipos de rescate}, en situaciones de catástrofe, permitiendo rebajar los tiempos de reconocimiento del terreno con la ayuda de una flota de \acs{UAV}s que se coordinen y comuniquen de forma descentralizada.
+\section{Propuesta de sistema de vigilancia adaptativo basado en \acs{UAV}s}
 
-El objetivo principal del proyecto es la \textbf{creación de un sistema que permita monitorizar determinadas zonas}, basándose en prioridades, de tal forma que en caso de catástrofe el uso de este software permita reducir costes en cuanto a: i) el tiempo de reconocimiento del territorio afectado por el desastre, ii) el tiempo de rescate de individuos y iii) la exposición al peligro por parte del personal de emergencia.
+Con todo lo anterior, en este \acs{TFG} se pretende \textbf{mejorar la productividad de los equipos de rescate}, en situaciones de catástrofe, permitiendo rebajar los tiempos de reconocimiento del terreno con la ayuda de una flota de \acs{UAV}s que se coordinen y comuniquen.
+
+La propuesta de este proyecto gira en torno a un \textbf{sistema adaptativo basado en la coordinación de drones} para obtener información útil sobre el entorno afectado por la catástrofe. El esquema de referencia sería la identificación de puntos de monitorización, en base a un sistema de prioridades, con el objetivo de obtener información teniendo en cuenta la importancia de cada uno de los puntos del entorno monitorizado.
+
+Con el uso de este sistema se pretende reducir costes en cuanto a: 
+\begin{itemize}
+\item El tiempo de reconocimiento del territorio afectado por el desastre.
+\item El tiempo de rescate de individuos.
+\item La exposición al peligro por parte del personal de emergencia.
+\end{itemize}
+
+Se plantea el uso de \textbf{DroneKit y su \acs{API} en Python para la programación del vehículo} aéreo \textit{3DR IRIS+}. Por medio de esta \acs{API}, los desarrolladores pueden crear aplicaciones que se ejecutan en un ordenador y que se comunican con el controlador de vuelo \textit{ArduPilot}. \textit{DroneKit-Python} proporciona acceso mediante programación a información de telemetría, del estado y de los parámetros del vehículo, y permite tanto la gestión de misiones como el control directo sobre el movimiento y las operaciones del vehículo.
+
+Por otro lado, la \textbf{herramienta de simulación \acs{SITL}} permite hacer uso de los drones que se consideren oportunos sin necesidad de poseer la infraestructura hardware. En resumen, \acs{SITL} permite ejecutar \textit{ArduPilot} directamente en el ordenador, sin ningún hardware especial. De este modo, el papel de \acs{SITL}, en este proyecto, será el de desplegar pruebas de manera previa a los vuelos con el \textit{3DR IRIS+} y el de llevar a cabo la coordinación de varios drones, al disponer solo de un \acs{UAV} real.
+
+Por último, a fin de obtener información en cada uno de los puntos de monitorización \textbf{se empleará la librería \textit{OpenCV}} para la visión por computador. Gracias a \textit{OpenCV} es posible la captura de imágenes en primera persona que seguidamente serán \textbf{analizadas mediante \textit{Google Cloud Vision \acs{API}}}, consiguiendo así la información sobre el entorno afectado por la catástrofe.
 
 \section{Estructura del documento}
 

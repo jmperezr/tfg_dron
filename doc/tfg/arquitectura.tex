@@ -139,7 +139,7 @@ Por esto, se decide hacer uso de archivos XML en los que se especifique la infor
 </mission>
 \end{listing}
 
-La clase \textit{XMLParser} proporciona una forma de acceder a los datos presentes en los documentos XML. La lectura de estos archivos, que tiene lugar en esta clase, ocasiona la \textbf{creación de una estructura de tipo lista}, que denominaremos \textbf{\textit{Pool de Misiones}}, que contiene una serie de puntos de interés.
+La clase \textit{XMLParser} proporciona una forma de acceder a los datos presentes en los documentos XML. La lectura de estos archivos, que tiene lugar en esta clase, ocasiona la \textbf{creación de una estructura de tipo lista}, que denominaremos \textbf{\textit{Pool de Misiones}}, que contiene una serie de puntos de interés. \\ \\
 
 \section{Módulo de Coordinación}
 
@@ -153,7 +153,7 @@ Su misión es coordinar la actividad de los drones, durante las misiones, para o
 
 \subsection{Clase Coordinator}
 
-El \textit{Coordinator} es el responsable de llevar a cabo la \textbf{coordinación}, \textbf{entre los \acs{UAV}s} que existan disponibles, con el objetivo de poder abarcar el mayor terreno posible en un tiempo que es considerablemente menor. Para llevar a cabo este propósito es necesario contar antes con un \textit{Pool de Misiones} que se encuentre ordenado por la prioridad de los «waypoints». 
+El \textit{Coordinator} es el responsable de llevar a cabo la \textbf{coordinación}, \textbf{entre los \acs{UAV}s} que existan disponibles, con el objetivo de poder abarcar el mayor terreno posible en un tiempo que es considerablemente menor. Para llevar a cabo este propósito es necesario contar antes con un \textit{Pool de Misiones} que se encuentre ordenado por la prioridad de los «waypoints». \\
 
 Una vez que los archivos XML han sido leídos y los «waypoints» han sido almacenados en el \textit{Pool de Misiones}, el \textit{Coordinator} debe \textbf{ordenar} esas localizaciones \textbf{por medio del campo prioridad}. La prioridad puede tomar tres valores diferentes: 1, 2 y 3. Siendo 1 la prioridad más elevada y 3 la de menor relevancia. De modo que, en el \textit{Pool de Misiones} deben aparecer primero los  cuya prioridad sea de 1 y en último lugar los que tengan una prioridad de 3, consiguiendo que los drones lleguen antes a los puntos de interés más importantes.
 
@@ -171,7 +171,7 @@ Para iniciar el sistema, se debe realizar una llamada a la clase \textbf{\textit
 \begin{itemize}
 \item \textbf{numVehicles}: se refiere al número de vehículos que participarán en las misiones y capturarán imágenes en directo del vuelo. Si se omite, el valor por defecto es 1 vehículo.
 \item \textbf{secondWait}: afecta al número de segundos que el vehículo permanecerá parado sobre un «waypoint» para captar imágenes relevantes de esa localización durante ese tiempo. Si se omite, el valor por defecto es de 10 segundos.
-\item \textbf{secondsPerPhoto}: referido al número de segundos que deben transcurrir para tomar una fotografía. Por ejemplo, si el valor es de 5 segundos, el sistema realizará una fotografía cada 5 segundos. Si se omite, el valor por defecto es de 10 segundos.
+\item \textbf{secondsPerPhoto}: referido al número de segundos que deben transcurrir para tomar una fotografía. Por ejemplo, si el valor es de 5 segundos, el sistema realizará una fotografía cada 5 segundos. Si se omite, el valor por defecto es de 10 segundos. \\
 \end{itemize} 
 
 Un ejemplo de cómo realizar la llamada a \textit{Coordinator} puede ser:
@@ -206,9 +206,7 @@ Entre las competencias de esta clase se encuentran las que se exponen a continua
 \item \textbf{Inserción de «waypoints»} y \textbf{escritura de misiones}: los «waypoints», que han sido extraídos del archivo XML en el \textit{Coordinator}, son adjudicados a drones que se encuentren en \textit{estado ocioso} y \textit{en vuelo}. La localización de estos puntos debe ser agregada a comandos de misión que puedan ser interpretados por el vehículo. Entre estos comandos se encuentran las órdenes necesarias para: acudir a una localización específica, mantener el vehículo en un punto concreto o realizar la vuelta a casa y el aterrizaje.
 \end{itemize}
 
-El \textit{Proxy Drone} es inicializado pasándole por parámetro el número de vehículo con el que se corresponde dicho objeto. Gracias a esto, el usuario puede obtener \textbf{información del estado del dron}, sabiendo, por ejemplo, si esa información está asociada al \textit{Dron 1} o al \textit{Dron 2}.
-
-\clearpage
+El \textit{Proxy Drone} es inicializado pasándole por parámetro el número de vehículo con el que se corresponde dicho objeto. Gracias a esto, el usuario puede obtener \textbf{información del estado del dron}, sabiendo si esa información está asociada al \textit{Dron 1}, al \textit{Dron 2}, etc.
 
 \section{Módulo de Despliegue de Bajo Nivel}
 
@@ -226,11 +224,9 @@ La clase \textbf{\textit{Drone}} ofrece la posibilidad de \textbf{simular vehíc
 \end{center}
 \end{figure}
 
-El uso de \acs{SITL} (véase Sección \ref{sec:sitl}) permite crear vehículos simulados que pueden usarse como un vehículo real: se puede conectar al vehículo usando una estación de control de tierra, despegar, cambiar los modos de vuelo, realizar misiones guiadas o automáticas, y aterrizar. La diferencia principal es que además de ser capaz de configurar el vehículo, los parámetros del simulador permiten configurar el entorno físico (por ejemplo, la velocidad y dirección del viento) y también simular el fallo de distintos componentes. Esto significa que \acs{SITL} es el entorno perfecto para probar correcciones de errores y otros cambios en el piloto automático, modos de fallo y aplicaciones desarrolladas mediante DroneKit-Python (véase Sección \ref{sec:dronekit}).
+El uso de \acs{SITL} (véase Sección \ref{sec:sitl}) permite crear vehículos simulados que pueden usarse como un vehículo real: se puede conectar al vehículo usando una estación de control de tierra, despegar, cambiar los modos de vuelo, realizar misiones guiadas o automáticas, y aterrizar. La diferencia principal es que además de ser capaz de configurar el vehículo, los parámetros del simulador permiten configurar el entorno físico (por ejemplo, la velocidad y dirección del viento) y también simular el fallo de distintos componentes. Esto significa que \acs{SITL} es el entorno perfecto para probar correcciones de errores, modos de fallo y aplicaciones desarrolladas mediante DroneKit-Python (véase Sección \ref{sec:dronekit}).
 
-\clearpage
-
-El cometido que tiene esta clase es, dependiendo del número de vehículo que lo instancie, acceder a una carpeta determinada y \textbf{ejecutar el comando} (ver Listado~\ref{code:simulacion}) \textbf{para generar la simulación} del dron, en un puerto UDP concreto, al que posteriormente el sistema se conectará para comunicarse con él.
+El cometido que tiene esta clase es, dependiendo del número de vehículo que lo instancie, acceder a una carpeta determinada y \textbf{ejecutar el comando} (ver Listado~\ref{code:simulacion}) \textbf{para generar la simulación} del dron, en un puerto UDP concreto, al que posteriormente el sistema se conectará para comunicarse con él. \\ \\
 
 \begin{listing}[
  float=h!,

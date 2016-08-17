@@ -42,9 +42,35 @@ Cabe destacar la \textbf{dificultad} que entraña al proyecto el empleo de vario
 Con el fin de proseguir el desarrollo del proyecto, partiendo de la base de este \acs{TFG}, se proponen varias líneas de trabajo:
 
 \begin{itemize}
-\item \textbf{Mejora del algoritmo de coordinación utilizando un enfoque descentralizado}: descentralizar la manera en la que se realiza la coordinación añadiría robustez al sistema, en cuanto a que, dispondría de capacidad para no depender de una única máquina. Para ello, puede ser adecuado el uso de un servidor en \textbf{ZeroC \acs{ICE}} como plataforma de comunicación.
-\item \textbf{Implementar detección de movimiento}: una funcionalidad más que interesante sería que el sistema fuera capaz de detectar cualquier tipo de movimiento existente en las imágenes. La identificación de supervivientes en situaciones de emergencia resultaría mucho más sencilla. Sin embargo, este tipo de implementación es costosa, a causa de que, el dron permanece en constante movimiento y por ello no se posee una imagen fija del entorno. Por lo tanto, sería necesario entrenar al sistema mediante modelos de aprendizaje para así poder detectar el movimiento.
-\item \textbf{Aumentar la flota de vehículos}: sería importante ampliar el número de drones del que se dispone, de manera que, se pueda plantear la coordinación de los \acs{UAV}s en entornos reales y no solo simulados.
+\item \textbf{Mejora del algoritmo de coordinación utilizando un enfoque descentralizado}: un sistema descentralizado, en oposición a uno centralizado, es una conjunto de ordenadores autónomos que se comunican uno con el otro para realizar un servicio común. Típicamente, los sistemas descentralizados se ubican en diversas ubicaciones geográfica y organizativas.
+
+Si se desarrolla correctamente, un sistema descentralizado permite una mayor flexibilidad en el crecimiento de las capacidades y las funciones. Además, un sistema descentralizado puede ser más fácil de mantener.
+
+Descentralizar la manera en la que se realiza la coordinación añadiría robustez al sistema, en cuanto a que, dispondría de capacidad para no depender de una única máquina. Para ello, puede ser adecuado el \textbf{uso de un servidor en ZeroC \acs{ICE}} como plataforma de comunicación.
+
+ZeroC \acs{ICE} es un «middleware orientado a objetos, es decir, proporciona herramientas, \acs{API}s y soporte de bibliotecas para construir aplicaciones cliente-servidor orientadas a objetos. Una aplicación \acs{ICE} se puede usar en entornos heterogéneos: los clientes y los servidores pueden escribirse en diferentes lenguajes de programación, pueden ejecutarse en distintos sistemas operativos y en distintas arquitecturas, y pueden comunicarse empleando diferentes tecnologías de red. Además, el código fuente de estas aplicaciones puede portarse de manera independiente al entorno de desarrollo» \cite{futuro2}.
+\item \textbf{Implementar detección de movimiento}: una funcionalidad más que interesante sería que el sistema fuera capaz de detectar cualquier tipo de movimiento existente en las imágenes.
+ 
+El movimiento es un concepto relativo al plano de la imagen y a los objetos existentes en ella, existiendo factores que implican que detectar el movimiento sea complicado como: i) los cambios extrínsecos e intrínsecos de la cámara, ii) los cambios de iluminación o iii) la superposición de múltiples movimientos semitransparentes como la niebla o el polvo. 
+
+La identificación de supervivientes en situaciones de emergencia resultaría mucho más sencilla. Sin embargo, este tipo de implementación es costosa, a causa de que, el dron permanece en constante movimiento y por ello no se posee una imagen fija del entorno. 
+
+La mayoría de los algoritmos de detección automática y de seguimiento están diseñados para configuraciones con cámara fija. En los últimos años ha habido intentos para desarrollar sistemas de videovigilancia que sean capaces de operar con cámaras en movimiento dando como resultado una serie de algoritmos que, con restricciones, son capaces de resolver el problema. Estos se dividen en dos grandes grupos: métodos que diferencian imágenes consecutivas alineadas y métodos que detectan movimiento directamente en la imagen.
+
+Con todo esto, se propone \textbf{entrenar el sistema}, como por ejemplo en \cite{futuro1}, \textbf{mediante modelos de aprendizaje} para así poder detectar el movimiento en situaciones de emergencia.
+
+\item \textbf{Reconstrucción de mapas}: un uso actual que tienen los drones es el de realizar mapas topográficos mediante la realización de fotografías a cierta altura. La aparición, en los últimos años, de software topográfico ha contribuido a generar modelos 3D, mediante técnicas de fotogrametría, a partir de fotografías tomadas de un determinado territorio.
+
+La idea de poder sobrevolar una extensión determinada para sacar unas fotografías y posteriormente poder recomponer el modelo para obtener la geometría y los elementos de dicha extensión hace que esta técnica sea muy potente. Los \acs{UAV} facilitan la fotogrametría empleando instrumental de bajo coste, como cámaras digitales compactas o réflex, para capturar las imágenes.
+
+Según \cite{futuro3} los verdaderos beneficios de esta tecnología no son simplemente duplicar los resultados convencionales. El tiempo necesario para hacer estas mediciones es sustancialmente diferente. La medición de tierra puede requerir días de tiempo completo en el campo, mientras que la medición aérea requiere horas.
+
+Por ese motivo, se plantea \textbf{acoplar al \textit{Modulo de Análisis de Imágenes} la funcionalidad topográfica}, que permita reconstruir el mapa de la zona afectada por la catástrofe, haciendo uso del software, actualmente en desarrollo, incluido en el \acs{TFG} \cite{futuro4}.
+
+\item \textbf{Aumentar la flota de vehículos}: sería importante ampliar el número de drones del que se dispone, de manera que, se pueda plantear la coordinación de los \acs{UAV}s en entornos reales y no solo simulados. La utilización de una flota de \acs{UAV}s ofrece una serie de ventajas en misiones de rescate en comparación a la utilización de un único \acs{UAV}. Una flota de drones que colaboran entre sí permite aumentar el área o reducir el tiempo requerido de una misión de vigilancia y reconocimiento.
 \end{itemize}
+
+
+
 
 

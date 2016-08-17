@@ -6,11 +6,11 @@
 \section{Visión general de la arquitectura}
 \label{sec:visiongeneral}
 
-La arquitectura diseñada (ver Figura~\ref{fig:arquitectura}) es una arquitectura basada en módulos que contribuye a simplificar significativamente el desarrollo del sistema. 
+La arquitectura diseñada (ver Figura~\ref{fig:arquitectura}) es una arquitectura basada en módulos que contribuye a simplificar significativamente el desarrollo del sistema. \\
 
 \begin{figure}[!h]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{/arquitectura.png}
+\includegraphics[width=1\textwidth]{/arquitectura.png}
 \caption[Arquitectura del sistema]{Arquitectura del sistema}
 \label{fig:arquitectura}
 \end{center}
@@ -22,7 +22,7 @@ Al aplicar la arquitectura modular, un problema complejo debe ser dividido en va
 
 Un módulo es cada una de las partes de un programa que resuelve uno de los subproblemas en que se divide el problema complejo original. Cada uno de estos módulos tiene una tarea bien definida y algunos necesitan de otros para poder operar. En caso de que un módulo necesite de otro, puede comunicarse con éste mediante una interfaz de comunicación que también debe estar bien definida. No debe confundirse el término módulo con términos como función o procedimiento, propios del lenguaje que lo soporte.
 
-En líneas generales, el sistema (ver Figura~\ref{fig:descripcion}) debe ser capaz de extraer «waypoints» de un \textit{Pool de Misiones}, clasificarlos conforme a la prioridad fijada y conseguir que varios drones recorran esos puntos, de forma coordinada, hasta vaciar el \textit{Pool de Misiones}. Así, el sistema reunirá una serie de imágenes, capturadas por los \acs{UAV}s, que deben ser analizadas.
+En líneas generales, el sistema (ver Figura~\ref{fig:descripcion}) debe ser capaz de extraer «waypoints» de un \textit{Pool de Misiones}, clasificarlos conforme a la prioridad fijada y conseguir que varios drones recorran esos puntos, de forma coordinada, hasta vaciar el \textit{Pool de Misiones}. Así, el sistema reunirá una serie de imágenes, capturadas por los \acs{UAV}s, que deben ser analizadas. \\
  
 \begin{figure}[!h]
 \begin{center}
@@ -32,7 +32,7 @@ En líneas generales, el sistema (ver Figura~\ref{fig:descripcion}) debe ser cap
 \end{center}
 \end{figure}
 
-En el sistema la información fluye a través de clases (ver Figura~\ref{fig:diagflujo}), transformándose hasta alcanzar el resultado final. Esto es, los vehículos aéreos se desplazan de manera coordinada a diversas localizaciones y a su vez retransmiten imágenes, que son analizadas para contribuir a mejorar los tiempos de respuesta en situaciones de emergencia.
+En el sistema la información fluye a través de clases (ver Figura~\ref{fig:diagflujo}), transformándose hasta alcanzar el resultado final. Esto es, los vehículos aéreos se desplazan de manera coordinada a diversas localizaciones y a su vez retransmiten imágenes, que son analizadas para contribuir a mejorar los tiempos de respuesta en situaciones de emergencia. \\ \\ \\
 
 \begin{figure}[!h]
 \begin{center}
@@ -42,16 +42,23 @@ En el sistema la información fluye a través de clases (ver Figura~\ref{fig:dia
 \end{center}
 \end{figure}
 
-La descripción general de la arquitectura (ver Figura~\ref{fig:arquitectura}) se elaborará a continuación atendiendo al framework y a los módulos que lo componen.
+Para ello una iteracción con un solo dron realiza las siguientes tareas:
+\begin{itemize}
+\item En la clase \textit{XMLParser} se leen los archivos XML, desembocando esto en la \textbf{creación de un \textit{Pool de Misiones}} que contenga todos los puntos que el \acs{UAV} debe monitorizar.
+\item El \textit{Coordinator} se encarga de \textbf{ordenar el \textit{Pool de Misiones}} atendiendo a una prioridad extraída de los archivos XML. Además, debe \textbf{crear} tantos \textbf{objetos del tipo \textit{Proxy Drone}} como se hayan especificado, en este caso uno.
+\item En la clase \textit{Drone} se obtiene una \textbf{simulación del vehículo aéreo}, a través de \acs{SITL}.
+\item Una vez que disponemos de la simulación del dron, se debe realizar la \textbf{conexión con el dron y con el \textit{FPVSystem}}. De esta manera, mientras el \acs{UAV} realiza la misión correspondiente, retransmite imágenes en directo que son analizadas por una \acs{API} externa, \textit{Google Cloud Vision \acs{API}}.
+\item Por último, el \textit{Coordinator} debe \textbf{asignar «waypoints»} hasta vaciar el \textit{Pool de Misiones} a drones que se encuentren en estado ocioso.
+\end{itemize}
 
-\clearpage
+La descripción general de la arquitectura (ver Figura~\ref{fig:arquitectura}) se elaborará a continuación atendiendo al framework y a los módulos que lo componen.
 
 \subsection{Framework}
 \label{sec:framework}
 
 Un \textbf{framework} es una estructura conceptual y tecnológica de soporte definido, normalmente con artefactos o módulos concretos de software, que puede servir de base para la organización y desarrollo de software.
 
-En este caso, es el proyecto propuesto, el cual consiste en un sistema de vigilancia adaptativo basado en la coordinación de \acs{UAV}s. Proporciona un conjunto de \textbf{servicios, funciones y herramientas} como puede ser el uso de una estación de control de tierra, la lectura de «waypoints», la ordenación de estos por prioridad, el vuelo de un vehículo aéreo o la grabación y el análisis de imágenes.
+En este caso, es el proyecto propuesto, el cual consiste en un sistema de vigilancia adaptativo basado en la coordinación de \acs{UAV}s. Proporciona un conjunto de \textbf{servicios, funciones y herramientas} como puede ser el uso de una estación de control de tierra, la lectura de «waypoints», la ordenación de estos por prioridad o el vuelo de un vehículo aéreo.
 
 \subsection{Módulos desarrollados}
 \label{sec:modulos}
@@ -75,6 +82,8 @@ Cada módulo representa una o más clases (ver Figura~\ref{fig:diagclases}) en l
 \label{fig:diagclases}
 \end{center}
 \end{figure}
+
+El diseño de las clases del sistema se fundamenta en la \textbf{separación de responsabilidades}. La segregación de funciones es un método para separar las responsabilidades de las diversas actividades que intervienen en el sistema, de esta forma, la arquitectura está preparada, por ejemplo, para integrar fácilmente nuevos módulos de análisis a través de otros sensores. También, se debe subrayar que la división entre la clase \textit{Proxy Drone} y las clases \textit{Drone} y \textit{FPVSystem} permite separar las competencias software y hardware, es decir, el \textit{Proxy Drone} se encargará de comunicarse y ordenar tareas a estos dispositivos hardware para así poder cumplir con los objetivos del sistema.
 
 Seguidamente, se expone en detalle cada uno de los módulos desarrollados junto a las clases que forman parte de él.
 

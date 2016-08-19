@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<mission>
+	<waypoint>
+ 		<lat>-3.9178383</lat>
+ 		<long>38.9885854</long>
+		<alt>25</alt>
+		<priority>2</priority>	
+	</waypoint>
+	<waypoint>
+ 		<lat>-3.9173019</lat>
+ 		<long>38.9902782</long>
+		<alt>25</alt>
+		<priority>2</priority>	
+	</waypoint>
+	<waypoint>
+ 		<lat>-3.9161646</lat>
+ 		<long>38.9884770</long>
+		<alt>25</alt>
+		<priority>2</priority>	
+	</waypoint>
+
+</mission>

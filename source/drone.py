@@ -11,12 +11,12 @@ class drone():
 	
 	def startDrone(self):
 		if self.numVehicle == 0:
-			os.chdir(os.path.expanduser("~/ardupilot/ArduCopter/"))
+			os.chdir(os.path.expanduser("./ardupilot/ArduCopter/"))
 		
 		elif self.numVehicle == 1:
-			os.chdir(os.path.expanduser("~/ardupilot2/ArduCopter/"))
+			os.chdir(os.path.expanduser("./ardupilot2/ArduCopter/"))
 		else:					
-			os.chdir(os.path.expanduser("~/ardupilot3/ArduCopter/"))
+			os.chdir(os.path.expanduser("./ardupilot3/ArduCopter/"))
 
 		cmd= 'gnome-terminal -x bash -c "sim_vehicle.sh -I %d -L prueba --map --out 127.0.0.1:%d --aircraft test && bash"' % (self.instance, self.UdpPort)
 		subprocess.call(cmd, shell=True)
